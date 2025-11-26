@@ -19,6 +19,9 @@ function vivo_include_dynamic_css($db_connection = null) {
  * This includes base styles + dynamic colors
  */
 function vivo_include_head_css($db_connection = null) {
+    // Add FC United inspired theme first so it defines the main design system
+    echo '<link rel="stylesheet" href="css/fcunited-theme.css?v=' . time() . '">' . "\n";
+    // Keep the app specific overrides/utility styles after the theme
     echo '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">' . "\n";
     echo '<link rel="stylesheet" href="css/vivo-style.css?v=' . time() . '">' . "\n";
     echo '<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">' . "\n";

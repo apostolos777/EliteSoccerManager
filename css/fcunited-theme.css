@@ -1,0 +1,69 @@
+/* FC United inspired theme styles (adapted) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap');
+
+:root{
+  --fc-primary:#081224; /* deep navy */
+  --fc-accent:#cf2e2e;  /* bold red accent */
+  --fc-accent-2:#61ce70; /* supportive green accent used in theme */
+  --fc-muted:#797e87; /* muted body text */
+  --fc-bg:#ffffff;
+  --fc-surface:#ffffff;
+  --fc-border:#e6e6e6;
+  --fc-radius-lg:12px;
+  --fc-radius-md:8px;
+  --fc-shadow-sm: 0 4px 12px rgba(5,8,15,0.06);
+  --fc-shadow-md: 0 8px 30px rgba(3,6,20,0.09);
+}
+
+html,body{font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; color:var(--fc-primary); background:var(--fc-bg);}
+
+h1,h2,h3,h4,h5{font-family: 'Bebas Neue', 'Poppins', sans-serif; color:var(--fc-primary);}
+
+/* Global container behavior */
+.container{max-width:1200px; margin:0 auto; padding:1rem;}
+
+/* Cards & panels — consistent with FC United look */
+.fc-card, .card{background:var(--fc-surface); border-radius:var(--fc-radius-lg); box-shadow:var(--fc-shadow-sm); border:1px solid var(--fc-border); padding:18px;}
+
+.fc-hero{background:linear-gradient(180deg, rgba(8,18,36,0.94) 0%, rgba(8,18,36,0.7) 100%); color: #fff; padding: 48px; border-radius: 14px;}
+
+.fc-stat{display:flex; flex-direction:column; align-items:flex-start; gap:6px;}
+.fc-stat .num{font-weight:800; font-size:2.25rem; color:var(--fc-accent);}
+.fc-stat .label{font-size:0.85rem; color:var(--fc-muted); font-weight:600;}
+
+/* Left stacked cards */
+.left-stack .stack-card{display:flex; gap:12px; align-items:center;}
+.left-stack .stack-card-icon{background:linear-gradient(135deg,#081224, #4054B2); color:#fff; padding:10px; border-radius:8px; font-size:1.15rem;}
+
+/* Action cards */
+.action-card{display:flex; flex-direction:column; justify-content:flex-start; align-items:center; text-align:center;}
+.action-card .action-icon{background: linear-gradient(135deg, rgba(6,147,227,0.8), rgba(155,81,224,0.9)); color: #fff; width:72px; height:72px; display:flex; align-items:center; justify-content:center; border-radius:12px; font-size:28px;}
+.action-card h3{margin-top:18px; margin-bottom:8px; font-weight:700;}
+.action-card p{color:var(--fc-muted);}
+
+/* Player gallery adaptation */
+.player-gallery .player-card{border-radius:10px; overflow:hidden;}
+.player-gallery img{width:100%; height:100px; object-fit:cover; display:block;}
+
+/* Responsive improvements for dashboard */
+@media (max-width: 980px){
+  .dashboard-grid{grid-template-columns:1fr;}
+  .main-actions{grid-template-columns: 1fr;}
+  .left-stack{width:100%; flex-direction:row; gap:8px; overflow:auto;}
+}
+
+/* Buttons */
+.btn-primary{background:var(--fc-accent); color:#fff; border-radius:8px; padding:8px 14px; display:inline-block; border:none;}
+.btn-secondary{background:#222; color:#fff; border-radius:8px; padding:8px 14px; display:inline-block;}
+
+/* Utilities */
+.muted{color:var(--fc-muted);} 
+
+/* Small headline */
+.card-title{font-weight:800; margin-bottom:10px;}
+
+/* tighten up spacing */
+.stats-grid{gap:14px;} 
+
+/* match screenshot: rounded tall columns */
+.action-card{border-radius:14px; padding:28px;}
