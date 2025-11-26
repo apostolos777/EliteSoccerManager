@@ -342,23 +342,26 @@ body:not(.sidebar-collapsed) { --sidebar-width: var(--sidebar-expanded-width); }
     transition: all 0.3s ease;
 }
 
-/* Adjust content when sidebar is collapsed using CSS variables */
-body.sidebar-collapsed .content-main {
-    margin-left: var(--sidebar-collapsed-width, 60px);
-}
-body.sidebar-collapsed .main-content {
-    margin-left: var(--sidebar-collapsed-width, 60px);
+/* Adjust content when sidebar is collapsed */
+body:not(.mobile-view) .content-main,
+body:not(.mobile-view) .main-content {
+    margin-left: var(--sidebar-width, 280px);
+    transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Smooth content shift regardless of container class */
-.content-main,
-.main-content {
-    transition: margin-left 0.3s ease;
+body.sidebar-collapsed:not(.mobile-view) .content-main,
+body.sidebar-collapsed:not(.mobile-view) .main-content {
+    margin-left: var(--sidebar-collapsed-width, 60px);
 }
 
 @media (max-width:768px){
     .club-logo-img{max-width:50px;max-height:50px}
     .sidebar-toggle {display: none;} /* Hide toggle on mobile, use hamburger menu instead */
+    
+    body .content-main,
+    body .main-content {
+        margin-left: 0 !important;
+    }
 }
 </style>
 
@@ -442,18 +445,22 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Desktop sidebar toggle
-    toggleBtn && toggleBtn.addEventListener('click', function() {
+    toggleBtn && toggleBtn.addEventListener('click', function(e) {
+        e.preventDefault();
         if (!sidebar || isMobile()) return;
-        sidebar.classList.toggle('collapsed');
-        body.classList.toggle('sidebar-collapsed');
-        root.classList.toggle('sidebar-collapsed');
+        
+        const isCollapsed = sidebar.classList.toggle('collapsed');
+        body.classList.toggle('sidebar-collapsed', isCollapsed);
+        root.classList.toggle('sidebar-collapsed', isCollapsed);
         
         // Store preference
-        const collapsed = sidebar.classList.contains('collapsed');
-        localStorage.setItem('sidebarCollapsed', collapsed);
-        setToggleIcon(collapsed);
-    // Update the inline CSS variable so the width and content margin respond immediately
-    applyRootSidebarWidth(collapsed);
+        localStorage.setItem('sidebarCollapsed', isCollapsed);
+        setToggleIcon(isCollapsed);
+        
+        // Update the CSS variables
+        applyRootSidebarWidth(isCollapsed);
+        
+        console.log('Sidebar toggled. Collapsed:', isCollapsed);
     });
 
     // Mobile menu functionality

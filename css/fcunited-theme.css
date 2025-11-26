@@ -13,6 +13,11 @@
   --fc-radius-md:8px;
   --fc-shadow-sm: 0 4px 12px rgba(5,8,15,0.06);
   --fc-shadow-md: 0 8px 30px rgba(3,6,20,0.09);
+  
+  /* Sidebar dimensions */
+  --sidebar-width: 280px;
+  --sidebar-expanded-width: 280px;
+  --sidebar-collapsed-width: 60px;
 }
 
 html,body{font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; color:var(--fc-primary); background:var(--fc-bg);}
