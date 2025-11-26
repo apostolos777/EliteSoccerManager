@@ -35,7 +35,7 @@ async function fetchAPI(endpoint) {
  */
 function DashboardStatCard({ icon, label, value, trend, loading }) {
     return React.createElement('div', { className: 'fc-card stat-card' },
-        loading ? 
+        loading ?
             React.createElement('div', { className: 'loading' }, 'Loading...') :
             [
                 React.createElement('div', { className: 'stat-icon', key: 'icon' },
@@ -71,7 +71,7 @@ function DashboardStats() {
     }, []);
 
     if (error) {
-        return React.createElement('div', { className: 'error-message' }, 
+        return React.createElement('div', { className: 'error-message' },
             'Failed to load dashboard stats: ' + error
         );
     }
@@ -79,8 +79,7 @@ function DashboardStats() {
     const statCards = [
         { icon: 'fas fa-users', label: 'Total Players', key: 'players' },
         { icon: 'fas fa-users-cog', label: 'Total Teams', key: 'teams' },
-        { icon: 'fas fa-calendar-alt', label: 'Upcoming Events', key: 'events' },
-        { icon: 'fas fa-clipboard-check', label: 'Attendance Rate', key: 'attendance', suffix: '%' }
+        { icon: 'fas fa-calendar-alt', label: 'Upcoming Events', key: 'events' }
     ];
 
     return React.createElement('div', { className: 'dashboard-stats' },
@@ -115,7 +114,7 @@ function UpcomingMatches() {
     return React.createElement('div', { className: 'fc-card stack-card' },
         React.createElement('h3', { className: 'card-title' }, 'Upcoming Matches'),
         React.createElement('div', { className: 'match-list' },
-            loading ? 
+            loading ?
                 React.createElement('p', null, 'Loading...') :
                 matches.length === 0 ?
                     React.createElement('p', { className: 'empty-state' }, 'No upcoming matches') :
@@ -173,19 +172,19 @@ function TopScorers() {
  */
 function PlayerCard({ player, onEdit, onDelete }) {
     const photoUrl = player.photo_url || 'https://via.placeholder.com/150x150/081224/ffffff?text=' + (player.first_name?.[0] || 'P') + (player.last_name?.[0] || '');
-    
+
     return React.createElement('div', { className: 'fc-card player-card' },
         React.createElement('div', { className: 'player-photo' },
-            React.createElement('img', { 
-                src: photoUrl, 
+            React.createElement('img', {
+                src: photoUrl,
                 alt: player.first_name + ' ' + player.last_name,
                 onError: (e) => { e.target.src = 'https://via.placeholder.com/150x150/081224/ffffff?text=' + (player.first_name?.[0] || 'P') + (player.last_name?.[0] || ''); }
             })
         ),
         React.createElement('div', { className: 'player-header' },
             React.createElement('h3', null, player.first_name + ' ' + player.last_name),
-            player.jersey_number && 
-                React.createElement('span', { className: 'jersey-badge' }, '#' + player.jersey_number)
+            player.jersey_number &&
+            React.createElement('span', { className: 'jersey-badge' }, '#' + player.jersey_number)
         ),
         React.createElement('div', { className: 'player-info' },
             React.createElement('div', { className: 'info-row' },
@@ -202,13 +201,13 @@ function PlayerCard({ player, onEdit, onDelete }) {
             )
         ),
         React.createElement('div', { className: 'player-actions' },
-            React.createElement('button', { 
-                className: 'btn-secondary', 
-                onClick: () => onEdit(player.id) 
+            React.createElement('button', {
+                className: 'btn-secondary',
+                onClick: () => onEdit(player.id)
             }, 'Edit'),
-            React.createElement('button', { 
-                className: 'btn-danger', 
-                onClick: () => onDelete(player.id) 
+            React.createElement('button', {
+                className: 'btn-danger',
+                onClick: () => onDelete(player.id)
             }, 'Delete')
         )
     );
@@ -230,13 +229,13 @@ function PlayersList() {
             fetchAPI('api/players.php'),
             fetchAPI('api/teams.php')
         ])
-        .then(([playersData, teamsData]) => {
-            setPlayers(playersData.players || []);
-            setFilteredPlayers(playersData.players || []);
-            setTeams(teamsData.teams || []);
-            setLoading(false);
-        })
-        .catch(() => setLoading(false));
+            .then(([playersData, teamsData]) => {
+                setPlayers(playersData.players || []);
+                setFilteredPlayers(playersData.players || []);
+                setTeams(teamsData.teams || []);
+                setLoading(false);
+            })
+            .catch(() => setLoading(false));
     }, []);
 
     // Filter players when search or team filter changes
@@ -246,7 +245,7 @@ function PlayersList() {
         // Apply search filter
         if (searchTerm) {
             const term = searchTerm.toLowerCase();
-            filtered = filtered.filter(p => 
+            filtered = filtered.filter(p =>
                 (p.first_name + ' ' + p.last_name).toLowerCase().includes(term) ||
                 (p.jersey_number && p.jersey_number.toString().includes(term))
             );
@@ -261,7 +260,8 @@ function PlayersList() {
     }, [searchTerm, teamFilter, players]);
 
     const handleEdit = (playerId) => {
-        window.location.href = 'edit_player.php?id=' + playerId;
+        // Use enhanced player profile editor
+        window.location.href = 'player_profile.php?id=' + playerId + '&action=edit';
     };
 
     const handleDelete = (playerId) => {
@@ -298,7 +298,7 @@ function PlayersList() {
                     React.createElement('option', { value: team.id, key: team.id }, team.name)
                 )
             ),
-            React.createElement('span', { className: 'results-count' }, 
+            React.createElement('span', { className: 'results-count' },
                 filteredPlayers.length + ' player' + (filteredPlayers.length !== 1 ? 's' : '')
             )
         ),
@@ -329,8 +329,8 @@ function TeamCard({ team, onEdit, onDelete, onViewDetails }) {
     return React.createElement('div', { className: 'fc-card team-card' },
         React.createElement('div', { className: 'team-header' },
             React.createElement('h3', null, team.name),
-            team.age_group && 
-                React.createElement('span', { className: 'age-badge' }, team.age_group)
+            team.age_group &&
+            React.createElement('span', { className: 'age-badge' }, team.age_group)
         ),
         React.createElement('div', { className: 'team-stats' },
             React.createElement('div', { className: 'stat' },
@@ -343,17 +343,17 @@ function TeamCard({ team, onEdit, onDelete, onViewDetails }) {
             )
         ),
         React.createElement('div', { className: 'team-actions' },
-            React.createElement('button', { 
-                className: 'btn-primary', 
-                onClick: () => onViewDetails(team.id) 
+            React.createElement('button', {
+                className: 'btn-primary',
+                onClick: () => onViewDetails(team.id)
             }, 'View Details'),
-            React.createElement('button', { 
-                className: 'btn-secondary', 
-                onClick: () => onEdit(team.id) 
+            React.createElement('button', {
+                className: 'btn-secondary',
+                onClick: () => onEdit(team.id)
             }, 'Edit'),
-            React.createElement('button', { 
-                className: 'btn-danger', 
-                onClick: () => onDelete(team.id) 
+            React.createElement('button', {
+                className: 'btn-danger',
+                onClick: () => onDelete(team.id)
             }, 'Delete')
         )
     );
@@ -376,8 +376,9 @@ function TeamsList() {
     }, []);
 
     const handleEdit = (teamId) => {
-        window.location.href = 'edit_team.php?id=' + teamId;
-    };
+        // Use modern team editor
+        window.location.href = 'team_edit.php?id=' + teamId + '&action=edit';
+    }
 
     const handleDelete = (teamId) => {
         if (confirm('Are you sure you want to delete this team?')) {
@@ -421,7 +422,7 @@ function TeamsList() {
 /**
  * Initialize React components on page load
  */
-window.initReactComponents = function() {
+window.initReactComponents = function () {
     // Dashboard components
     const dashboardStatsRoot = document.getElementById('react-dashboard-stats');
     if (dashboardStatsRoot) {

@@ -36,15 +36,14 @@ $pages_to_check = [
     'index.php',
     'dashboard.php', 
     'login.php',
-    'add_event.php',
+    'event_edit.php',
     'events.php',
     'teams.php',
     'players.php',
-    'edit_event.php',
-    'edit_player.php',
-    'edit_team.php',
-    'add_player.php',
-    'add_team.php'
+    'event_edit.php',
+    'player_profile.php',
+    'team_edit.php',
+    'club_settings.php'
 ];
 
 $updated_pages = [];

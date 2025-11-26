@@ -130,7 +130,7 @@ try {
                 <p class="page-subtitle">Organize squads and track team performance</p>
                 
                 <div class="page-actions">
-                    <a href="add_team.php" class="btn btn-primary">
+                    <a href="team_edit.php?action=add" class="btn btn-primary">
                         <i class="fas fa-plus-circle"></i>
                         Add New Team
                     </a>
@@ -211,7 +211,7 @@ try {
                 <i class="fas fa-shield-alt fa-3x" style="color:#94a3b8"></i>
                 <h3>No Teams Yet</h3>
                 <p>Create a team to get started</p>
-                <a href="add_team.php" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Add Team</a>
+                <a href="team_edit.php?action=add" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Add Team</a>
             </div>
         <?php else: ?>
             <div id="teamsGrid" class="team-grid">
@@ -253,7 +253,7 @@ try {
 
                         <div class="tc-actions">
                             <a href="team_details.php?id=<?= $team['id'] ?? '' ?>" class="view"><i class="fas fa-eye"></i> View</a>
-                            <a href="edit_team.php?id=<?= $team['id'] ?? '' ?>" class="edit"><i class="fas fa-edit"></i> Edit</a>
+                            <a href="team_edit.php?id=<?= $team['id'] ?? '' ?>&action=edit" class="edit"><i class="fas fa-edit"></i> Edit</a>
                             <a href="#" class="assign-coach-btn" onclick="openCoachAssignment(<?= $team['id'] ?>, '<?= htmlspecialchars(addslashes($team['name'])) ?>')"><i class="fas fa-user-plus"></i> Coach</a>
                             <a href="delete_team.php?id=<?= $team['id'] ?? '' ?>" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Delete</a>
                         </div>

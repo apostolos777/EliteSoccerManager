@@ -195,16 +195,14 @@ if (!$logoExists) {
 }
 
 .sidebar.collapsed {
-    width: 60px !important;
-    min-width: 60px !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: 0 !important;
+    overflow: hidden !important;
 }
 
-.sidebar.collapsed .logo-text,
-.sidebar.collapsed .nav-link span,
-.sidebar.collapsed .sidebar-footer .footer-content div {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s ease, visibility 0.2s ease;
+.sidebar.collapsed > *:not(.sidebar-toggle) {
+    display: none !important;
 }
 
 .sidebar.collapsed .sidebar-header {
@@ -237,7 +235,7 @@ if (!$logoExists) {
 /* Fix content area adjustment */
 body.sidebar-collapsed .content-main,
 body.sidebar-collapsed .main-content {
-    margin-left: 60px !important;
+    margin-left: 0 !important;
     transition: margin-left 0.3s ease !important;
 }
 

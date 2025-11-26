@@ -89,7 +89,7 @@ $message = $_GET['message'] ?? '';
             <p class="page-subtitle">Manage coaches, staff, and volunteers</p>
 
             <div class="page-actions">
-                <a href="add_coach.php" class="btn btn-primary">
+                <a href="edit_coach.php?action=add" class="btn btn-primary">
                     <i class="fas fa-plus-circle"></i>
                     Add New Coach
                 </a>

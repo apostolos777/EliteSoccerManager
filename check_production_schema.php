@@ -51,7 +51,7 @@ try {
                 foreach ($nameColumns as $col) {
                     echo "<td>" . ($p[$col] ?? 'NULL') . "</td>";
                 }
-                echo "<td><a href='edit_player.php?id=" . $p['id'] . "'>Edit</a></td>";
+                echo "<td><a href='player_profile.php?id=" . $p['id'] . "&action=edit'>Edit</a></td>";
                 echo "</tr>";
             }
             echo "</table>";

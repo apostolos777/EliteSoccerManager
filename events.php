@@ -54,7 +54,7 @@ if ($flash) { $message = $flash['m']; $messageType = $flash['t']; }
             </div>
             <div class="page-actions">
                 <!-- Link directly to add_event.php so the Add New Event action opens even when event_edit.php requires authentication -->
-                <a href="add_event.php" class="btn btn-primary">Add New Event</a>
+                    <a href="edit_event.php?action=add" class="btn btn-primary">Add New Event</a>
                 <a href="calendar.php" class="btn btn-secondary" style="margin-left:1rem;"><i class="fas fa-calendar"></i> Full Calendar View</a>
             </div>
         </div>

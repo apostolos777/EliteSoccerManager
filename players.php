@@ -215,7 +215,7 @@ if (isset($_GET['error'])) {
             <p class="page-subtitle">Squad overview and player profiles</p>
         </div>
         <div class="page-actions">
-            <a href="add_player.php" class="btn btn-primary"><i class="fas fa-user-plus"></i> Add Player</a>
+            <a href="player_profile.php?action=add" class="btn btn-primary"><i class="fas fa-user-plus"></i> Add Player</a>
             <button id="bulkDeleteBtn" class="btn btn-danger" style="margin-left:.5rem; display:none;" onclick="bulkDeleteSelected()"><i class="fas fa-trash"></i> Delete Selected</button>
         </div>
     </div>
@@ -284,6 +284,7 @@ if (isset($_GET['error'])) {
             <h3>No Players Yet</h3>
             <p>Add your first player to get started</p>
             <a href="add_player.php" class="btn btn-primary"><i class="fas fa-plus"></i> Add Player</a>
+                        <a href="player_profile.php?action=add" class="btn btn-primary"><i class="fas fa-plus"></i> Add Player</a>
         </div>
     <?php else: ?>
         <div style="margin:0 0 1rem; display:flex; gap:.5rem; align-items:center;">
@@ -346,7 +347,7 @@ if (isset($_GET['error'])) {
                     </div>
                     <div class="pcm-actions">
                         <a href="player_profile.php?id=<?= $p['id'] ?>" class="btn-view"><i class="fas fa-eye"></i> View</a>
-                        <a href="edit_player.php?id=<?= $p['id'] ?>" class="btn-edit"><i class="fas fa-edit"></i> Edit</a>
+                        <a href="player_profile.php?id=<?= $p['id'] ?>&action=edit" class="btn-edit"><i class="fas fa-edit"></i> Edit</a>
                         <?php if (function_exists('isAdmin') && isAdmin()): ?>
                         <a href="delete_player.php?id=<?= $p['id'] ?>" class="btn-delete" onclick="return confirm('Are you sure you want to permanently delete this player? This action cannot be undone and will remove all player data including attendance records.')" style="background:var(--primary);color:white !important;"><i class="fas fa-trash"></i> Delete</a>
                         <?php endif; ?>

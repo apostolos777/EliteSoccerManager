@@ -19,13 +19,11 @@ $pages_to_update = [
     'event_calendar.php',
     'event_details.php',
     'team_details.php',
-    'edit_event.php',
-    'edit_player.php',
-    'edit_team.php',
+    'event_edit.php',
+    'player_profile.php',
+    'team_edit.php',
     'edit_coach.php',
-    'add_player.php',
-    'add_team.php',
-    'add_coach.php',
+    'club_settings.php',
     'club_settings.php'
 ];
 

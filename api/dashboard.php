@@ -18,16 +18,8 @@ try {
         $stats = [
             'players' => $db->query("SELECT COUNT(*) FROM players")->fetchColumn(),
             'teams' => $db->query("SELECT COUNT(*) FROM teams")->fetchColumn(),
-            'events' => $db->query("SELECT COUNT(*) FROM events WHERE event_date >= date('now')")->fetchColumn(),
-            'attendance' => 0
+            'events' => $db->query("SELECT COUNT(*) FROM events WHERE date >= date('now')")->fetchColumn()
         ];
-        
-        // Calculate attendance rate
-        $totalAttendance = $db->query("SELECT COUNT(*) FROM attendance")->fetchColumn();
-        $presentCount = $db->query("SELECT COUNT(*) FROM attendance WHERE status = 'present'")->fetchColumn();
-        if ($totalAttendance > 0) {
-            $stats['attendance'] = round(($presentCount / $totalAttendance) * 100);
-        }
         
         echo json_encode(['stats' => $stats]);
         

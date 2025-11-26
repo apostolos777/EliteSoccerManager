@@ -403,46 +403,18 @@ try {
 
                 <!-- Quick Actions -->
                 <div class="quick-actions animate-fade-up">
+                    <!-- Add buttons row -->
+                    <div class="add-buttons-row" style="display:flex; gap:1.5rem; margin-bottom:2rem;">
+                        <a href="team_edit.php?action=add" class="btn btn-primary"><i class="fas fa-plus"></i> Add Team</a>
+                        <a href="player_profile.php?action=add" class="btn btn-primary"><i class="fas fa-user-plus"></i> Add Player</a>
+                        <a href="event_edit.php?action=add" class="btn btn-primary"><i class="fas fa-calendar-plus"></i> Add Event</a>
+                        <a href="attendance.php" class="btn btn-primary"><i class="fas fa-clipboard-check"></i> Take Attendance</a>
+                    </div>
                     <!-- Left stacked sidebar (React-powered widgets) -->
                     <aside class="left-stack" aria-label="Quick widgets">
                         <div id="react-upcoming-matches"></div>
                         <div id="react-top-scorers"></div>
-                        
-                        <div class="stack-card">
-                            <div class="stack-card-icon"><i class="fas fa-newspaper"></i></div>
-                            <div class="stack-card-body">
-                                <h5>Latest News</h5>
-                                <small>Stay updated with club news</small>
-                            </div>
-                        </div>
-
-                        <a href="add_team.php" class="stack-card" style="text-decoration: none; color: inherit;">
-                            <div class="stack-card-icon"><i class="fas fa-plus"></i></div>
-                            <div class="stack-card-body">
-                                <h5>Add New Team</h5>
-                                <small>Create and configure a new team</small>
-                            </div>
-                        </a>
                     </aside>
-
-                    <!-- Main large actions area (three tall columns) -->
-                    <div class="main-actions" role="region" aria-label="Primary actions">
-                        <a href="player_edit.php?action=add" class="action-card action-card--tall fc-card">
-                            <div class="action-icon"><i class="fas fa-user-plus"></i></div>
-                            <h3>Add New Player</h3>
-                            <p>Register a new player</p>
-                        </a>
-                        <a href="event_edit.php?action=add" class="action-card action-card--tall fc-card">
-                            <div class="action-icon"><i class="fas fa-calendar-plus"></i></div>
-                            <h3>Schedule Event</h3>
-                            <p>Create a new match or training</p>
-                        </a>
-                        <a href="attendance.php" class="action-card action-card--tall fc-card">
-                            <div class="action-icon"><i class="fas fa-clipboard-check"></i></div>
-                            <h3>Take Attendance</h3>
-                            <p>Record player attendance</p>
-                        </a>
-                    </div>
                 </div>
 
                 <!-- Dashboard Grid (main body) -->
@@ -583,6 +555,18 @@ try {
                             <?php else: ?>
                                 <div style="padding-top:10px; color:var(--text-secondary);">No scheduled upcoming matches.</div>
                             <?php endif; ?>
+                        </div>
+                        <!-- Latest News Widget -->
+                        <div class="card" style="margin-bottom: var(--space-4); padding: var(--space-4);">
+                            <h3 class="card-title" style="margin-bottom: 0.5rem;"><i class="fas fa-newspaper" style="color:var(--primary-green); margin-right:8px"></i>Latest News</h3>
+                            <div style="color:var(--text-secondary); font-size:0.95rem;">
+                                <ul style="padding-left:1.2em;">
+                                    <li>New player registration now open for Spring season.</li>
+                                    <li>Club AGM scheduled for December 10th.</li>
+                                    <li>Training kit orders due by December 5th.</li>
+                                    <li>Congratulations to the U14 team for winning the league!</li>
+                                </ul>
+                            </div>
                         </div>
 
                         <div class="card">
