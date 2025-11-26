@@ -2765,3 +2765,310 @@ Stack trace:
 [Wed Nov 26 20:03:29 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
 [Wed Nov 26 20:03:29 2025] [::1]:50668 [200]: GET /dashboard.php
 [Wed Nov 26 20:03:29 2025] [::1]:50668 Closing
+[Wed Nov 26 20:12:35 2025] [::1]:51101 Accepted
+[Wed Nov 26 20:12:35 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 20:12:35 2025] [::1]:51101 [200]: GET /dashboard.php
+[Wed Nov 26 20:12:35 2025] [::1]:51101 Closing
+[Wed Nov 26 20:12:35 2025] [::1]:51102 Accepted
+[Wed Nov 26 20:12:35 2025] [::1]:51103 Accepted
+[Wed Nov 26 20:12:35 2025] [::1]:51102 [200]: GET /css/fcunited-theme.css?v=1764180755
+[Wed Nov 26 20:12:35 2025] [::1]:51104 Accepted
+[Wed Nov 26 20:12:35 2025] [::1]:51103 [200]: GET /css/vivo-style.css?v=1764180755
+[Wed Nov 26 20:12:35 2025] [::1]:51105 Accepted
+[Wed Nov 26 20:12:35 2025] [::1]:51104 [200]: GET /js/react-components.js?v=1764180755
+[Wed Nov 26 20:12:35 2025] [::1]:51102 Closing
+[Wed Nov 26 20:12:35 2025] [::1]:51105 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 20:12:35 2025] [::1]:51103 Closing
+[Wed Nov 26 20:12:35 2025] [::1]:51104 Closing
+[Wed Nov 26 20:12:35 2025] [::1]:51105 Closing
+[Wed Nov 26 20:12:35 2025] [::1]:51108 Accepted
+[Wed Nov 26 20:12:35 2025] [::1]:51109 Accepted
+[Wed Nov 26 20:12:35 2025] [::1]:51110 Accepted
+[Wed Nov 26 20:12:35 2025] [::1]:51108 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 20:12:35 2025] [::1]:51111 Accepted
+[Wed Nov 26 20:12:35 2025] [::1]:51109 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 20:12:35 2025] [::1]:51110 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 20:12:35 2025] [::1]:51111 [200]: GET /css/club-custom.css
+[Wed Nov 26 20:12:35 2025] [::1]:51108 Closing
+[Wed Nov 26 20:12:35 2025] [::1]:51109 Closing
+[Wed Nov 26 20:12:35 2025] [::1]:51110 Closing
+[Wed Nov 26 20:12:35 2025] [::1]:51111 Closing
+[Wed Nov 26 20:12:36 2025] [::1]:51112 Accepted
+[Wed Nov 26 20:12:36 2025] PHP Fatal error:  Uncaught Error: Call to undefined function get_db_connection() in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/api/dashboard.php:11
+Stack trace:
+#0 {main}
+  thrown in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/api/dashboard.php on line 11
+[Wed Nov 26 20:12:36 2025] [::1]:51112 [200]: GET /api/dashboard.php - Uncaught Error: Call to undefined function get_db_connection() in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/api/dashboard.php:11
+Stack trace:
+#0 {main}
+  thrown in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/api/dashboard.php on line 11
+[Wed Nov 26 20:12:36 2025] [::1]:51112 Closing
+[Wed Nov 26 20:12:36 2025] [::1]:51113 Accepted
+[Wed Nov 26 20:12:36 2025] PHP Fatal error:  Uncaught Error: Call to undefined function get_db_connection() in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/api/dashboard.php:11
+Stack trace:
+#0 {main}
+  thrown in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/api/dashboard.php on line 11
+[Wed Nov 26 20:12:36 2025] [::1]:51113 [200]: GET /api/dashboard.php?section=matches - Uncaught Error: Call to undefined function get_db_connection() in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/api/dashboard.php:11
+Stack trace:
+#0 {main}
+  thrown in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/api/dashboard.php on line 11
+[Wed Nov 26 20:12:36 2025] [::1]:51113 Closing
+[Wed Nov 26 20:12:36 2025] [::1]:51114 Accepted
+[Wed Nov 26 20:12:36 2025] PHP Fatal error:  Uncaught Error: Call to undefined function get_db_connection() in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/api/dashboard.php:11
+Stack trace:
+#0 {main}
+  thrown in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/api/dashboard.php on line 11
+[Wed Nov 26 20:12:36 2025] [::1]:51114 [200]: GET /api/dashboard.php?section=scorers - Uncaught Error: Call to undefined function get_db_connection() in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/api/dashboard.php:11
+Stack trace:
+#0 {main}
+  thrown in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/api/dashboard.php on line 11
+[Wed Nov 26 20:12:36 2025] [::1]:51114 Closing
+[Wed Nov 26 20:12:36 2025] [::1]:51115 Accepted
+[Wed Nov 26 20:12:36 2025] [::1]:51115 [302]: GET /favicon.ico
+[Wed Nov 26 20:12:36 2025] [::1]:51115 Closing
+[Wed Nov 26 20:12:36 2025] [::1]:51116 Accepted
+[Wed Nov 26 20:12:36 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 20:12:36 2025] [::1]:51116 [200]: GET /dashboard.php
+[Wed Nov 26 20:12:36 2025] [::1]:51116 Closing
+[Wed Nov 26 20:12:47 2025] [::1]:51126 Accepted
+[Wed Nov 26 20:12:47 2025] [::1]:51126 [302]: GET /dashboard.php
+[Wed Nov 26 20:12:47 2025] [::1]:51126 Closing
+[Wed Nov 26 20:13:07 2025] [::1]:51140 Accepted
+[Wed Nov 26 20:13:07 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 20:13:07 2025] [::1]:51140 [200]: GET /dashboard.php
+[Wed Nov 26 20:13:07 2025] [::1]:51140 Closing
+[Wed Nov 26 20:13:07 2025] [::1]:51141 Accepted
+[Wed Nov 26 20:13:07 2025] [::1]:51142 Accepted
+[Wed Nov 26 20:13:07 2025] [::1]:51141 [200]: GET /css/fcunited-theme.css?v=1764180787
+[Wed Nov 26 20:13:07 2025] [::1]:51143 Accepted
+[Wed Nov 26 20:13:07 2025] [::1]:51142 [200]: GET /css/vivo-style.css?v=1764180787
+[Wed Nov 26 20:13:07 2025] [::1]:51144 Accepted
+[Wed Nov 26 20:13:07 2025] [::1]:51143 [200]: GET /js/react-components.js?v=1764180787
+[Wed Nov 26 20:13:07 2025] [::1]:51141 Closing
+[Wed Nov 26 20:13:07 2025] [::1]:51144 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 20:13:07 2025] [::1]:51142 Closing
+[Wed Nov 26 20:13:07 2025] [::1]:51145 Accepted
+[Wed Nov 26 20:13:07 2025] [::1]:51143 Closing
+[Wed Nov 26 20:13:07 2025] [::1]:51146 Accepted
+[Wed Nov 26 20:13:07 2025] [::1]:51145 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 20:13:07 2025] [::1]:51144 Closing
+[Wed Nov 26 20:13:07 2025] [::1]:51147 Accepted
+[Wed Nov 26 20:13:07 2025] [::1]:51146 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 20:13:07 2025] [::1]:51148 Accepted
+[Wed Nov 26 20:13:07 2025] [::1]:51147 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 20:13:07 2025] [::1]:51145 Closing
+[Wed Nov 26 20:13:07 2025] [::1]:51148 [200]: GET /css/club-custom.css
+[Wed Nov 26 20:13:07 2025] [::1]:51146 Closing
+[Wed Nov 26 20:13:07 2025] [::1]:51147 Closing
+[Wed Nov 26 20:13:07 2025] [::1]:51148 Closing
+[Wed Nov 26 20:13:07 2025] [::1]:51149 Accepted
+[Wed Nov 26 20:13:07 2025] [::1]:51150 Accepted
+[Wed Nov 26 20:13:07 2025] PHP Fatal error:  Uncaught Error: Call to undefined function get_db_connection() in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/api/dashboard.php:11
+Stack trace:
+#0 {main}
+  thrown in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/api/dashboard.php on line 11
+[Wed Nov 26 20:13:07 2025] [::1]:51149 [200]: GET /api/dashboard.php - Uncaught Error: Call to undefined function get_db_connection() in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/api/dashboard.php:11
+Stack trace:
+#0 {main}
+  thrown in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/api/dashboard.php on line 11
+[Wed Nov 26 20:13:07 2025] [::1]:51149 Closing
+[Wed Nov 26 20:13:07 2025] [::1]:51151 Accepted
+[Wed Nov 26 20:13:07 2025] PHP Fatal error:  Uncaught Error: Call to undefined function get_db_connection() in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/api/dashboard.php:11
+Stack trace:
+#0 {main}
+  thrown in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/api/dashboard.php on line 11
+[Wed Nov 26 20:13:07 2025] [::1]:51150 [200]: GET /api/dashboard.php?section=matches - Uncaught Error: Call to undefined function get_db_connection() in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/api/dashboard.php:11
+Stack trace:
+#0 {main}
+  thrown in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/api/dashboard.php on line 11
+[Wed Nov 26 20:13:07 2025] [::1]:51150 Closing
+[Wed Nov 26 20:13:07 2025] PHP Fatal error:  Uncaught Error: Call to undefined function get_db_connection() in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/api/dashboard.php:11
+Stack trace:
+#0 {main}
+  thrown in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/api/dashboard.php on line 11
+[Wed Nov 26 20:13:07 2025] [::1]:51151 [200]: GET /api/dashboard.php?section=scorers - Uncaught Error: Call to undefined function get_db_connection() in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/api/dashboard.php:11
+Stack trace:
+#0 {main}
+  thrown in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/api/dashboard.php on line 11
+[Wed Nov 26 20:13:07 2025] [::1]:51151 Closing
+[Wed Nov 26 20:13:07 2025] [::1]:51152 Accepted
+[Wed Nov 26 20:13:07 2025] [::1]:51152 [302]: GET /favicon.ico
+[Wed Nov 26 20:13:07 2025] [::1]:51152 Closing
+[Wed Nov 26 20:13:07 2025] [::1]:51153 Accepted
+[Wed Nov 26 20:13:07 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 20:13:07 2025] [::1]:51153 [200]: GET /dashboard.php
+[Wed Nov 26 20:13:07 2025] [::1]:51153 Closing
+[Wed Nov 26 20:13:11 2025] [::1]:51159 Accepted
+[Wed Nov 26 20:13:11 2025] [::1]:51159 [200]: GET /player_edit.php?action=add
+[Wed Nov 26 20:13:11 2025] [::1]:51159 Closing
+[Wed Nov 26 20:13:11 2025] [::1]:51160 Accepted
+[Wed Nov 26 20:13:11 2025] [::1]:51161 Accepted
+[Wed Nov 26 20:13:11 2025] [::1]:51162 Accepted
+[Wed Nov 26 20:13:11 2025] [::1]:51160 [200]: GET /css/vivo-style.css
+[Wed Nov 26 20:13:11 2025] [::1]:51161 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 20:13:11 2025] [::1]:51162 [200]: GET /js/sidebar.js
+[Wed Nov 26 20:13:11 2025] [::1]:51160 Closing
+[Wed Nov 26 20:13:11 2025] [::1]:51161 Closing
+[Wed Nov 26 20:13:11 2025] [::1]:51162 Closing
+[Wed Nov 26 20:13:11 2025] [::1]:51163 Accepted
+[Wed Nov 26 20:13:11 2025] [::1]:51164 Accepted
+[Wed Nov 26 20:13:11 2025] [::1]:51163 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 20:13:11 2025] [::1]:51165 Accepted
+[Wed Nov 26 20:13:11 2025] [::1]:51164 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 20:13:11 2025] [::1]:51166 Accepted
+[Wed Nov 26 20:13:11 2025] [::1]:51165 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 20:13:11 2025] [::1]:51163 Closing
+[Wed Nov 26 20:13:11 2025] [::1]:51166 [200]: GET /css/club-custom.css
+[Wed Nov 26 20:13:11 2025] [::1]:51164 Closing
+[Wed Nov 26 20:13:11 2025] [::1]:51165 Closing
+[Wed Nov 26 20:13:11 2025] [::1]:51166 Closing
+[Wed Nov 26 20:13:11 2025] [::1]:51169 Accepted
+[Wed Nov 26 20:13:11 2025] [::1]:51169 [302]: GET /favicon.ico
+[Wed Nov 26 20:13:11 2025] [::1]:51169 Closing
+[Wed Nov 26 20:13:11 2025] [::1]:51170 Accepted
+[Wed Nov 26 20:13:11 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 20:13:11 2025] [::1]:51170 [200]: GET /dashboard.php
+[Wed Nov 26 20:13:11 2025] [::1]:51170 Closing
+[Wed Nov 26 20:13:12 2025] [::1]:51173 Accepted
+[Wed Nov 26 20:13:12 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 20:13:12 2025] [::1]:51173 [200]: GET /dashboard.php
+[Wed Nov 26 20:13:12 2025] [::1]:51173 Closing
+[Wed Nov 26 20:13:12 2025] [::1]:51174 Accepted
+[Wed Nov 26 20:13:12 2025] [::1]:51174 [200]: GET /css/fcunited-theme.css?v=1764180792
+[Wed Nov 26 20:13:12 2025] [::1]:51174 Closing
+[Wed Nov 26 20:13:12 2025] [::1]:51175 Accepted
+[Wed Nov 26 20:13:12 2025] [::1]:51175 [200]: GET /css/vivo-style.css?v=1764180792
+[Wed Nov 26 20:13:12 2025] [::1]:51176 Accepted
+[Wed Nov 26 20:13:12 2025] [::1]:51175 Closing
+[Wed Nov 26 20:13:12 2025] [::1]:51176 [200]: GET /js/react-components.js?v=1764180792
+[Wed Nov 26 20:13:12 2025] [::1]:51176 Closing
+[Wed Nov 26 20:13:12 2025] [::1]:51179 Accepted
+[Wed Nov 26 20:13:12 2025] [::1]:51179 [302]: GET /favicon.ico
+[Wed Nov 26 20:13:12 2025] [::1]:51179 Closing
+[Wed Nov 26 20:13:12 2025] [::1]:51180 Accepted
+[Wed Nov 26 20:13:12 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 20:13:12 2025] [::1]:51180 [200]: GET /dashboard.php
+[Wed Nov 26 20:13:12 2025] [::1]:51180 Closing
+[Wed Nov 26 20:13:19 2025] [::1]:51185 Accepted
+[Wed Nov 26 20:13:19 2025] PHP Fatal error:  Uncaught Error: Call to undefined function get_db_connection() in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/api/dashboard.php:11
+Stack trace:
+#0 {main}
+  thrown in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/api/dashboard.php on line 11
+[Wed Nov 26 20:13:19 2025] [::1]:51185 [200]: GET /api/dashboard.php - Uncaught Error: Call to undefined function get_db_connection() in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/api/dashboard.php:11
+Stack trace:
+#0 {main}
+  thrown in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/api/dashboard.php on line 11
+[Wed Nov 26 20:13:19 2025] [::1]:51185 Closing
+[Wed Nov 26 20:13:29 2025] [::1]:51193 Accepted
+[Wed Nov 26 20:13:29 2025] PHP Fatal error:  Uncaught Error: Call to undefined function get_db_connection() in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/api/dashboard.php:11
+Stack trace:
+#0 {main}
+  thrown in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/api/dashboard.php on line 11
+[Wed Nov 26 20:13:29 2025] [::1]:51193 [200]: GET /api/dashboard.php - Uncaught Error: Call to undefined function get_db_connection() in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/api/dashboard.php:11
+Stack trace:
+#0 {main}
+  thrown in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/api/dashboard.php on line 11
+[Wed Nov 26 20:13:29 2025] [::1]:51193 Closing
+[Wed Nov 26 20:15:50 2025] [::1]:51288 Accepted
+[Wed Nov 26 20:15:50 2025] [::1]:51288 [200]: GET /api/dashboard.php
+[Wed Nov 26 20:15:50 2025] [::1]:51288 Closing
+[Wed Nov 26 20:15:52 2025] [::1]:51292 Accepted
+[Wed Nov 26 20:15:52 2025] [::1]:51292 [500]: GET /api/players.php
+[Wed Nov 26 20:15:52 2025] [::1]:51292 Closing
+[Wed Nov 26 20:18:36 2025] [::1]:51341 Accepted
+[Wed Nov 26 20:18:36 2025] [::1]:51341 [500]: GET /api/teams.php
+[Wed Nov 26 20:18:36 2025] [::1]:51341 Closing
+[Wed Nov 26 20:22:24 2025] [::1]:51437 Accepted
+[Wed Nov 26 20:22:24 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 20:22:24 2025] [::1]:51437 [200]: GET /dashboard.php
+[Wed Nov 26 20:22:24 2025] [::1]:51437 Closing
+[Wed Nov 26 20:22:24 2025] [::1]:51438 Accepted
+[Wed Nov 26 20:22:24 2025] [::1]:51439 Accepted
+[Wed Nov 26 20:22:24 2025] [::1]:51440 Accepted
+[Wed Nov 26 20:22:24 2025] [::1]:51438 [200]: GET /css/fcunited-theme.css?v=1764181344
+[Wed Nov 26 20:22:24 2025] [::1]:51439 [200]: GET /css/vivo-style.css?v=1764181344
+[Wed Nov 26 20:22:24 2025] [::1]:51441 Accepted
+[Wed Nov 26 20:22:24 2025] [::1]:51440 [200]: GET /js/react-components.js?v=1764181344
+[Wed Nov 26 20:22:24 2025] [::1]:51441 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 20:22:24 2025] [::1]:51438 Closing
+[Wed Nov 26 20:22:24 2025] [::1]:51439 Closing
+[Wed Nov 26 20:22:24 2025] [::1]:51440 Closing
+[Wed Nov 26 20:22:24 2025] [::1]:51441 Closing
+[Wed Nov 26 20:22:24 2025] [::1]:51443 Accepted
+[Wed Nov 26 20:22:24 2025] [::1]:51444 Accepted
+[Wed Nov 26 20:22:24 2025] [::1]:51445 Accepted
+[Wed Nov 26 20:22:24 2025] [::1]:51443 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 20:22:24 2025] [::1]:51446 Accepted
+[Wed Nov 26 20:22:24 2025] [::1]:51443 Closing
+[Wed Nov 26 20:22:24 2025] [::1]:51444 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 20:22:24 2025] [::1]:51445 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 20:22:24 2025] [::1]:51446 [200]: GET /css/club-custom.css
+[Wed Nov 26 20:22:24 2025] [::1]:51444 Closing
+[Wed Nov 26 20:22:24 2025] [::1]:51445 Closing
+[Wed Nov 26 20:22:24 2025] [::1]:51446 Closing
+[Wed Nov 26 20:22:25 2025] [::1]:51447 Accepted
+[Wed Nov 26 20:22:25 2025] [::1]:51448 Accepted
+[Wed Nov 26 20:22:25 2025] [::1]:51447 [200]: GET /api/dashboard.php
+[Wed Nov 26 20:22:25 2025] [::1]:51447 Closing
+[Wed Nov 26 20:22:25 2025] [::1]:51448 [500]: GET /api/dashboard.php?section=matches
+[Wed Nov 26 20:22:25 2025] [::1]:51448 Closing
+[Wed Nov 26 20:22:25 2025] [::1]:51449 Accepted
+[Wed Nov 26 20:22:25 2025] [::1]:51449 [500]: GET /api/dashboard.php?section=scorers
+[Wed Nov 26 20:22:25 2025] [::1]:51449 Closing
+[Wed Nov 26 20:22:25 2025] [::1]:51450 Accepted
+[Wed Nov 26 20:22:25 2025] [::1]:51450 [302]: GET /favicon.ico
+[Wed Nov 26 20:22:25 2025] [::1]:51450 Closing
+[Wed Nov 26 20:22:25 2025] [::1]:51451 Accepted
+[Wed Nov 26 20:22:25 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 20:22:25 2025] [::1]:51451 [200]: GET /dashboard.php
+[Wed Nov 26 20:22:25 2025] [::1]:51451 Closing
+[Wed Nov 26 20:22:50 2025] [::1]:51469 Accepted
+[Wed Nov 26 20:22:50 2025] [::1]:51469 [200]: GET /api/players.php
+[Wed Nov 26 20:22:50 2025] [::1]:51469 Closing
+[Wed Nov 26 20:24:25 2025] [::1]:51519 Accepted
+[Wed Nov 26 20:24:25 2025] [::1]:51519 [200]: GET /api/teams.php
+[Wed Nov 26 20:24:25 2025] [::1]:51519 Closing
+[Wed Nov 26 20:24:26 2025] [::1]:51521 Accepted
+[Wed Nov 26 20:24:26 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 20:24:26 2025] [::1]:51521 [200]: GET /dashboard.php
+[Wed Nov 26 20:24:26 2025] [::1]:51521 Closing
+[Wed Nov 26 20:24:26 2025] [::1]:51522 Accepted
+[Wed Nov 26 20:24:26 2025] [::1]:51523 Accepted
+[Wed Nov 26 20:24:26 2025] [::1]:51522 [200]: GET /css/fcunited-theme.css?v=1764181466
+[Wed Nov 26 20:24:26 2025] [::1]:51524 Accepted
+[Wed Nov 26 20:24:26 2025] [::1]:51523 [200]: GET /css/vivo-style.css?v=1764181466
+[Wed Nov 26 20:24:26 2025] [::1]:51525 Accepted
+[Wed Nov 26 20:24:26 2025] [::1]:51524 [200]: GET /js/react-components.js?v=1764181466
+[Wed Nov 26 20:24:26 2025] [::1]:51522 Closing
+[Wed Nov 26 20:24:26 2025] [::1]:51525 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 20:24:26 2025] [::1]:51523 Closing
+[Wed Nov 26 20:24:26 2025] [::1]:51524 Closing
+[Wed Nov 26 20:24:26 2025] [::1]:51525 Closing
+[Wed Nov 26 20:24:26 2025] [::1]:51526 Accepted
+[Wed Nov 26 20:24:26 2025] [::1]:51527 Accepted
+[Wed Nov 26 20:24:26 2025] [::1]:51528 Accepted
+[Wed Nov 26 20:24:26 2025] [::1]:51526 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 20:24:26 2025] [::1]:51529 Accepted
+[Wed Nov 26 20:24:26 2025] [::1]:51526 Closing
+[Wed Nov 26 20:24:26 2025] [::1]:51527 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 20:24:26 2025] [::1]:51528 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 20:24:26 2025] [::1]:51529 [200]: GET /css/club-custom.css
+[Wed Nov 26 20:24:26 2025] [::1]:51527 Closing
+[Wed Nov 26 20:24:26 2025] [::1]:51528 Closing
+[Wed Nov 26 20:24:26 2025] [::1]:51529 Closing
+[Wed Nov 26 20:24:27 2025] [::1]:51530 Accepted
+[Wed Nov 26 20:24:27 2025] [::1]:51531 Accepted
+[Wed Nov 26 20:24:27 2025] [::1]:51530 [200]: GET /api/dashboard.php
+[Wed Nov 26 20:24:27 2025] [::1]:51530 Closing
+[Wed Nov 26 20:24:27 2025] [::1]:51532 Accepted
+[Wed Nov 26 20:24:27 2025] [::1]:51531 [500]: GET /api/dashboard.php?section=matches
+[Wed Nov 26 20:24:27 2025] [::1]:51531 Closing
+[Wed Nov 26 20:24:27 2025] [::1]:51532 [500]: GET /api/dashboard.php?section=scorers
+[Wed Nov 26 20:24:27 2025] [::1]:51532 Closing
+[Wed Nov 26 20:24:27 2025] [::1]:51533 Accepted
+[Wed Nov 26 20:24:27 2025] [::1]:51533 [302]: GET /favicon.ico
+[Wed Nov 26 20:24:27 2025] [::1]:51533 Closing
+[Wed Nov 26 20:24:27 2025] [::1]:51534 Accepted
+[Wed Nov 26 20:24:27 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 20:24:27 2025] [::1]:51534 [200]: GET /dashboard.php
+[Wed Nov 26 20:24:27 2025] [::1]:51534 Closing

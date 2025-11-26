@@ -8,24 +8,21 @@ header('Content-Type: application/json');
 require_once '../database_config.php';
 
 try {
-    $db = get_db_connection();
+    $db = DatabaseConfigSQLite::getConnection();
     
-    // Get all teams with player counts and coach information
-    $stmt = $db->prepare("
+    // Get all teams with player counts
+    $stmt = $db->query("
         SELECT 
             t.*,
-            COUNT(p.id) as player_count,
-            c.name as coach_name
+            COUNT(p.id) as player_count
         FROM teams t
         LEFT JOIN players p ON t.id = p.team_id
-        LEFT JOIN coaches c ON t.coach_id = c.id
         GROUP BY t.id
         ORDER BY t.name
     ");
-    $result = $stmt->execute();
     
     $teams = [];
-    while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         $teams[] = [
             'id' => $row['id'],
             'name' => $row['name'],

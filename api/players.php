@@ -8,26 +8,25 @@ header('Content-Type: application/json');
 require_once '../database_config.php';
 
 try {
-    $db = get_db_connection();
+    $db = DatabaseConfigSQLite::getConnection();
     
     // Get all players with team information
-    $stmt = $db->prepare("
+    $stmt = $db->query("
         SELECT 
             p.*,
             t.name as team_name,
             t.id as team_id
         FROM players p
         LEFT JOIN teams t ON p.team_id = t.id
-        ORDER BY p.last_name, p.first_name
+        ORDER BY COALESCE(p.surname, p.name), COALESCE(p.name, '')
     ");
-    $result = $stmt->execute();
     
     $players = [];
-    while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         $players[] = [
             'id' => $row['id'],
-            'first_name' => $row['first_name'],
-            'last_name' => $row['last_name'],
+            'first_name' => $row['name'] ?? '',
+            'last_name' => $row['surname'] ?? '',
             'email' => $row['email'] ?? null,
             'date_of_birth' => $row['date_of_birth'] ?? null,
             'jersey_number' => $row['jersey_number'] ?? null,
