@@ -155,6 +155,7 @@ if (isset($_GET['error'])) {
     // Include dynamic CSS system
     require_once 'includes/css_helper.php';
     vivo_include_head_css($db);
+    vivo_include_react_scripts();
     ?>
     <style>
     /* Compact card grid layout; force 4 columns on desktop and constrain image height */
@@ -246,6 +247,11 @@ if (isset($_GET['error'])) {
         <div class="alert alert-danger"><i class="fas fa-exclamation-triangle"></i> <?= htmlspecialchars($error) ?></div>
     <?php endif; ?>
 
+    <!-- React-powered Players List -->
+    <div id="react-players-list"></div>
+
+    <!-- Legacy PHP content hidden when React loads -->
+    <div id="legacy-players-content" style="display:none;">
     <div class="player-filter-bar">
         <input type="text" id="playerSearch" placeholder="Search name / team / position" onkeyup="filterPlayers()">
         <select id="teamFilter" onchange="filterPlayers()">
@@ -466,5 +472,7 @@ function showInlineModal(content,title){
 }
 function closeInlineModal(){ const modal=document.getElementById('inline-modal'); if(modal){ modal.style.display='none'; document.body.style.overflow=''; } }
 </script>
+</div><!-- Close legacy-players-content -->
+</div><!-- Close content-main -->
 </body>
 </html>

@@ -183,6 +183,7 @@ try {
     // Include dynamic CSS system
     require_once 'includes/css_helper.php';
     vivo_include_head_css($db);
+    vivo_include_react_scripts();
     ?>
     <!-- Cache busting timestamp: <?php echo date('Y-m-d H:i:s'); ?> -->
     <style>
@@ -409,76 +410,33 @@ try {
                     </div>
                 </div>
 
-                <!-- Statistics Grid -->
-                <div class="stats-grid">
-                    <!-- Debug: Links should be clickable -->
-                    <a href="teams.php" class="stat-card fc-card animate-fade-up" style="text-decoration: none; color: inherit;" title="Click to view teams">
-                        <div class="stat-number num"><?php echo $total_teams; ?></div>
-                        <div class="stat-label">Teams</div>
-                    </a>
-                    <a href="players.php" class="stat-card fc-card animate-fade-up" style="animation-delay: 0.1s; text-decoration: none; color: inherit;" title="Click to view players">
-                        <div class="stat-number num"><?php echo $total_players; ?></div>
-                        <div class="stat-label">Players</div>
-                    </a>
-                    <a href="events.php" class="stat-card fc-card animate-fade-up" style="animation-delay: 0.2s; text-decoration: none; color: inherit;" title="Click to view events">
-                        <div class="stat-number num"><?php echo $total_events; ?></div>
-                        <div class="stat-label">Events</div>
-                    </a>
-                    <a href="players.php?status=active" class="stat-card fc-card animate-fade-up" style="animation-delay: 0.3s; text-decoration: none; color: inherit;" title="Click to view active players">
-                        <div class="stat-number num"><?php echo $active_players; ?></div>
-                        <div class="stat-label">Active Players</div>
-                    </a>
-                </div>
+                <!-- React-powered Statistics Grid -->
+                <div id="react-dashboard-stats"></div>
 
                 <!-- Quick Actions -->
                 <div class="quick-actions animate-fade-up">
-                    <!-- Left stacked sidebar (compact widgets) -->
+                    <!-- Left stacked sidebar (React-powered widgets) -->
                     <aside class="left-stack" aria-label="Quick widgets">
-                        <div class="stack-card">
-                            <div class="stack-card-icon"><i class="fas fa-calendar-check"></i></div>
-                            <div class="stack-card-body">
-                                <h5>Upcoming Matches</h5>
-                                <?php if (!empty($upcoming_matches)): ?>
-                                    <small><?php echo htmlspecialchars($upcoming_matches[0]['team_name'] ?? 'Club'); ?> — <?php echo date('M j', strtotime($upcoming_matches[0]['date'])); ?></small>
-                                <?php else: ?>
-                                    <small>No upcoming matches scheduled.</small>
-                                <?php endif; ?>
-                            </div>
-                        </div>
-
-                        <div class="stack-card">
-                            <div class="stack-card-icon"><i class="fas fa-user"></i></div>
-                            <div class="stack-card-body">
-                                <h5>Top Scorers</h5>
-                                <?php if (!empty($top_scorers)): ?>
-                                    <small><?php echo htmlspecialchars($top_scorers[0]['first_name'] . ' ' . $top_scorers[0]['last_name']); ?> — <?php echo (int)$top_scorers[0]['goals']; ?> goals</small>
-                                <?php else: ?>
-                                    <small>No scoring data available yet.</small>
-                                <?php endif; ?>
-                            </div>
-                        </div>
-
+                        <div id="react-upcoming-matches"></div>
+                        <div id="react-top-scorers"></div>
+                        
                         <div class="stack-card">
                             <div class="stack-card-icon"><i class="fas fa-newspaper"></i></div>
                             <div class="stack-card-body">
                                 <h5>Latest News</h5>
-                                <?php if (!empty($recent_events)): ?>
-                                    <small><?php echo htmlspecialchars($recent_events[0]['title'] ?? ''); ?></small>
-                                <?php else: ?>
-                                    <small>No news available.</small>
-                                <?php endif; ?>
+                                <small>Stay updated with club news</small>
                             </div>
                         </div>
 
-                        <div class="stack-card">
+                        <a href="add_team.php" class="stack-card" style="text-decoration: none; color: inherit;">
                             <div class="stack-card-icon"><i class="fas fa-plus"></i></div>
                             <div class="stack-card-body">
                                 <h5>Add New Team</h5>
                                 <small>Create and configure a new team</small>
                             </div>
-                        </div>
+                        </a>
                     </aside>
-                        <!-- Compact widgets are in the left stacked pane -->
+
                     <!-- Main large actions area (three tall columns) -->
                     <div class="main-actions" role="region" aria-label="Primary actions">
                         <a href="player_edit.php?action=add" class="action-card action-card--tall fc-card">
@@ -497,20 +455,6 @@ try {
                             <p>Record player attendance</p>
                         </a>
                     </div>
-                    <a href="event_edit.php?action=add" class="quick-action-card">
-                        <div class="quick-action-icon">
-                            <i class="fas fa-calendar-plus"></i>
-                        </div>
-                        <h4>Schedule Event</h4>
-                        <p>Create a new match or training</p>
-                    </a>
-                    <a href="attendance.php" class="quick-action-card">
-                        <div class="quick-action-icon">
-                            <i class="fas fa-clipboard-check"></i>
-                        </div>
-                        <h4>Take Attendance</h4>
-                        <p>Record player attendance</p>
-                    </a>
                 </div>
 
                 <!-- Dashboard Grid (main body) -->

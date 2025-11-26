@@ -114,6 +114,7 @@ try {
     // Include dynamic CSS system
     require_once 'includes/css_helper.php';
     vivo_include_head_css($db);
+    vivo_include_react_scripts();
     ?>
 </head>
 <body>

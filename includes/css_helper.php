@@ -29,6 +29,15 @@ function vivo_include_head_css($db_connection = null) {
 }
 
 /**
+ * Include React and React DOM from CDN (no Node.js required)
+ */
+function vivo_include_react_scripts() {
+    echo '<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>' . "\n";
+    echo '<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>' . "\n";
+    echo '<script src="js/react-components.js?v=' . time() . '"></script>' . "\n";
+}
+
+/**
  * Get a specific color for inline styles
  */
 function vivo_get_color($color_name) {
