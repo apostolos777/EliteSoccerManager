@@ -1,0 +1,583 @@
++ echo '🚀 Starting VIVO United Complete Upload (Fixed Script)...'
+🚀 Starting VIVO United Complete Upload (Fixed Script)...
++ echo =======================================================
+=======================================================
++ FTP_HOST=ftp.bizdynamix.co.za
++ FTP_USER=ftpadmin@vivounited.org
++ FTP_PASS=HR6DsVS#eaPp
++ FTP_PATH=public_html/vivounited/vivoapp
++ RED='\033[0;31m'
++ GREEN='\033[0;32m'
++ YELLOW='\033[1;33m'
++ BLUE='\033[0;34m'
++ NC='\033[0m'
++ echo '📦 Uploading Core System Files...'
+📦 Uploading Core System Files...
++ echo =================================
+=================================
++ success_count=0
++ total_count=0
++ (( total_count++ ))
++ upload_file wp-config.php wp-config.php
++ local local_file=wp-config.php
++ local remote_file=wp-config.php
++ '[' -f wp-config.php ']'
++ echo -e '\033[0;34mUploading:\033[0m wp-config.php -> wp-config.php'
+[0;34mUploading:[0m wp-config.php -> wp-config.php
++ curl -s -T wp-config.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/wp-config.php
++ echo -e '\033[0;31m❌ Failed:\033[0m wp-config.php'
+[0;31m❌ Failed:[0m wp-config.php
++ return 1
++ (( total_count++ ))
++ upload_file functions.php functions.php
++ local local_file=functions.php
++ local remote_file=functions.php
++ '[' -f functions.php ']'
++ echo -e '\033[0;34mUploading:\033[0m functions.php -> functions.php'
+[0;34mUploading:[0m functions.php -> functions.php
++ curl -s -T functions.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/functions.php
++ echo -e '\033[0;31m❌ Failed:\033[0m functions.php'
+[0;31m❌ Failed:[0m functions.php
++ return 1
++ (( total_count++ ))
++ upload_file database_factory.php database_factory.php
++ local local_file=database_factory.php
++ local remote_file=database_factory.php
++ '[' -f database_factory.php ']'
++ echo -e '\033[0;34mUploading:\033[0m database_factory.php -> database_factory.php'
+[0;34mUploading:[0m database_factory.php -> database_factory.php
++ curl -s -T database_factory.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/database_factory.php
++ echo -e '\033[0;31m❌ Failed:\033[0m database_factory.php'
+[0;31m❌ Failed:[0m database_factory.php
++ return 1
++ (( total_count++ ))
++ upload_file login.php login.php
++ local local_file=login.php
++ local remote_file=login.php
++ '[' -f login.php ']'
++ echo -e '\033[0;34mUploading:\033[0m login.php -> login.php'
+[0;34mUploading:[0m login.php -> login.php
++ curl -s -T login.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/login.php
++ echo -e '\033[0;31m❌ Failed:\033[0m login.php'
+[0;31m❌ Failed:[0m login.php
++ return 1
++ (( total_count++ ))
++ upload_file logout.php logout.php
++ local local_file=logout.php
++ local remote_file=logout.php
++ '[' -f logout.php ']'
++ echo -e '\033[0;34mUploading:\033[0m logout.php -> logout.php'
+[0;34mUploading:[0m logout.php -> logout.php
++ curl -s -T logout.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/logout.php
++ echo -e '\033[0;31m❌ Failed:\033[0m logout.php'
+[0;31m❌ Failed:[0m logout.php
++ return 1
++ (( total_count++ ))
++ upload_file includes/auth.php includes/auth.php
++ local local_file=includes/auth.php
++ local remote_file=includes/auth.php
++ '[' -f includes/auth.php ']'
++ echo -e '\033[0;34mUploading:\033[0m includes/auth.php -> includes/auth.php'
+[0;34mUploading:[0m includes/auth.php -> includes/auth.php
++ curl -s -T includes/auth.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/includes/auth.php
++ echo -e '\033[0;31m❌ Failed:\033[0m includes/auth.php'
+[0;31m❌ Failed:[0m includes/auth.php
++ return 1
++ (( total_count++ ))
++ upload_file index.php index.php
++ local local_file=index.php
++ local remote_file=index.php
++ '[' -f index.php ']'
++ echo -e '\033[0;34mUploading:\033[0m index.php -> index.php'
+[0;34mUploading:[0m index.php -> index.php
++ curl -s -T index.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/index.php
++ echo -e '\033[0;31m❌ Failed:\033[0m index.php'
+[0;31m❌ Failed:[0m index.php
++ return 1
++ (( total_count++ ))
++ upload_file dashboard.php dashboard.php
++ local local_file=dashboard.php
++ local remote_file=dashboard.php
++ '[' -f dashboard.php ']'
++ echo -e '\033[0;34mUploading:\033[0m dashboard.php -> dashboard.php'
+[0;34mUploading:[0m dashboard.php -> dashboard.php
++ curl -s -T dashboard.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/dashboard.php
++ echo -e '\033[0;31m❌ Failed:\033[0m dashboard.php'
+[0;31m❌ Failed:[0m dashboard.php
++ return 1
++ (( total_count++ ))
++ upload_file players.php players.php
++ local local_file=players.php
++ local remote_file=players.php
++ '[' -f players.php ']'
++ echo -e '\033[0;34mUploading:\033[0m players.php -> players.php'
+[0;34mUploading:[0m players.php -> players.php
++ curl -s -T players.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/players.php
++ echo -e '\033[0;31m❌ Failed:\033[0m players.php'
+[0;31m❌ Failed:[0m players.php
++ return 1
++ (( total_count++ ))
++ upload_file teams.php teams.php
++ local local_file=teams.php
++ local remote_file=teams.php
++ '[' -f teams.php ']'
++ echo -e '\033[0;34mUploading:\033[0m teams.php -> teams.php'
+[0;34mUploading:[0m teams.php -> teams.php
++ curl -s -T teams.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/teams.php
++ echo -e '\033[0;31m❌ Failed:\033[0m teams.php'
+[0;31m❌ Failed:[0m teams.php
++ return 1
++ (( total_count++ ))
++ upload_file events.php events.php
++ local local_file=events.php
++ local remote_file=events.php
++ '[' -f events.php ']'
++ echo -e '\033[0;34mUploading:\033[0m events.php -> events.php'
+[0;34mUploading:[0m events.php -> events.php
++ curl -s -T events.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/events.php
++ echo -e '\033[0;31m❌ Failed:\033[0m events.php'
+[0;31m❌ Failed:[0m events.php
++ return 1
++ (( total_count++ ))
++ upload_file add_player.php add_player.php
++ local local_file=add_player.php
++ local remote_file=add_player.php
++ '[' -f add_player.php ']'
++ echo -e '\033[0;34mUploading:\033[0m add_player.php -> add_player.php'
+[0;34mUploading:[0m add_player.php -> add_player.php
++ curl -s -T add_player.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/add_player.php
++ echo -e '\033[0;31m❌ Failed:\033[0m add_player.php'
+[0;31m❌ Failed:[0m add_player.php
++ return 1
++ (( total_count++ ))
++ upload_file edit_player.php edit_player.php
++ local local_file=edit_player.php
++ local remote_file=edit_player.php
++ '[' -f edit_player.php ']'
++ echo -e '\033[0;34mUploading:\033[0m edit_player.php -> edit_player.php'
+[0;34mUploading:[0m edit_player.php -> edit_player.php
++ curl -s -T edit_player.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/edit_player.php
++ echo -e '\033[0;31m❌ Failed:\033[0m edit_player.php'
+[0;31m❌ Failed:[0m edit_player.php
++ return 1
++ (( total_count++ ))
++ upload_file delete_player.php delete_player.php
++ local local_file=delete_player.php
++ local remote_file=delete_player.php
++ '[' -f delete_player.php ']'
++ echo -e '\033[0;34mUploading:\033[0m delete_player.php -> delete_player.php'
+[0;34mUploading:[0m delete_player.php -> delete_player.php
++ curl -s -T delete_player.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/delete_player.php
++ echo -e '\033[0;31m❌ Failed:\033[0m delete_player.php'
+[0;31m❌ Failed:[0m delete_player.php
++ return 1
++ (( total_count++ ))
++ upload_file player_profile.php player_profile.php
++ local local_file=player_profile.php
++ local remote_file=player_profile.php
++ '[' -f player_profile.php ']'
++ echo -e '\033[0;34mUploading:\033[0m player_profile.php -> player_profile.php'
+[0;34mUploading:[0m player_profile.php -> player_profile.php
++ curl -s -T player_profile.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/player_profile.php
++ echo -e '\033[0;31m❌ Failed:\033[0m player_profile.php'
+[0;31m❌ Failed:[0m player_profile.php
++ return 1
++ (( total_count++ ))
++ upload_file add_team.php add_team.php
++ local local_file=add_team.php
++ local remote_file=add_team.php
++ '[' -f add_team.php ']'
++ echo -e '\033[0;34mUploading:\033[0m add_team.php -> add_team.php'
+[0;34mUploading:[0m add_team.php -> add_team.php
++ curl -s -T add_team.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/add_team.php
++ echo -e '\033[0;31m❌ Failed:\033[0m add_team.php'
+[0;31m❌ Failed:[0m add_team.php
++ return 1
++ (( total_count++ ))
++ upload_file edit_team.php edit_team.php
++ local local_file=edit_team.php
++ local remote_file=edit_team.php
++ '[' -f edit_team.php ']'
++ echo -e '\033[0;34mUploading:\033[0m edit_team.php -> edit_team.php'
+[0;34mUploading:[0m edit_team.php -> edit_team.php
++ curl -s -T edit_team.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/edit_team.php
++ echo -e '\033[0;31m❌ Failed:\033[0m edit_team.php'
+[0;31m❌ Failed:[0m edit_team.php
++ return 1
++ (( total_count++ ))
++ upload_file delete_team.php delete_team.php
++ local local_file=delete_team.php
++ local remote_file=delete_team.php
++ '[' -f delete_team.php ']'
++ echo -e '\033[0;34mUploading:\033[0m delete_team.php -> delete_team.php'
+[0;34mUploading:[0m delete_team.php -> delete_team.php
++ curl -s -T delete_team.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/delete_team.php
++ echo -e '\033[0;31m❌ Failed:\033[0m delete_team.php'
+[0;31m❌ Failed:[0m delete_team.php
++ return 1
++ (( total_count++ ))
++ upload_file team_details.php team_details.php
++ local local_file=team_details.php
++ local remote_file=team_details.php
++ '[' -f team_details.php ']'
++ echo -e '\033[0;34mUploading:\033[0m team_details.php -> team_details.php'
+[0;34mUploading:[0m team_details.php -> team_details.php
++ curl -s -T team_details.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/team_details.php
++ echo -e '\033[0;31m❌ Failed:\033[0m team_details.php'
+[0;31m❌ Failed:[0m team_details.php
++ return 1
++ (( total_count++ ))
++ upload_file add_event.php add_event.php
++ local local_file=add_event.php
++ local remote_file=add_event.php
++ '[' -f add_event.php ']'
++ echo -e '\033[0;34mUploading:\033[0m add_event.php -> add_event.php'
+[0;34mUploading:[0m add_event.php -> add_event.php
++ curl -s -T add_event.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/add_event.php
++ echo -e '\033[0;31m❌ Failed:\033[0m add_event.php'
+[0;31m❌ Failed:[0m add_event.php
++ return 1
++ (( total_count++ ))
++ upload_file edit_event.php edit_event.php
++ local local_file=edit_event.php
++ local remote_file=edit_event.php
++ '[' -f edit_event.php ']'
++ echo -e '\033[0;34mUploading:\033[0m edit_event.php -> edit_event.php'
+[0;34mUploading:[0m edit_event.php -> edit_event.php
++ curl -s -T edit_event.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/edit_event.php
++ echo -e '\033[0;31m❌ Failed:\033[0m edit_event.php'
+[0;31m❌ Failed:[0m edit_event.php
++ return 1
++ (( total_count++ ))
++ upload_file delete_event.php delete_event.php
++ local local_file=delete_event.php
++ local remote_file=delete_event.php
++ '[' -f delete_event.php ']'
++ echo -e '\033[0;34mUploading:\033[0m delete_event.php -> delete_event.php'
+[0;34mUploading:[0m delete_event.php -> delete_event.php
++ curl -s -T delete_event.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/delete_event.php
++ echo -e '\033[0;31m❌ Failed:\033[0m delete_event.php'
+[0;31m❌ Failed:[0m delete_event.php
++ return 1
++ (( total_count++ ))
++ upload_file event_details.php event_details.php
++ local local_file=event_details.php
++ local remote_file=event_details.php
++ '[' -f event_details.php ']'
++ echo -e '\033[0;34mUploading:\033[0m event_details.php -> event_details.php'
+[0;34mUploading:[0m event_details.php -> event_details.php
++ curl -s -T event_details.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/event_details.php
++ echo -e '\033[0;31m❌ Failed:\033[0m event_details.php'
+[0;31m❌ Failed:[0m event_details.php
++ return 1
++ (( total_count++ ))
++ upload_file event_calendar.php event_calendar.php
++ local local_file=event_calendar.php
++ local remote_file=event_calendar.php
++ '[' -f event_calendar.php ']'
++ echo -e '\033[0;34mUploading:\033[0m event_calendar.php -> event_calendar.php'
+[0;34mUploading:[0m event_calendar.php -> event_calendar.php
++ curl -s -T event_calendar.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/event_calendar.php
++ echo -e '\033[0;31m❌ Failed:\033[0m event_calendar.php'
+[0;31m❌ Failed:[0m event_calendar.php
++ return 1
++ (( total_count++ ))
++ upload_file attendance.php attendance.php
++ local local_file=attendance.php
++ local remote_file=attendance.php
++ '[' -f attendance.php ']'
++ echo -e '\033[0;34mUploading:\033[0m attendance.php -> attendance.php'
+[0;34mUploading:[0m attendance.php -> attendance.php
++ curl -s -T attendance.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/attendance.php
++ echo -e '\033[0;31m❌ Failed:\033[0m attendance.php'
+[0;31m❌ Failed:[0m attendance.php
++ return 1
++ (( total_count++ ))
++ upload_file attendance_edit.php attendance_edit.php
++ local local_file=attendance_edit.php
++ local remote_file=attendance_edit.php
++ '[' -f attendance_edit.php ']'
++ echo -e '\033[1;33m⚠️  Skipped:\033[0m attendance_edit.php (file not found)'
+[1;33m⚠️  Skipped:[0m attendance_edit.php (file not found)
++ return 1
++ (( total_count++ ))
++ upload_file load_event_attendance.php load_event_attendance.php
++ local local_file=load_event_attendance.php
++ local remote_file=load_event_attendance.php
++ '[' -f load_event_attendance.php ']'
++ echo -e '\033[0;34mUploading:\033[0m load_event_attendance.php -> load_event_attendance.php'
+[0;34mUploading:[0m load_event_attendance.php -> load_event_attendance.php
++ curl -s -T load_event_attendance.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/load_event_attendance.php
++ echo -e '\033[0;31m❌ Failed:\033[0m load_event_attendance.php'
+[0;31m❌ Failed:[0m load_event_attendance.php
++ return 1
++ (( total_count++ ))
++ upload_file save_event_attendance.php save_event_attendance.php
++ local local_file=save_event_attendance.php
++ local remote_file=save_event_attendance.php
++ '[' -f save_event_attendance.php ']'
++ echo -e '\033[0;34mUploading:\033[0m save_event_attendance.php -> save_event_attendance.php'
+[0;34mUploading:[0m save_event_attendance.php -> save_event_attendance.php
++ curl -s -T save_event_attendance.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/save_event_attendance.php
++ echo -e '\033[0;31m❌ Failed:\033[0m save_event_attendance.php'
+[0;31m❌ Failed:[0m save_event_attendance.php
++ return 1
++ (( total_count++ ))
++ upload_file app.js app.js
++ local local_file=app.js
++ local remote_file=app.js
++ '[' -f app.js ']'
++ echo -e '\033[0;34mUploading:\033[0m app.js -> app.js'
+[0;34mUploading:[0m app.js -> app.js
++ curl -s -T app.js ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/app.js
++ echo -e '\033[0;31m❌ Failed:\033[0m app.js'
+[0;31m❌ Failed:[0m app.js
++ return 1
++ (( total_count++ ))
++ upload_file mobile-navigation.js mobile-navigation.js
++ local local_file=mobile-navigation.js
++ local remote_file=mobile-navigation.js
++ '[' -f mobile-navigation.js ']'
++ echo -e '\033[0;34mUploading:\033[0m mobile-navigation.js -> mobile-navigation.js'
+[0;34mUploading:[0m mobile-navigation.js -> mobile-navigation.js
++ curl -s -T mobile-navigation.js ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/mobile-navigation.js
++ echo -e '\033[0;31m❌ Failed:\033[0m mobile-navigation.js'
+[0;31m❌ Failed:[0m mobile-navigation.js
++ return 1
++ (( total_count++ ))
++ upload_file css/vivo-style.css css/vivo-style.css
++ local local_file=css/vivo-style.css
++ local remote_file=css/vivo-style.css
++ '[' -f css/vivo-style.css ']'
++ echo -e '\033[0;34mUploading:\033[0m css/vivo-style.css -> css/vivo-style.css'
+[0;34mUploading:[0m css/vivo-style.css -> css/vivo-style.css
++ curl -s -T css/vivo-style.css ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/css/vivo-style.css
++ echo -e '\033[0;31m❌ Failed:\033[0m css/vivo-style.css'
+[0;31m❌ Failed:[0m css/vivo-style.css
++ return 1
++ (( total_count++ ))
++ upload_file css/vivo-red-modern.css css/vivo-red-modern.css
++ local local_file=css/vivo-red-modern.css
++ local remote_file=css/vivo-red-modern.css
++ '[' -f css/vivo-red-modern.css ']'
++ echo -e '\033[0;34mUploading:\033[0m css/vivo-red-modern.css -> css/vivo-red-modern.css'
+[0;34mUploading:[0m css/vivo-red-modern.css -> css/vivo-red-modern.css
++ curl -s -T css/vivo-red-modern.css ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/css/vivo-red-modern.css
++ echo -e '\033[0;31m❌ Failed:\033[0m css/vivo-red-modern.css'
+[0;31m❌ Failed:[0m css/vivo-red-modern.css
++ return 1
++ (( total_count++ ))
++ upload_file css/vivo-compact.css css/vivo-compact.css
++ local local_file=css/vivo-compact.css
++ local remote_file=css/vivo-compact.css
++ '[' -f css/vivo-compact.css ']'
++ echo -e '\033[0;34mUploading:\033[0m css/vivo-compact.css -> css/vivo-compact.css'
+[0;34mUploading:[0m css/vivo-compact.css -> css/vivo-compact.css
++ curl -s -T css/vivo-compact.css ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/css/vivo-compact.css
++ echo -e '\033[0;31m❌ Failed:\033[0m css/vivo-compact.css'
+[0;31m❌ Failed:[0m css/vivo-compact.css
++ return 1
++ (( total_count++ ))
++ upload_file css/vivo-sidebar-override.css css/vivo-sidebar-override.css
++ local local_file=css/vivo-sidebar-override.css
++ local remote_file=css/vivo-sidebar-override.css
++ '[' -f css/vivo-sidebar-override.css ']'
++ echo -e '\033[0;34mUploading:\033[0m css/vivo-sidebar-override.css -> css/vivo-sidebar-override.css'
+[0;34mUploading:[0m css/vivo-sidebar-override.css -> css/vivo-sidebar-override.css
++ curl -s -T css/vivo-sidebar-override.css ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/css/vivo-sidebar-override.css
++ echo -e '\033[0;31m❌ Failed:\033[0m css/vivo-sidebar-override.css'
+[0;31m❌ Failed:[0m css/vivo-sidebar-override.css
++ return 1
++ (( total_count++ ))
++ upload_file includes/config.php includes/config.php
++ local local_file=includes/config.php
++ local remote_file=includes/config.php
++ '[' -f includes/config.php ']'
++ echo -e '\033[0;34mUploading:\033[0m includes/config.php -> includes/config.php'
+[0;34mUploading:[0m includes/config.php -> includes/config.php
++ curl -s -T includes/config.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/includes/config.php
++ echo -e '\033[0;31m❌ Failed:\033[0m includes/config.php'
+[0;31m❌ Failed:[0m includes/config.php
++ return 1
++ (( total_count++ ))
++ upload_file includes/sidebar.php includes/sidebar.php
++ local local_file=includes/sidebar.php
++ local remote_file=includes/sidebar.php
++ '[' -f includes/sidebar.php ']'
++ echo -e '\033[0;34mUploading:\033[0m includes/sidebar.php -> includes/sidebar.php'
+[0;34mUploading:[0m includes/sidebar.php -> includes/sidebar.php
++ curl -s -T includes/sidebar.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/includes/sidebar.php
++ echo -e '\033[0;31m❌ Failed:\033[0m includes/sidebar.php'
+[0;31m❌ Failed:[0m includes/sidebar.php
++ return 1
++ (( total_count++ ))
++ upload_file includes/css_helper.php includes/css_helper.php
++ local local_file=includes/css_helper.php
++ local remote_file=includes/css_helper.php
++ '[' -f includes/css_helper.php ']'
++ echo -e '\033[0;34mUploading:\033[0m includes/css_helper.php -> includes/css_helper.php'
+[0;34mUploading:[0m includes/css_helper.php -> includes/css_helper.php
++ curl -s -T includes/css_helper.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/includes/css_helper.php
++ echo -e '\033[0;31m❌ Failed:\033[0m includes/css_helper.php'
+[0;31m❌ Failed:[0m includes/css_helper.php
++ return 1
++ (( total_count++ ))
++ upload_file includes/color_system.php includes/color_system.php
++ local local_file=includes/color_system.php
++ local remote_file=includes/color_system.php
++ '[' -f includes/color_system.php ']'
++ echo -e '\033[0;34mUploading:\033[0m includes/color_system.php -> includes/color_system.php'
+[0;34mUploading:[0m includes/color_system.php -> includes/color_system.php
++ curl -s -T includes/color_system.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/includes/color_system.php
++ echo -e '\033[0;31m❌ Failed:\033[0m includes/color_system.php'
+[0;31m❌ Failed:[0m includes/color_system.php
++ return 1
++ (( total_count++ ))
++ upload_file config.php config.php
++ local local_file=config.php
++ local remote_file=config.php
++ '[' -f config.php ']'
++ echo -e '\033[0;34mUploading:\033[0m config.php -> config.php'
+[0;34mUploading:[0m config.php -> config.php
++ curl -s -T config.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/config.php
++ echo -e '\033[0;31m❌ Failed:\033[0m config.php'
+[0;31m❌ Failed:[0m config.php
++ return 1
++ (( total_count++ ))
++ upload_file database.php database.php
++ local local_file=database.php
++ local remote_file=database.php
++ '[' -f database.php ']'
++ echo -e '\033[1;33m⚠️  Skipped:\033[0m database.php (file not found)'
+[1;33m⚠️  Skipped:[0m database.php (file not found)
++ return 1
++ (( total_count++ ))
++ upload_file models.php models.php
++ local local_file=models.php
++ local remote_file=models.php
++ '[' -f models.php ']'
++ echo -e '\033[0;34mUploading:\033[0m models.php -> models.php'
+[0;34mUploading:[0m models.php -> models.php
++ curl -s -T models.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/models.php
++ echo -e '\033[0;31m❌ Failed:\033[0m models.php'
+[0;31m❌ Failed:[0m models.php
++ return 1
++ (( total_count++ ))
++ upload_file header.php header.php
++ local local_file=header.php
++ local remote_file=header.php
++ '[' -f header.php ']'
++ echo -e '\033[0;34mUploading:\033[0m header.php -> header.php'
+[0;34mUploading:[0m header.php -> header.php
++ curl -s -T header.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/header.php
++ echo -e '\033[0;31m❌ Failed:\033[0m header.php'
+[0;31m❌ Failed:[0m header.php
++ return 1
++ (( total_count++ ))
++ upload_file sidebar_fixed.php sidebar_fixed.php
++ local local_file=sidebar_fixed.php
++ local remote_file=sidebar_fixed.php
++ '[' -f sidebar_fixed.php ']'
++ echo -e '\033[1;33m⚠️  Skipped:\033[0m sidebar_fixed.php (file not found)'
+[1;33m⚠️  Skipped:[0m sidebar_fixed.php (file not found)
++ return 1
++ (( total_count++ ))
++ upload_file sidebar_minimal.php sidebar_minimal.php
++ local local_file=sidebar_minimal.php
++ local remote_file=sidebar_minimal.php
++ '[' -f sidebar_minimal.php ']'
++ echo -e '\033[1;33m⚠️  Skipped:\033[0m sidebar_minimal.php (file not found)'
+[1;33m⚠️  Skipped:[0m sidebar_minimal.php (file not found)
++ return 1
++ (( total_count++ ))
++ upload_file assign_jerseys.php assign_jerseys.php
++ local local_file=assign_jerseys.php
++ local remote_file=assign_jerseys.php
++ '[' -f assign_jerseys.php ']'
++ echo -e '\033[0;34mUploading:\033[0m assign_jerseys.php -> assign_jerseys.php'
+[0;34mUploading:[0m assign_jerseys.php -> assign_jerseys.php
++ curl -s -T assign_jerseys.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/assign_jerseys.php
++ echo -e '\033[0;31m❌ Failed:\033[0m assign_jerseys.php'
+[0;31m❌ Failed:[0m assign_jerseys.php
++ return 1
++ (( total_count++ ))
++ upload_file assign_teams.php assign_teams.php
++ local local_file=assign_teams.php
++ local remote_file=assign_teams.php
++ '[' -f assign_teams.php ']'
++ echo -e '\033[0;34mUploading:\033[0m assign_teams.php -> assign_teams.php'
+[0;34mUploading:[0m assign_teams.php -> assign_teams.php
++ curl -s -T assign_teams.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/assign_teams.php
++ echo -e '\033[0;31m❌ Failed:\033[0m assign_teams.php'
+[0;31m❌ Failed:[0m assign_teams.php
++ return 1
++ (( total_count++ ))
++ upload_file import_players_csv.php import_players_csv.php
++ local local_file=import_players_csv.php
++ local remote_file=import_players_csv.php
++ '[' -f import_players_csv.php ']'
++ echo -e '\033[1;33m⚠️  Skipped:\033[0m import_players_csv.php (file not found)'
+[1;33m⚠️  Skipped:[0m import_players_csv.php (file not found)
++ return 1
++ (( total_count++ ))
++ upload_file player_card_print.php player_card_print.php
++ local local_file=player_card_print.php
++ local remote_file=player_card_print.php
++ '[' -f player_card_print.php ']'
++ echo -e '\033[0;34mUploading:\033[0m player_card_print.php -> player_card_print.php'
+[0;34mUploading:[0m player_card_print.php -> player_card_print.php
++ curl -s -T player_card_print.php ftp://ftpadmin@vivounited.org:HR6DsVS#eaPp@ftp.bizdynamix.co.za/public_html/vivounited/vivoapp/player_card_print.php
++ echo -e '\033[0;31m❌ Failed:\033[0m player_card_print.php'
+[0;31m❌ Failed:[0m player_card_print.php
++ return 1
++ echo ''
+
++ echo '🎯 Upload Summary'
+🎯 Upload Summary
++ echo ================
+================
++ echo -e '\033[0;32m✅ Successfully uploaded:\033[0m 0 / 48 files'
+[0;32m✅ Successfully uploaded:[0m 0 / 48 files
++ '[' 0 -eq 48 ']'
++ echo -e '\033[1;33m⚠️  Some files failed to upload\033[0m'
+[1;33m⚠️  Some files failed to upload[0m
++ echo ''
+
++ echo '🔧 Next Steps:'
+🔧 Next Steps:
++ echo ==============
+==============
++ echo '1. Clear your web server cache (LiteSpeed)'
+1. Clear your web server cache (LiteSpeed)
++ echo '2. Test the login system: https://www.vivounited.org/vivoapp/login.php'
+2. Test the login system: https://www.vivounited.org/vivoapp/login.php
++ echo '3. Test player creation: https://www.vivounited.org/vivoapp/add_player.php'
+3. Test player creation: https://www.vivounited.org/vivoapp/add_player.php
++ echo '4. Test dashboard: https://www.vivounited.org/vivoapp/index.php'
+4. Test dashboard: https://www.vivounited.org/vivoapp/index.php
++ echo '5. Test mobile navigation on mobile devices'
+5. Test mobile navigation on mobile devices
++ echo ''
+
++ echo '📞 If issues persist:'
+📞 If issues persist:
++ echo ====================
+====================
++ echo '1. Contact your hosting provider (bizdynamix.co.za)'
+1. Contact your hosting provider (bizdynamix.co.za)
++ echo '2. Request LiteSpeed cache clearance'
+2. Request LiteSpeed cache clearance
++ echo '3. Verify FTP upload path is correct'
+3. Verify FTP upload path is correct
++ echo '4. Check file permissions (644 for files, 755 for directories)'
+4. Check file permissions (644 for files, 755 for directories)
++ echo ''
+
++ echo -e '\033[0;32m🚀 Deployment Complete!\033[0m'
+[0;32m🚀 Deployment Complete![0m
++ echo ==========================
+==========================
++ echo 'All critical files have been uploaded to fix the identified issues.'
+All critical files have been uploaded to fix the identified issues.
++ echo 'The app should now work without the previous database and functionality errors.'
+The app should now work without the previous database and functionality errors.

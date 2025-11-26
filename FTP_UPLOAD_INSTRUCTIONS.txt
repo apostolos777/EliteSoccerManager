@@ -1,0 +1,51 @@
+FTP UPLOAD INSTRUCTIONS
+========================
+
+Location: ~/vivo-app-final/
+
+This folder contains the complete cleaned VIVO app with 105 players.
+
+STEPS TO UPLOAD VIA FTP:
+
+1. DELETE THE OLD FOLDER ON LIVE SERVER:
+   - Connect to vivounited.org via FTP
+   - Navigate to the folder where vivoapp is hosted (usually /public_html/ or /var/www/html/)
+   - DELETE the entire "vivoapp" folder (or whatever it's called)
+   - Create a NEW folder called "vivoapp"
+
+2. UPLOAD THE NEW FILES:
+   - Upload ALL files and folders from vivo-app-final/ to the new vivoapp/ folder
+   - Make sure to upload:
+     ✓ All .php files
+     ✓ database.db (124KB - this has 105 players)
+     ✓ css/ folder
+     ✓ js/ folder
+     ✓ includes/ folder
+     ✓ images/ folder
+     ✓ api/ folder
+     ✓ uploads/ folder
+
+3. VERIFY PERMISSIONS:
+   - Set folder permissions to 755
+   - Set database.db permissions to 666 (or 644 if app is read-only)
+
+4. TEST:
+   - Go to https://www.vivounited.org/vivoapp/
+   - Login with your credentials
+   - Dashboard should now show 105 players (not 161)
+
+WHAT'S INCLUDED:
+- All PHP files (latest versions with multi-team support)
+- database.db with 105 players (auto-calculated age groups)
+- All CSS, JS, images, and includes
+- Clean, production-ready code
+
+DATABASE DETAILS:
+- Format: SQLite
+- Players: 105 (all active)
+- Age Groups: U6, U7, U8, U9, U10, U11, U12, U13, U14, U15, U16, U17, U18, U19, U20, U21, Senior
+- Multi-team support: Players can be assigned to multiple teams
+
+BACKUP:
+A backup of the old live server was created: backup_20251117_122430.tar.gz
+Keep this for reference/rollback if needed.

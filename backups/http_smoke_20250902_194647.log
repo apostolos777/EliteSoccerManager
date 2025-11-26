@@ -1,0 +1,71 @@
+=== HTTP SMOKE START Tue Sep  2 19:46:57 SAST 2025 ===
+=== http://127.0.0.1:8000/index.php ===
+HTTP: 302
+
+=== http://127.0.0.1:8000/login.php ===
+HTTP: 200
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - VIVO United</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/vivo-style.css?v=1756835217">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<style id="vivo-dynamic-colors">
+:root {
+    --primary: #0e1052;
+    --color-primary: #0e1052;
+    --primary-rgb: 14, 16, 82;
+    --primary-light: rgba(14, 16, 82, 0.1);
+    --primary-medium: rgba(14, 16, 82, 0.5);
+    --primary-dark: rgba(14, 16, 82, 0.8);
+    --color-primary-rgb: 14, 16, 82;
+    --color-primary-light: rgba(14, 16, 82, 0.1);
+    --color-primary-medium: rgba(14, 16, 82, 0.5);
+    --color-primary-dark: rgba(14, 16, 82, 0.8);
+    --secondary: #bd0000;
+    --color-secondary: #bd0000;
+    --secondary-rgb: 189, 0, 0;
+    --secondary-light: rgba(189, 0, 0, 0.1);
+    --secondary-medium: rgba(189, 0, 0, 0.5);
+    --secondary-dark: rgba(189, 0, 0, 0.8);
+    --color-secondary-rgb: 189, 0, 0;
+    --color-secondary-light: rgba(189, 0, 0, 0.1);
+    --color-secondary-medium: rgba(189, 0, 0, 0.5);
+    --color-secondary-dark: rgba(189, 0, 0, 0.8);
+    --accent: #eff6ff;
+    --color-accent: #eff6ff;
+    --accent-rgb: 239, 246, 255;
+    --accent-light: rgba(239, 246, 255, 0.1);
+    --accent-medium: rgba(239, 246, 255, 0.5);
+    --accent-dark: rgba(239, 246, 255, 0.8);
+    --color-accent-rgb: 239, 246, 255;
+    --color-accent-light: rgba(239, 246, 255, 0.1);
+    --color-accent-medium: rgba(239, 246, 255, 0.5);
+    --color-accent-dark: rgba(239, 246, 255, 0.8);
+    --success: #22c55e;
+    --color-success: #22c55e;
+    --success-rgb: 34, 197, 94;
+    --success-light: rgba(34, 197, 94, 0.1);
+    --success-medium: rgba(34, 197, 94, 0.5);
+    --success-dark: rgba(34, 197, 94, 0.8);
+    --color-success-rgb: 34, 197, 94;
+    --color-success-light: rgba(
+=== http://127.0.0.1:8000/players.php ===
+HTTP: 302
+
+=== http://127.0.0.1:8000/teams.php ===
+HTTP: 302
+
+=== http://127.0.0.1:8000/events.php ===
+HTTP: 302
+
+=== http://127.0.0.1:8000/event_details.php?id=1 ===
+HTTP: 302
+
+=== http://127.0.0.1:8000/attendance.php ===
+HTTP: 302
+

@@ -1,0 +1,390 @@
+/* VIVO United Football Manager - Compact Layout Override */
+/* This file provides compact spacing and typography for all pages */
+
+:root {
+    /* Compact Spacing System - Reduced by ~60% */
+    --space-1-compact: 0.15rem;   /* 2.4px - was 4px */
+    --space-2-compact: 0.3rem;    /* 4.8px - was 8px */
+    --space-3-compact: 0.45rem;   /* 7.2px - was 12px */
+    --space-4-compact: 0.6rem;    /* 9.6px - was 16px */
+    --space-5-compact: 0.75rem;   /* 12px - was 20px */
+    --space-6-compact: 0.9rem;    /* 14.4px - was 24px */
+    --space-8-compact: 1.2rem;    /* 19.2px - was 32px */
+    --space-10-compact: 1.5rem;   /* 24px - was 40px */
+    --space-12-compact: 1.8rem;   /* 28.8px - was 48px */
+    --space-16-compact: 2.4rem;   /* 38.4px - was 64px */
+    --space-20-compact: 3rem;     /* 48px - was 80px */
+    
+    /* Compact Typography Scale */
+    --text-xs-compact: 0.7rem;    /* 11.2px */
+    --text-sm-compact: 0.8rem;    /* 12.8px */
+    --text-base-compact: 0.85rem; /* 13.6px */
+    --text-lg-compact: 0.95rem;   /* 15.2px */
+    --text-xl-compact: 1.1rem;    /* 17.6px */
+    --text-2xl-compact: 1.4rem;   /* 22.4px */
+    --text-3xl-compact: 1.8rem;   /* 28.8px */
+    
+    /* Compact Border Radius */
+    --radius-sm-compact: 4px;
+    --radius-md-compact: 6px;
+    --radius-lg-compact: 8px;
+    --radius-xl-compact: 12px;
+}
+
+/* Apply compact styles globally when .compact-layout class is present */
+.compact-layout {
+    /* Update spacing variables to compact versions */
+    --space-1: var(--space-1-compact);
+    --space-2: var(--space-2-compact);
+    --space-3: var(--space-3-compact);
+    --space-4: var(--space-4-compact);
+    --space-5: var(--space-5-compact);
+    --space-6: var(--space-6-compact);
+    --space-8: var(--space-8-compact);
+    --space-10: var(--space-10-compact);
+    --space-12: var(--space-12-compact);
+    --space-16: var(--space-16-compact);
+    --space-20: var(--space-20-compact);
+    
+    /* Update radius variables */
+    --radius-sm: var(--radius-sm-compact);
+    --radius-md: var(--radius-md-compact);
+    --radius-lg: var(--radius-lg-compact);
+    --radius-xl: var(--radius-xl-compact);
+}
+
+/* Compact Typography Override */
+.compact-layout body {
+    font-size: var(--text-base-compact);
+    line-height: 1.4; /* Reduced from 1.6 */
+}
+
+.compact-layout h1 {
+    font-size: var(--text-3xl-compact);
+    margin-bottom: var(--space-4-compact);
+}
+
+.compact-layout h2 {
+    font-size: var(--text-2xl-compact);
+    margin-bottom: var(--space-3-compact);
+}
+
+.compact-layout h3 {
+    font-size: var(--text-xl-compact);
+    margin-bottom: var(--space-2-compact);
+}
+
+.compact-layout h4 {
+    font-size: var(--text-lg-compact);
+    margin-bottom: var(--space-2-compact);
+}
+
+.compact-layout h5, .compact-layout h6 {
+    font-size: var(--text-base-compact);
+    margin-bottom: var(--space-1-compact);
+}
+
+/* Compact Main Content */
+.compact-layout .main-content {
+    padding: var(--space-6-compact);
+}
+
+.compact-layout .main-content .header {
+    padding: var(--space-8-compact) 0 var(--space-6-compact) 0;
+}
+
+.compact-layout .header-title {
+    font-size: var(--text-2xl-compact) !important;
+    margin-bottom: var(--space-2-compact) !important;
+}
+
+/* Compact Cards and Containers */
+.compact-layout .card,
+.compact-layout .info-card,
+.compact-layout .stats-card,
+.compact-layout .player-card,
+.compact-layout .team-card,
+.compact-layout .event-card {
+    padding: var(--space-4-compact);
+    margin-bottom: var(--space-4-compact);
+    border-radius: var(--radius-md-compact);
+}
+
+.compact-layout .card-header {
+    padding: var(--space-3-compact) var(--space-4-compact);
+    font-size: var(--text-base-compact);
+}
+
+.compact-layout .card-content {
+    padding: var(--space-4-compact);
+}
+
+.compact-layout .card-title {
+    font-size: var(--text-lg-compact);
+    margin-bottom: var(--space-2-compact);
+}
+
+/* Compact Forms */
+.compact-layout .form-container {
+    padding: var(--space-6-compact);
+    max-width: 800px;
+}
+
+.compact-layout .form-group {
+    margin-bottom: var(--space-4-compact);
+}
+
+.compact-layout .form-label {
+    font-size: var(--text-sm-compact);
+    margin-bottom: var(--space-1-compact);
+}
+
+.compact-layout .form-control,
+.compact-layout .form-input,
+.compact-layout .form-select {
+    padding: var(--space-2-compact) var(--space-3-compact);
+    font-size: var(--text-sm-compact);
+    border-radius: var(--radius-sm-compact);
+}
+
+.compact-layout .form-row {
+    gap: var(--space-3-compact);
+    margin-bottom: var(--space-4-compact);
+}
+
+/* Compact Buttons */
+.compact-layout .btn {
+    padding: var(--space-2-compact) var(--space-4-compact);
+    font-size: var(--text-sm-compact);
+    border-radius: var(--radius-sm-compact);
+    gap: var(--space-1-compact);
+}
+
+.compact-layout .btn-lg {
+    padding: var(--space-3-compact) var(--space-6-compact);
+    font-size: var(--text-base-compact);
+}
+
+.compact-layout .btn-sm {
+    padding: var(--space-1-compact) var(--space-3-compact);
+    font-size: var(--text-xs-compact);
+}
+
+/* Compact Tables */
+.compact-layout .table {
+    font-size: var(--text-sm-compact);
+}
+
+.compact-layout .table th,
+.compact-layout .table td {
+    padding: var(--space-2-compact) var(--space-3-compact);
+}
+
+.compact-layout .table th {
+    font-size: var(--text-xs-compact);
+    font-weight: 600;
+}
+
+/* Compact Stats Grid */
+.compact-layout .stats-grid {
+    gap: var(--space-3-compact);
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+}
+
+.compact-layout .stat-card {
+    padding: var(--space-3-compact);
+    border-radius: var(--radius-sm-compact);
+}
+
+.compact-layout .stat-number {
+    font-size: var(--text-xl-compact);
+    margin-bottom: var(--space-1-compact);
+}
+
+.compact-layout .stat-label {
+    font-size: var(--text-xs-compact);
+}
+
+/* Compact Navigation */
+.compact-layout .navbar {
+    padding: var(--space-3-compact) var(--space-6-compact);
+}
+
+.compact-layout .navbar-brand {
+    font-size: var(--text-lg-compact);
+}
+
+.compact-layout .nav-link {
+    padding: var(--space-2-compact) var(--space-3-compact);
+    font-size: var(--text-sm-compact);
+}
+
+/* Compact Sidebar */
+.compact-layout .sidebar .nav-item {
+    margin-bottom: var(--space-1-compact);
+}
+
+.compact-layout .sidebar .nav-link {
+    padding: var(--space-2-compact) var(--space-4-compact);
+    font-size: var(--text-sm-compact);
+}
+
+.compact-layout .sidebar .nav-link i {
+    width: 16px;
+    font-size: var(--text-sm-compact);
+}
+
+/* Compact Alerts and Messages */
+.compact-layout .alert {
+    padding: var(--space-3-compact) var(--space-4-compact);
+    margin-bottom: var(--space-4-compact);
+    font-size: var(--text-sm-compact);
+    border-radius: var(--radius-sm-compact);
+}
+
+/* Compact Filters */
+.compact-layout .filter-section {
+    padding: var(--space-4-compact);
+    margin-bottom: var(--space-4-compact);
+    border-radius: var(--radius-md-compact);
+}
+
+.compact-layout .filter-row {
+    gap: var(--space-3-compact);
+    margin-bottom: var(--space-3-compact);
+}
+
+.compact-layout .filter-group {
+    margin-bottom: var(--space-3-compact);
+}
+
+.compact-layout .filter-label {
+    font-size: var(--text-xs-compact);
+    margin-bottom: var(--space-1-compact);
+}
+
+/* Compact Player/Team Cards */
+.compact-layout .player-card,
+.compact-layout .team-card {
+    padding: var(--space-4-compact);
+    border-radius: var(--radius-md-compact);
+}
+
+.compact-layout .player-avatar,
+.compact-layout .team-logo {
+    width: 40px;
+    height: 40px;
+    font-size: var(--text-base-compact);
+}
+
+.compact-layout .player-name,
+.compact-layout .team-name {
+    font-size: var(--text-base-compact);
+    margin-bottom: var(--space-1-compact);
+}
+
+.compact-layout .player-details,
+.compact-layout .team-details {
+    font-size: var(--text-xs-compact);
+    gap: var(--space-2-compact);
+}
+
+/* Compact Modals */
+.compact-layout .modal-content {
+    padding: var(--space-6-compact);
+    border-radius: var(--radius-lg-compact);
+}
+
+.compact-layout .modal-header {
+    padding-bottom: var(--space-3-compact);
+    margin-bottom: var(--space-4-compact);
+}
+
+.compact-layout .modal-title {
+    font-size: var(--text-xl-compact);
+}
+
+/* Compact Responsive Adjustments */
+@media (max-width: 768px) {
+    .compact-layout .main-content {
+        padding: var(--space-3-compact);
+    }
+    
+    .compact-layout .card,
+    .compact-layout .form-container,
+    .compact-layout .filter-section {
+        padding: var(--space-3-compact);
+        margin-bottom: var(--space-3-compact);
+    }
+    
+    .compact-layout .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-2-compact);
+    }
+    
+    .compact-layout .form-row {
+        grid-template-columns: 1fr;
+        gap: var(--space-2-compact);
+    }
+    
+    .compact-layout .header-title {
+        font-size: var(--text-xl-compact) !important;
+    }
+}
+
+/* Compact Dark Theme Adjustments */
+.compact-layout .stat-card-dark {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    border: 1px solid #475569;
+    padding: var(--space-3-compact);
+}
+
+.compact-layout .stat-card-dark .stat-number {
+    font-size: var(--text-lg-compact);
+}
+
+.compact-layout .stat-card-dark .stat-label {
+    font-size: var(--text-xs-compact);
+}
+
+/* Compact Profile Specific */
+.compact-layout .profile-header {
+    padding: var(--space-6-compact);
+    margin-bottom: var(--space-4-compact);
+}
+
+.compact-layout .profile-main-info {
+    gap: var(--space-4-compact);
+}
+
+.compact-layout .player-avatar-large {
+    width: 50px;
+    height: 50px;
+    font-size: var(--text-lg-compact);
+}
+
+.compact-layout .jersey-display {
+    width: 32px;
+    height: 32px;
+    font-size: var(--text-base-compact);
+}
+
+.compact-layout .info-section {
+    padding: var(--space-4-compact);
+    margin-bottom: var(--space-3-compact);
+}
+
+.compact-layout .section-title {
+    font-size: var(--text-base-compact);
+    margin-bottom: var(--space-3-compact);
+    padding-bottom: var(--space-2-compact);
+}
+
+.compact-layout .info-row {
+    padding: var(--space-1-compact) 0;
+}
+
+.compact-layout .info-label,
+.compact-layout .info-value {
+    font-size: var(--text-xs-compact);
+}

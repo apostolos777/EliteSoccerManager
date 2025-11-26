@@ -1,0 +1,5 @@
+#!/bin/bash
+set ssl:verify-certificate no
+cd /vivoapp
+put vivo-deploy-20251117_165356.tar.gz
+quit

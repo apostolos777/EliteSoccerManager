@@ -1,0 +1,26 @@
+<svg width="150" height="150" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient-coach-female-1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#be185d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9d174d;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="150" height="150" fill="url(#gradient-coach-female-1)" rx="75"/>
+  <g transform="translate(75,75)">
+    <!-- Female coach silhouette -->
+    <circle cx="0" cy="-20" r="18" fill="rgba(255,255,255,0.8)"/>
+    <!-- Ponytail -->
+    <ellipse cx="15" cy="-25" rx="4" ry="8" fill="rgba(255,255,255,0.7)"/>
+    <!-- Blazer/professional top -->
+    <path d="M-13 -5 Q-13 -8 -10 -8 L10 -8 Q13 -8 13 -5 L13 30 L-13 30 Z" fill="rgba(255,255,255,0.8)"/>
+    <!-- Arms -->
+    <rect x="-18" y="-2" width="5" height="18" rx="2.5" fill="rgba(255,255,255,0.8)"/>
+    <rect x="13" y="-2" width="5" height="18" rx="2.5" fill="rgba(255,255,255,0.8)"/>
+    <!-- Legs (professional pants/skirt) -->
+    <rect x="-6" y="30" width="5" height="18" rx="2.5" fill="rgba(255,255,255,0.8)"/>
+    <rect x="1" y="30" width="5" height="18" rx="2.5" fill="rgba(255,255,255,0.8)"/>
+    <!-- Tablet/clipboard -->
+    <rect x="18" y="3" width="7" height="10" rx="1" fill="rgba(255,255,255,0.9)" stroke="rgba(0,0,0,0.2)" stroke-width="0.5"/>
+    <circle cx="21.5" cy="8" r="0.5" fill="rgba(0,0,0,0.3)"/>
+  </g>
+</svg>
