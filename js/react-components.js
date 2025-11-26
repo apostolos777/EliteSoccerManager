@@ -172,7 +172,16 @@ function TopScorers() {
  * Player Card Component
  */
 function PlayerCard({ player, onEdit, onDelete }) {
+    const photoUrl = player.photo_url || 'https://via.placeholder.com/150x150/081224/ffffff?text=' + (player.first_name?.[0] || 'P') + (player.last_name?.[0] || '');
+    
     return React.createElement('div', { className: 'fc-card player-card' },
+        React.createElement('div', { className: 'player-photo' },
+            React.createElement('img', { 
+                src: photoUrl, 
+                alt: player.first_name + ' ' + player.last_name,
+                onError: (e) => { e.target.src = 'https://via.placeholder.com/150x150/081224/ffffff?text=' + (player.first_name?.[0] || 'P') + (player.last_name?.[0] || ''); }
+            })
+        ),
         React.createElement('div', { className: 'player-header' },
             React.createElement('h3', null, player.first_name + ' ' + player.last_name),
             player.jersey_number && 

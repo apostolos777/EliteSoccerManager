@@ -31,7 +31,8 @@ try {
             'date_of_birth' => $row['date_of_birth'] ?? null,
             'jersey_number' => $row['jersey_number'] ?? null,
             'team_id' => $row['team_id'] ?? null,
-            'team_name' => $row['team_name'] ?? null
+            'team_name' => $row['team_name'] ?? null,
+            'photo_url' => $row['photo_url'] ?? null
         ];
     }
     

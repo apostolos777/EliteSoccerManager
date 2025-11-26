@@ -398,18 +398,6 @@ try {
             
             <!-- Content Section -->
             <div class="content-section">
-                <!-- Welcome Banner -->
-                <div class="welcome-banner animate-fade-up">
-                    <div class="welcome-content">
-                        <h2 style="font-size: 2rem; margin-bottom: var(--space-3); font-family: var(--font-display);">
-                            Welcome to VIVO United Football Manager
-                        </h2>
-                        <p style="font-size: 1.1rem; opacity: 0.9;">
-                            Your professional football management system. Manage teams, track players, organize events, and monitor attendance all in one place.
-                        </p>
-                    </div>
-                </div>
-
                 <!-- React-powered Statistics Grid -->
                 <div id="react-dashboard-stats"></div>
 
