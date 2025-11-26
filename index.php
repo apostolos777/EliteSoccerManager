@@ -9,6 +9,10 @@ if (!isLoggedIn()) {
     exit();
 }
 
+// If logged in, redirect root index to the dashboard page (single source of truth)
+header('Location: dashboard.php');
+exit();
+
 // Database connection
 try {
     $db = new PDO('sqlite:database.db');

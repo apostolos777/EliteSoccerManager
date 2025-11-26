@@ -1,559 +1,1180 @@
-[Sat Oct 18 12:01:10 2025] PHP 8.4.13 Development Server (http://localhost:8001) started
-[Sat Oct 18 12:01:18 2025] [::1]:56032 Accepted
-[Sat Oct 18 12:01:18 2025] Club settings loaded: {"club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444"}
-[Sat Oct 18 12:01:18 2025] Dashboard Stats: Teams=33, Players=161, Events=2, Goals=0, Coaches=11
-[Sat Oct 18 12:01:18 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
-[Sat Oct 18 12:01:18 2025] [::1]:56032 [200]: GET /
-[Sat Oct 18 12:01:18 2025] [::1]:56032 Closing
-[Sat Oct 18 12:01:18 2025] [::1]:56033 Accepted
-[Sat Oct 18 12:01:18 2025] [::1]:56033 [200]: GET /css/vivo-style.css?v=1760781678
-[Sat Oct 18 12:01:18 2025] [::1]:56033 Closing
-[Sat Oct 18 12:01:18 2025] [::1]:56034 Accepted
-[Sat Oct 18 12:01:18 2025] [::1]:56035 Accepted
-[Sat Oct 18 12:01:18 2025] [::1]:56034 [200]: GET /css/vivo-red-modern.css
-[Sat Oct 18 12:01:18 2025] [::1]:56036 Accepted
-[Sat Oct 18 12:01:18 2025] [::1]:56035 [200]: GET /css/vivo-compact.css
-[Sat Oct 18 12:01:18 2025] [::1]:56037 Accepted
-[Sat Oct 18 12:01:18 2025] [::1]:56036 [200]: GET /css/vivo-sidebar-override.css
-[Sat Oct 18 12:01:18 2025] [::1]:56034 Closing
-[Sat Oct 18 12:01:18 2025] [::1]:56037 [200]: GET /css/club-custom.css
-[Sat Oct 18 12:01:18 2025] [::1]:56035 Closing
-[Sat Oct 18 12:01:18 2025] [::1]:56036 Closing
-[Sat Oct 18 12:01:18 2025] [::1]:56037 Closing
-[Sat Oct 18 12:01:19 2025] [::1]:56038 Accepted
-[Sat Oct 18 12:01:19 2025] Club settings loaded: {"club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444"}
-[Sat Oct 18 12:01:19 2025] Dashboard Stats: Teams=33, Players=161, Events=2, Goals=0, Coaches=11
-[Sat Oct 18 12:01:19 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
-[Sat Oct 18 12:01:19 2025] [::1]:56038 [200]: GET /favicon.ico
-[Sat Oct 18 12:01:19 2025] [::1]:56038 Closing
-[Sat Oct 18 12:01:22 2025] [::1]:56052 Accepted
-[Sat Oct 18 12:01:22 2025] [::1]:56052 [200]: GET /teams.php
-[Sat Oct 18 12:01:22 2025] [::1]:56052 Closing
-[Sat Oct 18 12:01:22 2025] [::1]:56053 Accepted
-[Sat Oct 18 12:01:22 2025] [::1]:56053 [200]: GET /css/vivo-style.css?v=1760781682
-[Sat Oct 18 12:01:22 2025] [::1]:56053 Closing
-[Sat Oct 18 12:01:22 2025] [::1]:56054 Accepted
-[Sat Oct 18 12:01:22 2025] [::1]:56055 Accepted
-[Sat Oct 18 12:01:22 2025] [::1]:56054 [200]: GET /css/vivo-red-modern.css
-[Sat Oct 18 12:01:22 2025] [::1]:56056 Accepted
-[Sat Oct 18 12:01:22 2025] [::1]:56055 [200]: GET /css/vivo-compact.css
-[Sat Oct 18 12:01:22 2025] [::1]:56057 Accepted
-[Sat Oct 18 12:01:22 2025] [::1]:56056 [200]: GET /css/vivo-sidebar-override.css
-[Sat Oct 18 12:01:22 2025] [::1]:56054 Closing
-[Sat Oct 18 12:01:22 2025] [::1]:56057 [200]: GET /css/club-custom.css
-[Sat Oct 18 12:01:22 2025] [::1]:56055 Closing
-[Sat Oct 18 12:01:22 2025] [::1]:56056 Closing
-[Sat Oct 18 12:01:22 2025] [::1]:56057 Closing
-[Sat Oct 18 12:01:22 2025] [::1]:56062 Accepted
-[Sat Oct 18 12:01:22 2025] Club settings loaded: {"club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444"}
-[Sat Oct 18 12:01:22 2025] Dashboard Stats: Teams=33, Players=161, Events=2, Goals=0, Coaches=11
-[Sat Oct 18 12:01:22 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
-[Sat Oct 18 12:01:22 2025] [::1]:56062 [200]: GET /favicon.ico
-[Sat Oct 18 12:01:22 2025] [::1]:56062 Closing
-[Sat Oct 18 12:01:24 2025] [::1]:56067 Accepted
-[Sat Oct 18 12:01:24 2025] [::1]:56067 [200]: GET /coaches.php
-[Sat Oct 18 12:01:24 2025] [::1]:56067 Closing
-[Sat Oct 18 12:01:24 2025] [::1]:56072 Accepted
-[Sat Oct 18 12:01:24 2025] [::1]:56072 [200]: GET /css/vivo-style.css?v=1760781684
-[Sat Oct 18 12:01:24 2025] [::1]:56072 Closing
-[Sat Oct 18 12:01:24 2025] [::1]:56073 Accepted
-[Sat Oct 18 12:01:24 2025] [::1]:56074 Accepted
-[Sat Oct 18 12:01:24 2025] [::1]:56075 Accepted
-[Sat Oct 18 12:01:24 2025] [::1]:56073 [200]: GET /css/vivo-red-modern.css
-[Sat Oct 18 12:01:24 2025] [::1]:56074 [200]: GET /css/vivo-compact.css
-[Sat Oct 18 12:01:24 2025] [::1]:56073 Closing
-[Sat Oct 18 12:01:24 2025] [::1]:56074 Closing
-[Sat Oct 18 12:01:24 2025] [::1]:56076 Accepted
-[Sat Oct 18 12:01:24 2025] [::1]:56075 [200]: GET /css/vivo-sidebar-override.css
-[Sat Oct 18 12:01:24 2025] [::1]:56075 Closing
-[Sat Oct 18 12:01:24 2025] [::1]:56076 [200]: GET /css/club-custom.css
-[Sat Oct 18 12:01:24 2025] [::1]:56076 Closing
-[Sat Oct 18 12:01:24 2025] [::1]:56077 Accepted
-[Sat Oct 18 12:01:24 2025] Club settings loaded: {"club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444"}
-[Sat Oct 18 12:01:24 2025] Dashboard Stats: Teams=33, Players=161, Events=2, Goals=0, Coaches=11
-[Sat Oct 18 12:01:24 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
-[Sat Oct 18 12:01:24 2025] [::1]:56077 [200]: GET /favicon.ico
-[Sat Oct 18 12:01:24 2025] [::1]:56077 Closing
-[Sat Oct 18 12:02:00 2025] [::1]:56241 Accepted
-[Sat Oct 18 12:02:00 2025] [::1]:56241 [200]: GET /attendance.php
-[Sat Oct 18 12:02:00 2025] [::1]:56241 Closing
-[Sat Oct 18 12:02:00 2025] [::1]:56242 Accepted
-[Sat Oct 18 12:02:00 2025] [::1]:56242 [200]: GET /css/vivo-style.css?v=1760781720
-[Sat Oct 18 12:02:00 2025] [::1]:56242 Closing
-[Sat Oct 18 12:02:00 2025] [::1]:56243 Accepted
-[Sat Oct 18 12:02:00 2025] [::1]:56244 Accepted
-[Sat Oct 18 12:02:00 2025] [::1]:56243 [200]: GET /css/vivo-red-modern.css
-[Sat Oct 18 12:02:00 2025] [::1]:56245 Accepted
-[Sat Oct 18 12:02:00 2025] [::1]:56244 [200]: GET /css/vivo-compact.css
-[Sat Oct 18 12:02:00 2025] [::1]:56246 Accepted
-[Sat Oct 18 12:02:00 2025] [::1]:56245 [200]: GET /css/vivo-sidebar-override.css
-[Sat Oct 18 12:02:00 2025] [::1]:56243 Closing
-[Sat Oct 18 12:02:00 2025] [::1]:56246 [200]: GET /css/club-custom.css
-[Sat Oct 18 12:02:00 2025] [::1]:56244 Closing
-[Sat Oct 18 12:02:00 2025] [::1]:56245 Closing
-[Sat Oct 18 12:02:00 2025] [::1]:56246 Closing
-[Sat Oct 18 12:02:00 2025] [::1]:56247 Accepted
-[Sat Oct 18 12:02:00 2025] Club settings loaded: {"club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444"}
-[Sat Oct 18 12:02:00 2025] Dashboard Stats: Teams=33, Players=161, Events=2, Goals=0, Coaches=11
-[Sat Oct 18 12:02:00 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
-[Sat Oct 18 12:02:00 2025] [::1]:56247 [200]: GET /favicon.ico
-[Sat Oct 18 12:02:00 2025] [::1]:56247 Closing
-[Sat Oct 18 12:02:02 2025] [::1]:56252 Accepted
-[Sat Oct 18 12:02:02 2025] [::1]:56252 [200]: GET /attendance.php?event_id=32
-[Sat Oct 18 12:02:02 2025] [::1]:56252 Closing
-[Sat Oct 18 12:02:02 2025] [::1]:56253 Accepted
-[Sat Oct 18 12:02:02 2025] [::1]:56253 [200]: GET /css/vivo-style.css?v=1760781722
-[Sat Oct 18 12:02:02 2025] [::1]:56253 Closing
-[Sat Oct 18 12:02:02 2025] [::1]:56254 Accepted
-[Sat Oct 18 12:02:02 2025] [::1]:56255 Accepted
-[Sat Oct 18 12:02:02 2025] [::1]:56254 [200]: GET /css/vivo-red-modern.css
-[Sat Oct 18 12:02:02 2025] [::1]:56256 Accepted
-[Sat Oct 18 12:02:02 2025] [::1]:56257 Accepted
-[Sat Oct 18 12:02:02 2025] [::1]:56255 [200]: GET /css/vivo-compact.css
-[Sat Oct 18 12:02:02 2025] [::1]:56254 Closing
-[Sat Oct 18 12:02:02 2025] [::1]:56256 [200]: GET /css/vivo-sidebar-override.css
-[Sat Oct 18 12:02:02 2025] [::1]:56257 [200]: GET /css/club-custom.css
-[Sat Oct 18 12:02:02 2025] [::1]:56255 Closing
-[Sat Oct 18 12:02:02 2025] [::1]:56256 Closing
-[Sat Oct 18 12:02:02 2025] [::1]:56257 Closing
-[Sat Oct 18 12:02:02 2025] [::1]:56262 Accepted
-[Sat Oct 18 12:02:02 2025] Club settings loaded: {"club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444"}
-[Sat Oct 18 12:02:02 2025] Dashboard Stats: Teams=33, Players=161, Events=2, Goals=0, Coaches=11
-[Sat Oct 18 12:02:02 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
-[Sat Oct 18 12:02:02 2025] [::1]:56262 [200]: GET /favicon.ico
-[Sat Oct 18 12:02:02 2025] [::1]:56262 Closing
-[Sat Oct 18 12:02:07 2025] [::1]:56283 Accepted
-[Sat Oct 18 12:02:07 2025] [::1]:56283 [302]: GET /
-[Sat Oct 18 12:02:07 2025] [::1]:56283 Closing
-[Sat Oct 18 12:02:07 2025] [::1]:56284 Accepted
-[Sat Oct 18 12:02:07 2025] [::1]:56284 [302]: GET /attendance.php
-[Sat Oct 18 12:02:07 2025] [::1]:56284 Closing
-[Sat Oct 18 12:02:07 2025] [::1]:56285 Accepted
-[Sat Oct 18 12:02:07 2025] [::1]:56285 [302]: GET /coaches.php
-[Sat Oct 18 12:02:07 2025] [::1]:56285 Closing
-[Sat Oct 18 12:02:07 2025] [::1]:56286 Accepted
-[Sat Oct 18 12:02:07 2025] [::1]:56286 [302]: GET /players.php
-[Sat Oct 18 12:02:07 2025] [::1]:56286 Closing
-[Sat Oct 18 12:02:07 2025] [::1]:56287 Accepted
-[Sat Oct 18 12:02:07 2025] [::1]:56287 [200]: GET /login.php
-[Sat Oct 18 12:02:07 2025] [::1]:56287 Closing
-[Sat Oct 18 12:02:07 2025] [::1]:56288 Accepted
-[Sat Oct 18 12:02:07 2025] [::1]:56288 [302]: GET /
-[Sat Oct 18 12:02:07 2025] [::1]:56288 Closing
-[Sat Oct 18 12:02:07 2025] [::1]:56289 Accepted
-[Sat Oct 18 12:02:07 2025] [::1]:56289 [302]: GET /attendance.php
-[Sat Oct 18 12:02:07 2025] [::1]:56289 Closing
-[Sat Oct 18 12:02:07 2025] [::1]:56290 Accepted
-[Sat Oct 18 12:02:07 2025] [::1]:56290 [302]: GET /coaches.php
-[Sat Oct 18 12:02:07 2025] [::1]:56290 Closing
-[Sat Oct 18 12:02:07 2025] [::1]:56291 Accepted
-[Sat Oct 18 12:02:07 2025] [::1]:56291 [200]: GET /css/vivo-red-modern.css
-[Sat Oct 18 12:02:07 2025] [::1]:56291 Closing
-[Sat Oct 18 12:02:07 2025] [::1]:56292 Accepted
-[Sat Oct 18 12:02:07 2025] [::1]:56292 [200]: GET /js/mobile-menu.js
-[Sat Oct 18 12:02:07 2025] [::1]:56292 Closing
-[Sat Oct 18 12:02:07 2025] [::1]:56293 Accepted
-[Sat Oct 18 12:02:07 2025] [::1]:56293 [200]: GET /includes/sidebar.php
-[Sat Oct 18 12:02:07 2025] [::1]:56293 Closing
-[Sat Oct 18 12:03:13 2025] [::1]:56586 Accepted
-[Sat Oct 18 12:03:13 2025] Club settings loaded: {"club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444"}
-[Sat Oct 18 12:03:13 2025] Dashboard Stats: Teams=33, Players=161, Events=2, Goals=0, Coaches=11
-[Sat Oct 18 12:03:13 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
-[Sat Oct 18 12:03:13 2025] [::1]:56586 [200]: GET /
-[Sat Oct 18 12:03:13 2025] [::1]:56586 Closing
-[Sat Oct 18 12:03:13 2025] [::1]:56587 Accepted
-[Sat Oct 18 12:03:13 2025] [::1]:56587 [200]: GET /css/vivo-style.css?v=1760781793
-[Sat Oct 18 12:03:13 2025] [::1]:56587 Closing
-[Sat Oct 18 12:03:13 2025] [::1]:56592 Accepted
-[Sat Oct 18 12:03:13 2025] [::1]:56593 Accepted
-[Sat Oct 18 12:03:13 2025] [::1]:56592 [200]: GET /css/vivo-red-modern.css
-[Sat Oct 18 12:03:13 2025] [::1]:56594 Accepted
-[Sat Oct 18 12:03:13 2025] [::1]:56593 [200]: GET /css/vivo-compact.css
-[Sat Oct 18 12:03:13 2025] [::1]:56595 Accepted
-[Sat Oct 18 12:03:13 2025] [::1]:56594 [200]: GET /css/vivo-sidebar-override.css
-[Sat Oct 18 12:03:13 2025] [::1]:56592 Closing
-[Sat Oct 18 12:03:13 2025] [::1]:56595 [200]: GET /css/club-custom.css
-[Sat Oct 18 12:03:13 2025] [::1]:56593 Closing
-[Sat Oct 18 12:03:13 2025] [::1]:56594 Closing
-[Sat Oct 18 12:03:13 2025] [::1]:56595 Closing
-[Sat Oct 18 12:03:14 2025] [::1]:56596 Accepted
-[Sat Oct 18 12:03:14 2025] Club settings loaded: {"club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444"}
-[Sat Oct 18 12:03:14 2025] Dashboard Stats: Teams=33, Players=161, Events=2, Goals=0, Coaches=11
-[Sat Oct 18 12:03:14 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
-[Sat Oct 18 12:03:14 2025] [::1]:56596 [200]: GET /favicon.ico
-[Sat Oct 18 12:03:14 2025] [::1]:56596 Closing
-[Sat Oct 18 12:04:54 2025] [::1]:57041 Accepted
-[Sat Oct 18 12:04:54 2025] Club settings loaded: {"club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444"}
-[Sat Oct 18 12:04:54 2025] Dashboard Stats: Teams=33, Players=161, Events=2, Goals=0, Coaches=11
-[Sat Oct 18 12:04:54 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
-[Sat Oct 18 12:04:54 2025] [::1]:57041 [200]: GET /index.php
-[Sat Oct 18 12:04:54 2025] [::1]:57041 Closing
-[Sat Oct 18 12:04:54 2025] [::1]:57042 Accepted
-[Sat Oct 18 12:04:54 2025] [::1]:57042 [200]: GET /css/vivo-style.css?v=1760781894
-[Sat Oct 18 12:04:54 2025] [::1]:57042 Closing
-[Sat Oct 18 12:04:54 2025] [::1]:57043 Accepted
-[Sat Oct 18 12:04:54 2025] [::1]:57044 Accepted
-[Sat Oct 18 12:04:54 2025] [::1]:57045 Accepted
-[Sat Oct 18 12:04:54 2025] [::1]:57043 [200]: GET /css/vivo-red-modern.css
-[Sat Oct 18 12:04:54 2025] [::1]:57046 Accepted
-[Sat Oct 18 12:04:54 2025] [::1]:57044 [200]: GET /css/vivo-compact.css
-[Sat Oct 18 12:04:54 2025] [::1]:57045 [200]: GET /css/vivo-sidebar-override.css
-[Sat Oct 18 12:04:54 2025] [::1]:57046 [200]: GET /css/club-custom.css
-[Sat Oct 18 12:04:54 2025] [::1]:57043 Closing
-[Sat Oct 18 12:04:54 2025] [::1]:57044 Closing
-[Sat Oct 18 12:04:54 2025] [::1]:57045 Closing
-[Sat Oct 18 12:04:54 2025] [::1]:57046 Closing
-[Sat Oct 18 12:04:54 2025] [::1]:57047 Accepted
-[Sat Oct 18 12:04:54 2025] Club settings loaded: {"club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444"}
-[Sat Oct 18 12:04:54 2025] Dashboard Stats: Teams=33, Players=161, Events=2, Goals=0, Coaches=11
-[Sat Oct 18 12:04:54 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
-[Sat Oct 18 12:04:54 2025] [::1]:57047 [200]: GET /favicon.ico
-[Sat Oct 18 12:04:54 2025] [::1]:57047 Closing
-[Sat Oct 18 12:08:23 2025] [::1]:57971 Accepted
-[Sat Oct 18 12:08:23 2025] [::1]:57971 [200]: GET /events.php
-[Sat Oct 18 12:08:23 2025] [::1]:57971 Closing
-[Sat Oct 18 12:08:23 2025] [::1]:57972 Accepted
-[Sat Oct 18 12:08:23 2025] [::1]:57972 [200]: GET /css/vivo-style.css?v=1760782103
-[Sat Oct 18 12:08:23 2025] [::1]:57972 Closing
-[Sat Oct 18 12:08:23 2025] [::1]:57973 Accepted
-[Sat Oct 18 12:08:23 2025] [::1]:57973 [200]: GET /css/vivo-red-modern.css
-[Sat Oct 18 12:08:23 2025] [::1]:57973 Closing
-[Sat Oct 18 12:08:23 2025] [::1]:57974 Accepted
-[Sat Oct 18 12:08:23 2025] [::1]:57975 Accepted
-[Sat Oct 18 12:08:23 2025] [::1]:57976 Accepted
-[Sat Oct 18 12:08:23 2025] [::1]:57974 [200]: GET /css/vivo-compact.css
-[Sat Oct 18 12:08:23 2025] [::1]:57975 [200]: GET /css/vivo-sidebar-override.css
-[Sat Oct 18 12:08:23 2025] [::1]:57976 [200]: GET /css/club-custom.css
-[Sat Oct 18 12:08:23 2025] [::1]:57974 Closing
-[Sat Oct 18 12:08:23 2025] [::1]:57975 Closing
-[Sat Oct 18 12:08:23 2025] [::1]:57976 Closing
-[Sat Oct 18 12:08:23 2025] [::1]:57981 Accepted
-[Sat Oct 18 12:08:23 2025] Club settings loaded: {"club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444"}
-[Sat Oct 18 12:08:23 2025] Dashboard Stats: Teams=33, Players=161, Events=2, Goals=0, Coaches=11
-[Sat Oct 18 12:08:23 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
-[Sat Oct 18 12:08:23 2025] [::1]:57981 [200]: GET /favicon.ico
-[Sat Oct 18 12:08:23 2025] [::1]:57981 Closing
-[Sat Oct 18 12:08:23 2025] [::1]:57983 Accepted
-[Sat Oct 18 12:08:23 2025] Club settings loaded: {"club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444"}
-[Sat Oct 18 12:08:23 2025] Dashboard Stats: Teams=33, Players=161, Events=2, Goals=0, Coaches=11
-[Sat Oct 18 12:08:23 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
-[Sat Oct 18 12:08:23 2025] [::1]:57983 [200]: GET /event_edit.php?action=add
-[Sat Oct 18 12:08:23 2025] [::1]:57983 Closing
-[Sat Oct 18 12:08:23 2025] [::1]:57985 Accepted
-[Sat Oct 18 12:08:23 2025] [::1]:57985 [200]: GET /css/vivo-style.css?v=1760782103
-[Sat Oct 18 12:08:23 2025] [::1]:57985 Closing
-[Sat Oct 18 12:08:23 2025] [::1]:57986 Accepted
-[Sat Oct 18 12:08:23 2025] [::1]:57987 Accepted
-[Sat Oct 18 12:08:23 2025] [::1]:57986 [200]: GET /css/vivo-red-modern.css
-[Sat Oct 18 12:08:23 2025] [::1]:57987 [200]: GET /css/vivo-compact.css
-[Sat Oct 18 12:08:23 2025] [::1]:57986 Closing
-[Sat Oct 18 12:08:23 2025] [::1]:57987 Closing
-[Sat Oct 18 12:08:23 2025] [::1]:57988 Accepted
-[Sat Oct 18 12:08:23 2025] [::1]:57988 [200]: GET /css/vivo-sidebar-override.css
-[Sat Oct 18 12:08:23 2025] [::1]:57989 Accepted
-[Sat Oct 18 12:08:23 2025] [::1]:57988 Closing
-[Sat Oct 18 12:08:23 2025] [::1]:57989 [200]: GET /css/club-custom.css
-[Sat Oct 18 12:08:23 2025] [::1]:57989 Closing
-[Sat Oct 18 12:08:23 2025] [::1]:57990 Accepted
-[Sat Oct 18 12:08:23 2025] Club settings loaded: {"club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444"}
-[Sat Oct 18 12:08:23 2025] Dashboard Stats: Teams=33, Players=161, Events=2, Goals=0, Coaches=11
-[Sat Oct 18 12:08:23 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
-[Sat Oct 18 12:08:23 2025] [::1]:57990 [200]: GET /favicon.ico
-[Sat Oct 18 12:08:23 2025] [::1]:57990 Closing
-[Sat Oct 18 12:09:09 2025] [::1]:58195 Accepted
-[Sat Oct 18 12:09:09 2025] Club settings loaded: {"club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444"}
-[Sat Oct 18 12:09:09 2025] Dashboard Stats: Teams=33, Players=161, Events=2, Goals=0, Coaches=11
-[Sat Oct 18 12:09:09 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
-[Sat Oct 18 12:09:09 2025] [::1]:58195 [200]: GET /event_edit.php?action=add
-[Sat Oct 18 12:09:09 2025] [::1]:58195 Closing
-[Sat Oct 18 12:09:09 2025] [::1]:58196 Accepted
-[Sat Oct 18 12:09:09 2025] [::1]:58196 [200]: GET /css/vivo-style.css?v=1760782149
-[Sat Oct 18 12:09:09 2025] [::1]:58196 Closing
-[Sat Oct 18 12:09:09 2025] [::1]:58197 Accepted
-[Sat Oct 18 12:09:09 2025] [::1]:58198 Accepted
-[Sat Oct 18 12:09:09 2025] [::1]:58197 [200]: GET /css/vivo-red-modern.css
-[Sat Oct 18 12:09:09 2025] [::1]:58199 Accepted
-[Sat Oct 18 12:09:09 2025] [::1]:58198 [200]: GET /css/vivo-compact.css
-[Sat Oct 18 12:09:09 2025] [::1]:58200 Accepted
-[Sat Oct 18 12:09:09 2025] [::1]:58199 [200]: GET /css/vivo-sidebar-override.css
-[Sat Oct 18 12:09:09 2025] [::1]:58197 Closing
-[Sat Oct 18 12:09:09 2025] [::1]:58200 [200]: GET /css/club-custom.css
-[Sat Oct 18 12:09:09 2025] [::1]:58198 Closing
-[Sat Oct 18 12:09:09 2025] [::1]:58199 Closing
-[Sat Oct 18 12:09:09 2025] [::1]:58200 Closing
-[Sat Oct 18 12:09:09 2025] [::1]:58201 Accepted
-[Sat Oct 18 12:09:09 2025] Club settings loaded: {"club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444"}
-[Sat Oct 18 12:09:09 2025] Dashboard Stats: Teams=33, Players=161, Events=2, Goals=0, Coaches=11
-[Sat Oct 18 12:09:09 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
-[Sat Oct 18 12:09:09 2025] [::1]:58201 [200]: GET /favicon.ico
-[Sat Oct 18 12:09:09 2025] [::1]:58201 Closing
-[Sat Oct 18 12:09:14 2025] [::1]:58222 Accepted
-[Sat Oct 18 12:09:14 2025] [::1]:58222 [200]: GET /attendance.php
-[Sat Oct 18 12:09:14 2025] [::1]:58222 Closing
-[Sat Oct 18 12:09:14 2025] [::1]:58223 Accepted
-[Sat Oct 18 12:09:14 2025] [::1]:58223 [200]: GET /css/vivo-style.css?v=1760782154
-[Sat Oct 18 12:09:14 2025] [::1]:58223 Closing
-[Sat Oct 18 12:09:14 2025] [::1]:58224 Accepted
-[Sat Oct 18 12:09:14 2025] [::1]:58225 Accepted
-[Sat Oct 18 12:09:14 2025] [::1]:58226 Accepted
-[Sat Oct 18 12:09:14 2025] [::1]:58224 [200]: GET /css/vivo-red-modern.css
-[Sat Oct 18 12:09:14 2025] [::1]:58225 [200]: GET /css/vivo-compact.css
-[Sat Oct 18 12:09:14 2025] [::1]:58227 Accepted
-[Sat Oct 18 12:09:14 2025] [::1]:58226 [200]: GET /css/vivo-sidebar-override.css
-[Sat Oct 18 12:09:14 2025] [::1]:58224 Closing
-[Sat Oct 18 12:09:14 2025] [::1]:58227 [200]: GET /css/club-custom.css
-[Sat Oct 18 12:09:14 2025] [::1]:58225 Closing
-[Sat Oct 18 12:09:14 2025] [::1]:58226 Closing
-[Sat Oct 18 12:09:14 2025] [::1]:58227 Closing
-[Sat Oct 18 12:09:14 2025] [::1]:58228 Accepted
-[Sat Oct 18 12:09:14 2025] Club settings loaded: {"club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444"}
-[Sat Oct 18 12:09:14 2025] Dashboard Stats: Teams=33, Players=161, Events=2, Goals=0, Coaches=11
-[Sat Oct 18 12:09:14 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
-[Sat Oct 18 12:09:14 2025] [::1]:58228 [200]: GET /favicon.ico
-[Sat Oct 18 12:09:14 2025] [::1]:58228 Closing
-[Sat Oct 18 12:09:17 2025] [::1]:58242 Accepted
-[Sat Oct 18 12:09:17 2025] [::1]:58242 [200]: GET /attendance.php?event_id=32
-[Sat Oct 18 12:09:17 2025] [::1]:58242 Closing
-[Sat Oct 18 12:09:17 2025] [::1]:58243 Accepted
-[Sat Oct 18 12:09:17 2025] [::1]:58243 [200]: GET /css/vivo-style.css?v=1760782157
-[Sat Oct 18 12:09:17 2025] [::1]:58243 Closing
-[Sat Oct 18 12:09:17 2025] [::1]:58244 Accepted
-[Sat Oct 18 12:09:17 2025] [::1]:58244 [200]: GET /css/vivo-red-modern.css
-[Sat Oct 18 12:09:17 2025] [::1]:58245 Accepted
-[Sat Oct 18 12:09:17 2025] [::1]:58246 Accepted
-[Sat Oct 18 12:09:17 2025] [::1]:58247 Accepted
-[Sat Oct 18 12:09:17 2025] [::1]:58244 Closing
-[Sat Oct 18 12:09:17 2025] [::1]:58245 [200]: GET /css/vivo-compact.css
-[Sat Oct 18 12:09:17 2025] [::1]:58246 [200]: GET /css/vivo-sidebar-override.css
-[Sat Oct 18 12:09:17 2025] [::1]:58247 [200]: GET /css/club-custom.css
-[Sat Oct 18 12:09:17 2025] [::1]:58245 Closing
-[Sat Oct 18 12:09:17 2025] [::1]:58246 Closing
-[Sat Oct 18 12:09:17 2025] [::1]:58247 Closing
-[Sat Oct 18 12:09:17 2025] [::1]:58248 Accepted
-[Sat Oct 18 12:09:17 2025] Club settings loaded: {"club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444"}
-[Sat Oct 18 12:09:17 2025] Dashboard Stats: Teams=33, Players=161, Events=2, Goals=0, Coaches=11
-[Sat Oct 18 12:09:17 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
-[Sat Oct 18 12:09:17 2025] [::1]:58248 [200]: GET /favicon.ico
-[Sat Oct 18 12:09:17 2025] [::1]:58248 Closing
-[Sat Oct 18 12:09:22 2025] [::1]:58275 Accepted
-[Sat Oct 18 12:09:22 2025] [::1]:58275 [200]: GET /coaches.php
-[Sat Oct 18 12:09:22 2025] [::1]:58275 Closing
-[Sat Oct 18 12:09:22 2025] [::1]:58276 Accepted
-[Sat Oct 18 12:09:22 2025] [::1]:58276 [200]: GET /css/vivo-style.css?v=1760782162
-[Sat Oct 18 12:09:22 2025] [::1]:58276 Closing
-[Sat Oct 18 12:09:22 2025] [::1]:58277 Accepted
-[Sat Oct 18 12:09:22 2025] [::1]:58278 Accepted
-[Sat Oct 18 12:09:22 2025] [::1]:58279 Accepted
-[Sat Oct 18 12:09:22 2025] [::1]:58277 [200]: GET /css/vivo-red-modern.css
-[Sat Oct 18 12:09:22 2025] [::1]:58280 Accepted
-[Sat Oct 18 12:09:22 2025] [::1]:58278 [200]: GET /css/vivo-compact.css
-[Sat Oct 18 12:09:22 2025] [::1]:58279 [200]: GET /css/vivo-sidebar-override.css
-[Sat Oct 18 12:09:22 2025] [::1]:58280 [200]: GET /css/club-custom.css
-[Sat Oct 18 12:09:22 2025] [::1]:58277 Closing
-[Sat Oct 18 12:09:22 2025] [::1]:58278 Closing
-[Sat Oct 18 12:09:22 2025] [::1]:58279 Closing
-[Sat Oct 18 12:09:22 2025] [::1]:58280 Closing
-[Sat Oct 18 12:09:22 2025] [::1]:58281 Accepted
-[Sat Oct 18 12:09:22 2025] Club settings loaded: {"club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444"}
-[Sat Oct 18 12:09:22 2025] Dashboard Stats: Teams=33, Players=161, Events=2, Goals=0, Coaches=11
-[Sat Oct 18 12:09:22 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
-[Sat Oct 18 12:09:22 2025] [::1]:58281 [200]: GET /favicon.ico
-[Sat Oct 18 12:09:22 2025] [::1]:58281 Closing
-[Sat Oct 18 12:09:23 2025] [::1]:58282 Accepted
-[Sat Oct 18 12:09:23 2025] [::1]:58282 [200]: GET /club_settings.php
-[Sat Oct 18 12:09:23 2025] [::1]:58282 Closing
-[Sat Oct 18 12:09:23 2025] [::1]:58283 Accepted
-[Sat Oct 18 12:09:23 2025] [::1]:58283 [200]: GET /css/vivo-style.css?v=1760782163
-[Sat Oct 18 12:09:23 2025] [::1]:58283 Closing
-[Sat Oct 18 12:09:23 2025] [::1]:58288 Accepted
-[Sat Oct 18 12:09:23 2025] [::1]:58289 Accepted
-[Sat Oct 18 12:09:23 2025] [::1]:58290 Accepted
-[Sat Oct 18 12:09:23 2025] [::1]:58288 [200]: GET /css/vivo-red-modern.css
-[Sat Oct 18 12:09:23 2025] [::1]:58289 [200]: GET /css/vivo-compact.css
-[Sat Oct 18 12:09:23 2025] [::1]:58291 Accepted
-[Sat Oct 18 12:09:23 2025] [::1]:58290 [200]: GET /css/vivo-sidebar-override.css
-[Sat Oct 18 12:09:23 2025] [::1]:58291 [200]: GET /css/club-custom.css
-[Sat Oct 18 12:09:23 2025] [::1]:58288 Closing
-[Sat Oct 18 12:09:23 2025] [::1]:58289 Closing
-[Sat Oct 18 12:09:23 2025] [::1]:58290 Closing
-[Sat Oct 18 12:09:23 2025] [::1]:58291 Closing
-[Sat Oct 18 12:09:23 2025] [::1]:58292 Accepted
-[Sat Oct 18 12:09:23 2025] Club settings loaded: {"club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444"}
-[Sat Oct 18 12:09:23 2025] Dashboard Stats: Teams=33, Players=161, Events=2, Goals=0, Coaches=11
-[Sat Oct 18 12:09:23 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
-[Sat Oct 18 12:09:23 2025] [::1]:58292 [200]: GET /favicon.ico
-[Sat Oct 18 12:09:23 2025] [::1]:58292 Closing
-[Sat Oct 18 12:09:29 2025] [::1]:58318 Accepted
-[Sat Oct 18 12:09:29 2025] [::1]:58318 [200]: POST /club_settings.php
-[Sat Oct 18 12:09:29 2025] [::1]:58318 Closing
-[Sat Oct 18 12:09:29 2025] [::1]:58319 Accepted
-[Sat Oct 18 12:09:29 2025] [::1]:58320 Accepted
-[Sat Oct 18 12:09:29 2025] [::1]:58319 [200]: GET /css/vivo-style.css?v=1760782169
-[Sat Oct 18 12:09:29 2025] [::1]:58320 [200]: GET /uploads/club_logo_20251018_100929.png
-[Sat Oct 18 12:09:29 2025] [::1]:58319 Closing
-[Sat Oct 18 12:09:29 2025] [::1]:58320 Closing
-[Sat Oct 18 12:09:29 2025] [::1]:58321 Accepted
-[Sat Oct 18 12:09:29 2025] [::1]:58322 Accepted
-[Sat Oct 18 12:09:29 2025] [::1]:58321 [200]: GET /css/vivo-red-modern.css
-[Sat Oct 18 12:09:29 2025] [::1]:58323 Accepted
-[Sat Oct 18 12:09:29 2025] [::1]:58322 [200]: GET /css/vivo-compact.css
-[Sat Oct 18 12:09:29 2025] [::1]:58324 Accepted
-[Sat Oct 18 12:09:29 2025] [::1]:58323 [200]: GET /css/vivo-sidebar-override.css
-[Sat Oct 18 12:09:29 2025] [::1]:58321 Closing
-[Sat Oct 18 12:09:29 2025] [::1]:58324 [200]: GET /css/club-custom.css
-[Sat Oct 18 12:09:29 2025] [::1]:58322 Closing
-[Sat Oct 18 12:09:29 2025] [::1]:58323 Closing
-[Sat Oct 18 12:09:29 2025] [::1]:58324 Closing
-[Sat Oct 18 12:09:29 2025] [::1]:58325 Accepted
-[Sat Oct 18 12:09:29 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
-[Sat Oct 18 12:09:29 2025] Dashboard Stats: Teams=33, Players=161, Events=2, Goals=0, Coaches=11
-[Sat Oct 18 12:09:29 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
-[Sat Oct 18 12:09:30 2025] [::1]:58325 [200]: GET /favicon.ico
-[Sat Oct 18 12:09:30 2025] [::1]:58325 Closing
-[Sat Oct 18 12:09:31 2025] [::1]:58334 Accepted
-[Sat Oct 18 12:09:31 2025] [::1]:58334 [200]: GET /teams.php
-[Sat Oct 18 12:09:31 2025] [::1]:58334 Closing
-[Sat Oct 18 12:09:31 2025] [::1]:58335 Accepted
-[Sat Oct 18 12:09:31 2025] [::1]:58336 Accepted
-[Sat Oct 18 12:09:31 2025] [::1]:58335 [200]: GET /css/vivo-style.css?v=1760782171
-[Sat Oct 18 12:09:31 2025] [::1]:58336 [200]: GET /uploads/club_logo_20251018_100929.png
-[Sat Oct 18 12:09:31 2025] [::1]:58335 Closing
-[Sat Oct 18 12:09:31 2025] [::1]:58336 Closing
-[Sat Oct 18 12:09:31 2025] [::1]:58337 Accepted
-[Sat Oct 18 12:09:31 2025] [::1]:58338 Accepted
-[Sat Oct 18 12:09:31 2025] [::1]:58337 [200]: GET /css/vivo-red-modern.css
-[Sat Oct 18 12:09:31 2025] [::1]:58339 Accepted
-[Sat Oct 18 12:09:31 2025] [::1]:58338 [200]: GET /css/vivo-compact.css
-[Sat Oct 18 12:09:31 2025] [::1]:58340 Accepted
-[Sat Oct 18 12:09:31 2025] [::1]:58337 Closing
-[Sat Oct 18 12:09:31 2025] [::1]:58339 [200]: GET /css/vivo-sidebar-override.css
-[Sat Oct 18 12:09:31 2025] [::1]:58340 [200]: GET /css/club-custom.css
-[Sat Oct 18 12:09:31 2025] [::1]:58338 Closing
-[Sat Oct 18 12:09:31 2025] [::1]:58339 Closing
-[Sat Oct 18 12:09:31 2025] [::1]:58340 Closing
-[Sat Oct 18 12:09:31 2025] [::1]:58341 Accepted
-[Sat Oct 18 12:09:31 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
-[Sat Oct 18 12:09:31 2025] Dashboard Stats: Teams=33, Players=161, Events=2, Goals=0, Coaches=11
-[Sat Oct 18 12:09:31 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
-[Sat Oct 18 12:09:31 2025] [::1]:58341 [200]: GET /favicon.ico
-[Sat Oct 18 12:09:31 2025] [::1]:58341 Closing
-[Sat Oct 18 12:09:32 2025] [::1]:58342 Accepted
-[Sat Oct 18 12:09:32 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
-[Sat Oct 18 12:09:32 2025] Dashboard Stats: Teams=33, Players=161, Events=2, Goals=0, Coaches=11
-[Sat Oct 18 12:09:32 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
-[Sat Oct 18 12:09:32 2025] [::1]:58342 [200]: GET /index.php
-[Sat Oct 18 12:09:32 2025] [::1]:58342 Closing
-[Sat Oct 18 12:09:32 2025] [::1]:58343 Accepted
-[Sat Oct 18 12:09:32 2025] [::1]:58344 Accepted
-[Sat Oct 18 12:09:32 2025] [::1]:58343 [200]: GET /css/vivo-style.css?v=1760782172
-[Sat Oct 18 12:09:32 2025] [::1]:58343 Closing
-[Sat Oct 18 12:09:32 2025] [::1]:58344 [200]: GET /uploads/club_logo_20251018_100929.png
-[Sat Oct 18 12:09:32 2025] [::1]:58344 Closing
-[Sat Oct 18 12:09:32 2025] [::1]:58345 Accepted
-[Sat Oct 18 12:09:32 2025] [::1]:58345 [200]: GET /css/vivo-red-modern.css
-[Sat Oct 18 12:09:32 2025] [::1]:58345 Closing
-[Sat Oct 18 12:09:32 2025] [::1]:58346 Accepted
-[Sat Oct 18 12:09:32 2025] [::1]:58347 Accepted
-[Sat Oct 18 12:09:32 2025] [::1]:58346 [200]: GET /css/vivo-compact.css
-[Sat Oct 18 12:09:32 2025] [::1]:58348 Accepted
-[Sat Oct 18 12:09:32 2025] [::1]:58346 Closing
-[Sat Oct 18 12:09:32 2025] [::1]:58347 [200]: GET /css/vivo-sidebar-override.css
-[Sat Oct 18 12:09:32 2025] [::1]:58348 [200]: GET /css/club-custom.css
-[Sat Oct 18 12:09:32 2025] [::1]:58347 Closing
-[Sat Oct 18 12:09:32 2025] [::1]:58348 Closing
-[Sat Oct 18 12:09:32 2025] [::1]:58349 Accepted
-[Sat Oct 18 12:09:32 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
-[Sat Oct 18 12:09:32 2025] Dashboard Stats: Teams=33, Players=161, Events=2, Goals=0, Coaches=11
-[Sat Oct 18 12:09:32 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
-[Sat Oct 18 12:09:32 2025] [::1]:58349 [200]: GET /favicon.ico
-[Sat Oct 18 12:09:32 2025] [::1]:58349 Closing
-[Sat Oct 18 12:09:33 2025] [::1]:58354 Accepted
-[Sat Oct 18 12:09:33 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
-[Sat Oct 18 12:09:33 2025] Dashboard Stats: Teams=33, Players=161, Events=2, Goals=0, Coaches=11
-[Sat Oct 18 12:09:33 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
-[Sat Oct 18 12:09:33 2025] [::1]:58354 [200]: GET /index.php
-[Sat Oct 18 12:09:33 2025] [::1]:58354 Closing
-[Sat Oct 18 12:09:33 2025] [::1]:58355 Accepted
-[Sat Oct 18 12:09:33 2025] [::1]:58356 Accepted
-[Sat Oct 18 12:09:33 2025] [::1]:58355 [200]: GET /css/vivo-style.css?v=1760782173
-[Sat Oct 18 12:09:33 2025] [::1]:58356 [200]: GET /uploads/club_logo_20251018_100929.png
-[Sat Oct 18 12:09:33 2025] [::1]:58355 Closing
-[Sat Oct 18 12:09:33 2025] [::1]:58356 Closing
-[Sat Oct 18 12:09:33 2025] [::1]:58357 Accepted
-[Sat Oct 18 12:09:33 2025] [::1]:58358 Accepted
-[Sat Oct 18 12:09:33 2025] [::1]:58359 Accepted
-[Sat Oct 18 12:09:33 2025] [::1]:58357 [200]: GET /css/vivo-red-modern.css
-[Sat Oct 18 12:09:33 2025] [::1]:58360 Accepted
-[Sat Oct 18 12:09:33 2025] [::1]:58358 [200]: GET /css/vivo-compact.css
-[Sat Oct 18 12:09:33 2025] [::1]:58359 [200]: GET /css/vivo-sidebar-override.css
-[Sat Oct 18 12:09:33 2025] [::1]:58360 [200]: GET /css/club-custom.css
-[Sat Oct 18 12:09:33 2025] [::1]:58357 Closing
-[Sat Oct 18 12:09:33 2025] [::1]:58358 Closing
-[Sat Oct 18 12:09:33 2025] [::1]:58359 Closing
-[Sat Oct 18 12:09:33 2025] [::1]:58360 Closing
-[Sat Oct 18 12:09:33 2025] [::1]:58361 Accepted
-[Sat Oct 18 12:09:33 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
-[Sat Oct 18 12:09:33 2025] Dashboard Stats: Teams=33, Players=161, Events=2, Goals=0, Coaches=11
-[Sat Oct 18 12:09:33 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
-[Sat Oct 18 12:09:33 2025] [::1]:58361 [200]: GET /favicon.ico
-[Sat Oct 18 12:09:33 2025] [::1]:58361 Closing
-[Sat Oct 18 12:09:35 2025] [::1]:58374 Accepted
-[Sat Oct 18 12:09:35 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
-[Sat Oct 18 12:09:35 2025] Dashboard Stats: Teams=33, Players=161, Events=2, Goals=0, Coaches=11
-[Sat Oct 18 12:09:35 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
-[Sat Oct 18 12:09:35 2025] [::1]:58374 [200]: GET /index.php
-[Sat Oct 18 12:09:35 2025] [::1]:58374 Closing
-[Sat Oct 18 12:09:35 2025] [::1]:58375 Accepted
-[Sat Oct 18 12:09:35 2025] [::1]:58375 [200]: GET /css/vivo-style.css?v=1760782175
-[Sat Oct 18 12:09:35 2025] [::1]:58375 Closing
-[Sat Oct 18 12:09:35 2025] [::1]:58376 Accepted
-[Sat Oct 18 12:09:35 2025] [::1]:58376 [200]: GET /uploads/club_logo_20251018_100929.png
-[Sat Oct 18 12:09:35 2025] [::1]:58376 Closing
-[Sat Oct 18 12:09:35 2025] [::1]:58377 Accepted
-[Sat Oct 18 12:09:35 2025] [::1]:58378 Accepted
-[Sat Oct 18 12:09:35 2025] [::1]:58379 Accepted
-[Sat Oct 18 12:09:35 2025] [::1]:58377 [200]: GET /css/vivo-red-modern.css
-[Sat Oct 18 12:09:35 2025] [::1]:58380 Accepted
-[Sat Oct 18 12:09:35 2025] [::1]:58377 Closing
-[Sat Oct 18 12:09:35 2025] [::1]:58378 [200]: GET /css/vivo-compact.css
-[Sat Oct 18 12:09:35 2025] [::1]:58379 [200]: GET /css/vivo-sidebar-override.css
-[Sat Oct 18 12:09:35 2025] [::1]:58380 [200]: GET /css/club-custom.css
-[Sat Oct 18 12:09:35 2025] [::1]:58378 Closing
-[Sat Oct 18 12:09:35 2025] [::1]:58379 Closing
-[Sat Oct 18 12:09:35 2025] [::1]:58380 Closing
-[Sat Oct 18 12:09:36 2025] [::1]:58381 Accepted
-[Sat Oct 18 12:09:36 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
-[Sat Oct 18 12:09:36 2025] Dashboard Stats: Teams=33, Players=161, Events=2, Goals=0, Coaches=11
-[Sat Oct 18 12:09:36 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
-[Sat Oct 18 12:09:36 2025] [::1]:58381 [200]: GET /favicon.ico
-[Sat Oct 18 12:09:36 2025] [::1]:58381 Closing
-[Sat Oct 18 12:13:20 2025] [::1]:58505 Accepted
-[Sat Oct 18 12:13:20 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
-[Sat Oct 18 12:13:20 2025] Dashboard Stats: Teams=33, Players=161, Events=2, Goals=0, Coaches=11
-[Sat Oct 18 12:13:20 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
-[Sat Oct 18 12:13:20 2025] [::1]:58505 [200]: GET /index.php
-[Sat Oct 18 12:13:20 2025] [::1]:58505 Closing
-[Sat Oct 18 12:13:20 2025] [::1]:58506 Accepted
-[Sat Oct 18 12:13:20 2025] [::1]:58507 Accepted
-[Sat Oct 18 12:13:20 2025] [::1]:58506 [200]: GET /css/vivo-style.css?v=1760782400
-[Sat Oct 18 12:13:20 2025] [::1]:58507 [200]: GET /uploads/club_logo_20251018_100929.png
-[Sat Oct 18 12:13:20 2025] [::1]:58506 Closing
-[Sat Oct 18 12:13:20 2025] [::1]:58507 Closing
-[Sat Oct 18 12:13:21 2025] [::1]:58508 Accepted
-[Sat Oct 18 12:13:21 2025] [::1]:58509 Accepted
-[Sat Oct 18 12:13:21 2025] [::1]:58508 [200]: GET /css/vivo-red-modern.css
-[Sat Oct 18 12:13:21 2025] [::1]:58510 Accepted
-[Sat Oct 18 12:13:21 2025] [::1]:58509 [200]: GET /css/vivo-compact.css
-[Sat Oct 18 12:13:21 2025] [::1]:58511 Accepted
-[Sat Oct 18 12:13:21 2025] [::1]:58510 [200]: GET /css/vivo-sidebar-override.css
-[Sat Oct 18 12:13:21 2025] [::1]:58508 Closing
-[Sat Oct 18 12:13:21 2025] [::1]:58511 [200]: GET /css/club-custom.css
-[Sat Oct 18 12:13:21 2025] [::1]:58509 Closing
-[Sat Oct 18 12:13:21 2025] [::1]:58510 Closing
-[Sat Oct 18 12:13:21 2025] [::1]:58511 Closing
-[Sat Oct 18 12:13:21 2025] [::1]:58512 Accepted
-[Sat Oct 18 12:13:21 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
-[Sat Oct 18 12:13:21 2025] Dashboard Stats: Teams=33, Players=161, Events=2, Goals=0, Coaches=11
-[Sat Oct 18 12:13:21 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
-[Sat Oct 18 12:13:21 2025] [::1]:58512 [200]: GET /favicon.ico
-[Sat Oct 18 12:13:21 2025] [::1]:58512 Closing
+[Wed Nov 26 18:47:40 2025] PHP 8.4.13 Development Server (http://localhost:8000) started
+[Wed Nov 26 18:49:10 2025] [::1]:63862 Accepted
+[Wed Nov 26 18:49:10 2025] [::1]:63862 [302]: HEAD /
+[Wed Nov 26 18:49:10 2025] [::1]:63862 Closing
+[Wed Nov 26 18:49:34 2025] [::1]:63885 Accepted
+[Wed Nov 26 18:49:34 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 18:49:34 2025] Dashboard Stats: Teams=33, Players=106, Events=2, Goals=0, Coaches=11
+[Wed Nov 26 18:49:34 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
+[Wed Nov 26 18:49:34 2025] [::1]:63885 [200]: GET /
+[Wed Nov 26 18:49:34 2025] [::1]:63885 Closing
+[Wed Nov 26 18:49:34 2025] [::1]:63886 Accepted
+[Wed Nov 26 18:49:34 2025] [::1]:63887 Accepted
+[Wed Nov 26 18:49:34 2025] [::1]:63886 [200]: GET /css/vivo-style.css?v=1764175774
+[Wed Nov 26 18:49:34 2025] [::1]:63887 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 18:49:34 2025] [::1]:63886 Closing
+[Wed Nov 26 18:49:34 2025] [::1]:63887 Closing
+[Wed Nov 26 18:49:34 2025] [::1]:63888 Accepted
+[Wed Nov 26 18:49:34 2025] [::1]:63889 Accepted
+[Wed Nov 26 18:49:34 2025] [::1]:63890 Accepted
+[Wed Nov 26 18:49:34 2025] [::1]:63891 Accepted
+[Wed Nov 26 18:49:34 2025] [::1]:63888 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 18:49:34 2025] [::1]:63889 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 18:49:34 2025] [::1]:63890 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 18:49:34 2025] [::1]:63891 [200]: GET /css/club-custom.css
+[Wed Nov 26 18:49:34 2025] [::1]:63888 Closing
+[Wed Nov 26 18:49:34 2025] [::1]:63889 Closing
+[Wed Nov 26 18:49:34 2025] [::1]:63890 Closing
+[Wed Nov 26 18:49:34 2025] [::1]:63891 Closing
+[Wed Nov 26 18:49:34 2025] [::1]:63893 Accepted
+[Wed Nov 26 18:49:34 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 18:49:34 2025] Dashboard Stats: Teams=33, Players=106, Events=2, Goals=0, Coaches=11
+[Wed Nov 26 18:49:34 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
+[Wed Nov 26 18:49:34 2025] [::1]:63893 [200]: GET /favicon.ico
+[Wed Nov 26 18:49:34 2025] [::1]:63893 Closing
+[Wed Nov 26 18:49:39 2025] [::1]:63897 Accepted
+[Wed Nov 26 18:49:39 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 18:49:39 2025] Dashboard Stats: Teams=33, Players=106, Events=2, Goals=0, Coaches=11
+[Wed Nov 26 18:49:39 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
+[Wed Nov 26 18:49:39 2025] [::1]:63897 [200]: GET /
+[Wed Nov 26 18:49:39 2025] [::1]:63897 Closing
+[Wed Nov 26 18:49:40 2025] [::1]:63898 Accepted
+[Wed Nov 26 18:49:40 2025] [::1]:63899 Accepted
+[Wed Nov 26 18:49:40 2025] [::1]:63898 [200]: GET /css/vivo-style.css?v=1764175779
+[Wed Nov 26 18:49:40 2025] [::1]:63899 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 18:49:40 2025] [::1]:63898 Closing
+[Wed Nov 26 18:49:40 2025] [::1]:63899 Closing
+[Wed Nov 26 18:49:40 2025] [::1]:63900 Accepted
+[Wed Nov 26 18:49:40 2025] [::1]:63901 Accepted
+[Wed Nov 26 18:49:40 2025] [::1]:63902 Accepted
+[Wed Nov 26 18:49:40 2025] [::1]:63900 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 18:49:40 2025] [::1]:63903 Accepted
+[Wed Nov 26 18:49:40 2025] [::1]:63901 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 18:49:40 2025] [::1]:63902 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 18:49:40 2025] [::1]:63900 Closing
+[Wed Nov 26 18:49:40 2025] [::1]:63903 [200]: GET /css/club-custom.css
+[Wed Nov 26 18:49:40 2025] [::1]:63901 Closing
+[Wed Nov 26 18:49:40 2025] [::1]:63902 Closing
+[Wed Nov 26 18:49:40 2025] [::1]:63903 Closing
+[Wed Nov 26 18:49:40 2025] [::1]:63906 Accepted
+[Wed Nov 26 18:49:40 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 18:49:40 2025] Dashboard Stats: Teams=33, Players=106, Events=2, Goals=0, Coaches=11
+[Wed Nov 26 18:49:40 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
+[Wed Nov 26 18:49:40 2025] [::1]:63906 [200]: GET /favicon.ico
+[Wed Nov 26 18:49:40 2025] [::1]:63906 Closing
+[Wed Nov 26 18:49:53 2025] [::1]:63908 Accepted
+[Wed Nov 26 18:49:53 2025] [::1]:63908 [200]: GET /players.php
+[Wed Nov 26 18:49:53 2025] [::1]:63908 Closing
+[Wed Nov 26 18:49:53 2025] [::1]:63909 Accepted
+[Wed Nov 26 18:49:53 2025] [::1]:63910 Accepted
+[Wed Nov 26 18:49:53 2025] [::1]:63909 [200]: GET /css/vivo-style.css?v=1764175793
+[Wed Nov 26 18:49:53 2025] [::1]:63911 Accepted
+[Wed Nov 26 18:49:53 2025] [::1]:63910 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 18:49:53 2025] [::1]:63912 Accepted
+[Wed Nov 26 18:49:53 2025] [::1]:63911 [200]: GET /images/placeholders/player-placeholder-5.svg
+[Wed Nov 26 18:49:53 2025] [::1]:63913 Accepted
+[Wed Nov 26 18:49:53 2025] [::1]:63909 Closing
+[Wed Nov 26 18:49:53 2025] [::1]:63912 [200]: GET /images/placeholders/player-placeholder-2.svg
+[Wed Nov 26 18:49:53 2025] [::1]:63914 Accepted
+[Wed Nov 26 18:49:53 2025] [::1]:63910 Closing
+[Wed Nov 26 18:49:53 2025] [::1]:63913 [200]: GET /images/placeholders/player-placeholder-1.svg
+[Wed Nov 26 18:49:53 2025] [::1]:63915 Accepted
+[Wed Nov 26 18:49:53 2025] [::1]:63914 [200]: GET /images/placeholders/player-placeholder-3.svg
+[Wed Nov 26 18:49:53 2025] [::1]:63911 Closing
+[Wed Nov 26 18:49:53 2025] [::1]:63916 Accepted
+[Wed Nov 26 18:49:53 2025] [::1]:63915 [200]: GET /images/placeholders/player-placeholder-4.svg
+[Wed Nov 26 18:49:53 2025] [::1]:63912 Closing
+[Wed Nov 26 18:49:53 2025] [::1]:63917 Accepted
+[Wed Nov 26 18:49:53 2025] [::1]:63916 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 18:49:53 2025] [::1]:63913 Closing
+[Wed Nov 26 18:49:53 2025] [::1]:63918 Accepted
+[Wed Nov 26 18:49:53 2025] [::1]:63917 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 18:49:53 2025] [::1]:63914 Closing
+[Wed Nov 26 18:49:53 2025] [::1]:63919 Accepted
+[Wed Nov 26 18:49:53 2025] [::1]:63918 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 18:49:53 2025] [::1]:63915 Closing
+[Wed Nov 26 18:49:53 2025] [::1]:63919 [200]: GET /css/club-custom.css
+[Wed Nov 26 18:49:53 2025] [::1]:63916 Closing
+[Wed Nov 26 18:49:53 2025] [::1]:63920 Accepted
+[Wed Nov 26 18:49:53 2025] [::1]:63917 Closing
+[Wed Nov 26 18:49:53 2025] [::1]:63918 Closing
+[Wed Nov 26 18:49:53 2025] [::1]:63920 [200]: GET /uploads/players/player_291_profile.png
+[Wed Nov 26 18:49:53 2025] [::1]:63919 Closing
+[Wed Nov 26 18:49:53 2025] [::1]:63920 Closing
+[Wed Nov 26 18:49:53 2025] [::1]:63923 Accepted
+[Wed Nov 26 18:49:53 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 18:49:53 2025] Dashboard Stats: Teams=33, Players=106, Events=2, Goals=0, Coaches=11
+[Wed Nov 26 18:49:53 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
+[Wed Nov 26 18:49:53 2025] [::1]:63923 [200]: GET /favicon.ico
+[Wed Nov 26 18:49:53 2025] [::1]:63923 Closing
+[Wed Nov 26 18:50:13 2025] [::1]:63929 Accepted
+[Wed Nov 26 18:50:13 2025] [::1]:63929 [200]: GET /player_profile.php?id=199
+[Wed Nov 26 18:50:13 2025] [::1]:63929 Closing
+[Wed Nov 26 18:50:13 2025] [::1]:63930 Accepted
+[Wed Nov 26 18:50:13 2025] [::1]:63931 Accepted
+[Wed Nov 26 18:50:13 2025] [::1]:63930 [200]: GET /css/vivo-style.css?v=1764175813
+[Wed Nov 26 18:50:13 2025] [::1]:63931 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 18:50:13 2025] [::1]:63930 Closing
+[Wed Nov 26 18:50:13 2025] [::1]:63931 Closing
+[Wed Nov 26 18:50:13 2025] [::1]:63932 Accepted
+[Wed Nov 26 18:50:13 2025] [::1]:63933 Accepted
+[Wed Nov 26 18:50:13 2025] [::1]:63934 Accepted
+[Wed Nov 26 18:50:13 2025] [::1]:63932 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 18:50:13 2025] [::1]:63935 Accepted
+[Wed Nov 26 18:50:13 2025] [::1]:63933 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 18:50:13 2025] [::1]:63934 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 18:50:13 2025] [::1]:63932 Closing
+[Wed Nov 26 18:50:13 2025] [::1]:63935 [200]: GET /css/club-custom.css
+[Wed Nov 26 18:50:13 2025] [::1]:63933 Closing
+[Wed Nov 26 18:50:13 2025] [::1]:63934 Closing
+[Wed Nov 26 18:50:13 2025] [::1]:63935 Closing
+[Wed Nov 26 18:50:13 2025] [::1]:63938 Accepted
+[Wed Nov 26 18:50:13 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 18:50:13 2025] Dashboard Stats: Teams=33, Players=106, Events=2, Goals=0, Coaches=11
+[Wed Nov 26 18:50:13 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
+[Wed Nov 26 18:50:13 2025] [::1]:63938 [200]: GET /favicon.ico
+[Wed Nov 26 18:50:13 2025] [::1]:63938 Closing
+[Wed Nov 26 18:50:19 2025] [::1]:63939 Accepted
+[Wed Nov 26 18:50:19 2025] [::1]:63939 [200]: GET /players.php
+[Wed Nov 26 18:50:19 2025] [::1]:63939 Closing
+[Wed Nov 26 18:50:19 2025] [::1]:63940 Accepted
+[Wed Nov 26 18:50:19 2025] [::1]:63941 Accepted
+[Wed Nov 26 18:50:19 2025] [::1]:63940 [200]: GET /css/vivo-style.css?v=1764175819
+[Wed Nov 26 18:50:19 2025] [::1]:63941 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 18:50:19 2025] [::1]:63940 Closing
+[Wed Nov 26 18:50:19 2025] [::1]:63941 Closing
+[Wed Nov 26 18:50:19 2025] [::1]:63942 Accepted
+[Wed Nov 26 18:50:19 2025] [::1]:63942 [200]: GET /images/placeholders/player-placeholder-5.svg
+[Wed Nov 26 18:50:19 2025] [::1]:63942 Closing
+[Wed Nov 26 18:50:19 2025] [::1]:63943 Accepted
+[Wed Nov 26 18:50:19 2025] [::1]:63944 Accepted
+[Wed Nov 26 18:50:19 2025] [::1]:63945 Accepted
+[Wed Nov 26 18:50:19 2025] [::1]:63943 [200]: GET /images/placeholders/player-placeholder-2.svg
+[Wed Nov 26 18:50:19 2025] [::1]:63943 Closing
+[Wed Nov 26 18:50:19 2025] [::1]:63944 [200]: GET /images/placeholders/player-placeholder-1.svg
+[Wed Nov 26 18:50:19 2025] [::1]:63945 [200]: GET /images/placeholders/player-placeholder-3.svg
+[Wed Nov 26 18:50:19 2025] [::1]:63944 Closing
+[Wed Nov 26 18:50:19 2025] [::1]:63945 Closing
+[Wed Nov 26 18:50:19 2025] [::1]:63946 Accepted
+[Wed Nov 26 18:50:19 2025] [::1]:63947 Accepted
+[Wed Nov 26 18:50:19 2025] [::1]:63946 [200]: GET /images/placeholders/player-placeholder-4.svg
+[Wed Nov 26 18:50:19 2025] [::1]:63946 Closing
+[Wed Nov 26 18:50:19 2025] [::1]:63947 [200]: GET /uploads/players/player_291_profile.png
+[Wed Nov 26 18:50:19 2025] [::1]:63948 Accepted
+[Wed Nov 26 18:50:19 2025] [::1]:63948 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 18:50:19 2025] [::1]:63948 Closing
+[Wed Nov 26 18:50:19 2025] [::1]:63949 Accepted
+[Wed Nov 26 18:50:19 2025] [::1]:63949 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 18:50:19 2025] [::1]:63949 Closing
+[Wed Nov 26 18:50:19 2025] [::1]:63950 Accepted
+[Wed Nov 26 18:50:19 2025] [::1]:63950 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 18:50:19 2025] [::1]:63950 Closing
+[Wed Nov 26 18:50:19 2025] [::1]:63951 Accepted
+[Wed Nov 26 18:50:19 2025] [::1]:63951 [200]: GET /css/club-custom.css
+[Wed Nov 26 18:50:19 2025] [::1]:63951 Closing
+[Wed Nov 26 18:50:19 2025] [::1]:63947 Closing
+[Wed Nov 26 18:50:19 2025] [::1]:63954 Accepted
+[Wed Nov 26 18:50:19 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 18:50:19 2025] Dashboard Stats: Teams=33, Players=106, Events=2, Goals=0, Coaches=11
+[Wed Nov 26 18:50:19 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
+[Wed Nov 26 18:50:19 2025] [::1]:63954 [200]: GET /favicon.ico
+[Wed Nov 26 18:50:19 2025] [::1]:63954 Closing
+[Wed Nov 26 18:50:21 2025] [::1]:63955 Accepted
+[Wed Nov 26 18:50:21 2025] [::1]:63955 [200]: GET /player_profile.php?id=271
+[Wed Nov 26 18:50:21 2025] [::1]:63955 Closing
+[Wed Nov 26 18:50:21 2025] [::1]:63956 Accepted
+[Wed Nov 26 18:50:21 2025] [::1]:63956 [200]: GET /css/vivo-style.css?v=1764175821
+[Wed Nov 26 18:50:21 2025] [::1]:63956 Closing
+[Wed Nov 26 18:50:21 2025] [::1]:63957 Accepted
+[Wed Nov 26 18:50:21 2025] [::1]:63957 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 18:50:21 2025] [::1]:63957 Closing
+[Wed Nov 26 18:50:21 2025] [::1]:63958 Accepted
+[Wed Nov 26 18:50:21 2025] [::1]:63959 Accepted
+[Wed Nov 26 18:50:21 2025] [::1]:63960 Accepted
+[Wed Nov 26 18:50:21 2025] [::1]:63958 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 18:50:21 2025] [::1]:63961 Accepted
+[Wed Nov 26 18:50:21 2025] [::1]:63958 Closing
+[Wed Nov 26 18:50:21 2025] [::1]:63959 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 18:50:21 2025] [::1]:63960 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 18:50:21 2025] [::1]:63961 [200]: GET /css/club-custom.css
+[Wed Nov 26 18:50:21 2025] [::1]:63959 Closing
+[Wed Nov 26 18:50:21 2025] [::1]:63960 Closing
+[Wed Nov 26 18:50:21 2025] [::1]:63961 Closing
+[Wed Nov 26 18:50:21 2025] [::1]:63965 Accepted
+[Wed Nov 26 18:50:21 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 18:50:21 2025] Dashboard Stats: Teams=33, Players=106, Events=2, Goals=0, Coaches=11
+[Wed Nov 26 18:50:21 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
+[Wed Nov 26 18:50:21 2025] [::1]:63965 [200]: GET /favicon.ico
+[Wed Nov 26 18:50:21 2025] [::1]:63965 Closing
+[Wed Nov 26 18:50:26 2025] [::1]:63966 Accepted
+[Wed Nov 26 18:50:26 2025] [::1]:63966 [200]: GET /edit_player.php?id=271
+[Wed Nov 26 18:50:26 2025] [::1]:63966 Closing
+[Wed Nov 26 18:50:26 2025] [::1]:63967 Accepted
+[Wed Nov 26 18:50:26 2025] [::1]:63967 [200]: GET /css/vivo-style.css?v=1764175826
+[Wed Nov 26 18:50:26 2025] [::1]:63968 Accepted
+[Wed Nov 26 18:50:26 2025] [::1]:63968 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 18:50:26 2025] [::1]:63967 Closing
+[Wed Nov 26 18:50:26 2025] [::1]:63968 Closing
+[Wed Nov 26 18:50:26 2025] [::1]:63969 Accepted
+[Wed Nov 26 18:50:26 2025] [::1]:63969 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 18:50:26 2025] [::1]:63969 Closing
+[Wed Nov 26 18:50:26 2025] [::1]:63970 Accepted
+[Wed Nov 26 18:50:26 2025] [::1]:63971 Accepted
+[Wed Nov 26 18:50:26 2025] [::1]:63972 Accepted
+[Wed Nov 26 18:50:26 2025] [::1]:63970 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 18:50:26 2025] [::1]:63970 Closing
+[Wed Nov 26 18:50:26 2025] [::1]:63971 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 18:50:26 2025] [::1]:63972 [200]: GET /css/club-custom.css
+[Wed Nov 26 18:50:26 2025] [::1]:63971 Closing
+[Wed Nov 26 18:50:26 2025] [::1]:63972 Closing
+[Wed Nov 26 18:50:27 2025] [::1]:63975 Accepted
+[Wed Nov 26 18:50:27 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 18:50:27 2025] Dashboard Stats: Teams=33, Players=106, Events=2, Goals=0, Coaches=11
+[Wed Nov 26 18:50:27 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
+[Wed Nov 26 18:50:27 2025] [::1]:63975 [200]: GET /favicon.ico
+[Wed Nov 26 18:50:27 2025] [::1]:63975 Closing
+[Wed Nov 26 18:50:29 2025] [::1]:63976 Accepted
+[Wed Nov 26 18:50:29 2025] [::1]:63976 [200]: GET /players.php
+[Wed Nov 26 18:50:29 2025] [::1]:63976 Closing
+[Wed Nov 26 18:50:29 2025] [::1]:63977 Accepted
+[Wed Nov 26 18:50:29 2025] [::1]:63978 Accepted
+[Wed Nov 26 18:50:29 2025] [::1]:63977 [200]: GET /css/vivo-style.css?v=1764175829
+[Wed Nov 26 18:50:29 2025] [::1]:63979 Accepted
+[Wed Nov 26 18:50:29 2025] [::1]:63978 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 18:50:29 2025] [::1]:63979 [200]: GET /images/placeholders/player-placeholder-5.svg
+[Wed Nov 26 18:50:29 2025] [::1]:63977 Closing
+[Wed Nov 26 18:50:29 2025] [::1]:63978 Closing
+[Wed Nov 26 18:50:29 2025] [::1]:63979 Closing
+[Wed Nov 26 18:50:29 2025] [::1]:63980 Accepted
+[Wed Nov 26 18:50:29 2025] [::1]:63981 Accepted
+[Wed Nov 26 18:50:29 2025] [::1]:63982 Accepted
+[Wed Nov 26 18:50:29 2025] [::1]:63980 [200]: GET /images/placeholders/player-placeholder-2.svg
+[Wed Nov 26 18:50:29 2025] [::1]:63981 [200]: GET /images/placeholders/player-placeholder-1.svg
+[Wed Nov 26 18:50:29 2025] [::1]:63983 Accepted
+[Wed Nov 26 18:50:29 2025] [::1]:63980 Closing
+[Wed Nov 26 18:50:29 2025] [::1]:63982 [200]: GET /images/placeholders/player-placeholder-3.svg
+[Wed Nov 26 18:50:29 2025] [::1]:63981 Closing
+[Wed Nov 26 18:50:29 2025] [::1]:63983 [200]: GET /images/placeholders/player-placeholder-4.svg
+[Wed Nov 26 18:50:29 2025] [::1]:63982 Closing
+[Wed Nov 26 18:50:29 2025] [::1]:63983 Closing
+[Wed Nov 26 18:50:29 2025] [::1]:63984 Accepted
+[Wed Nov 26 18:50:29 2025] [::1]:63985 Accepted
+[Wed Nov 26 18:50:29 2025] [::1]:63984 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 18:50:29 2025] [::1]:63985 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 18:50:29 2025] [::1]:63984 Closing
+[Wed Nov 26 18:50:29 2025] [::1]:63985 Closing
+[Wed Nov 26 18:50:29 2025] [::1]:63986 Accepted
+[Wed Nov 26 18:50:29 2025] [::1]:63987 Accepted
+[Wed Nov 26 18:50:29 2025] [::1]:63986 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 18:50:29 2025] [::1]:63987 [200]: GET /css/club-custom.css
+[Wed Nov 26 18:50:29 2025] [::1]:63986 Closing
+[Wed Nov 26 18:50:29 2025] [::1]:63987 Closing
+[Wed Nov 26 18:50:29 2025] [::1]:63988 Accepted
+[Wed Nov 26 18:50:29 2025] [::1]:63988 [200]: GET /uploads/players/player_291_profile.png
+[Wed Nov 26 18:50:29 2025] [::1]:63988 Closing
+[Wed Nov 26 18:50:29 2025] [::1]:63991 Accepted
+[Wed Nov 26 18:50:29 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 18:50:29 2025] Dashboard Stats: Teams=33, Players=106, Events=2, Goals=0, Coaches=11
+[Wed Nov 26 18:50:29 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
+[Wed Nov 26 18:50:29 2025] [::1]:63991 [200]: GET /favicon.ico
+[Wed Nov 26 18:50:29 2025] [::1]:63991 Closing
+[Wed Nov 26 18:50:53 2025] [::1]:63997 Accepted
+[Wed Nov 26 18:50:53 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 18:50:53 2025] Dashboard Stats: Teams=33, Players=106, Events=2, Goals=0, Coaches=11
+[Wed Nov 26 18:50:53 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
+[Wed Nov 26 18:50:53 2025] [::1]:63997 [200]: GET /index.php
+[Wed Nov 26 18:50:53 2025] [::1]:63997 Closing
+[Wed Nov 26 18:50:53 2025] [::1]:63998 Accepted
+[Wed Nov 26 18:50:53 2025] [::1]:63998 [200]: GET /css/vivo-style.css?v=1764175853
+[Wed Nov 26 18:50:53 2025] [::1]:63999 Accepted
+[Wed Nov 26 18:50:53 2025] [::1]:63998 Closing
+[Wed Nov 26 18:50:53 2025] [::1]:63999 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 18:50:53 2025] [::1]:63999 Closing
+[Wed Nov 26 18:50:53 2025] [::1]:64000 Accepted
+[Wed Nov 26 18:50:53 2025] [::1]:64001 Accepted
+[Wed Nov 26 18:50:53 2025] [::1]:64000 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 18:50:53 2025] [::1]:64000 Closing
+[Wed Nov 26 18:50:53 2025] [::1]:64002 Accepted
+[Wed Nov 26 18:50:53 2025] [::1]:64001 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 18:50:53 2025] [::1]:64003 Accepted
+[Wed Nov 26 18:50:53 2025] [::1]:64002 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 18:50:53 2025] [::1]:64003 [200]: GET /css/club-custom.css
+[Wed Nov 26 18:50:53 2025] [::1]:64001 Closing
+[Wed Nov 26 18:50:53 2025] [::1]:64002 Closing
+[Wed Nov 26 18:50:53 2025] [::1]:64003 Closing
+[Wed Nov 26 18:50:53 2025] [::1]:64004 Accepted
+[Wed Nov 26 18:50:53 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 18:50:53 2025] Dashboard Stats: Teams=33, Players=106, Events=2, Goals=0, Coaches=11
+[Wed Nov 26 18:50:53 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
+[Wed Nov 26 18:50:53 2025] [::1]:64004 [200]: GET /favicon.ico
+[Wed Nov 26 18:50:53 2025] [::1]:64004 Closing
+[Wed Nov 26 19:01:17 2025] [::1]:64374 Accepted
+[Wed Nov 26 19:01:17 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:01:17 2025] Dashboard Stats: Teams=33, Players=106, Events=2, Goals=0, Coaches=11
+[Wed Nov 26 19:01:17 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
+[Wed Nov 26 19:01:17 2025] [::1]:64374 [200]: GET /index.php
+[Wed Nov 26 19:01:17 2025] [::1]:64374 Closing
+[Wed Nov 26 19:01:17 2025] [::1]:64377 Accepted
+[Wed Nov 26 19:01:17 2025] [::1]:64378 Accepted
+[Wed Nov 26 19:01:17 2025] [::1]:64377 [200]: GET /css/vivo-style.css?v=1764176477
+[Wed Nov 26 19:01:17 2025] [::1]:64378 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 19:01:17 2025] [::1]:64377 Closing
+[Wed Nov 26 19:01:17 2025] [::1]:64378 Closing
+[Wed Nov 26 19:01:18 2025] [::1]:64379 Accepted
+[Wed Nov 26 19:01:18 2025] [::1]:64380 Accepted
+[Wed Nov 26 19:01:18 2025] [::1]:64379 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 19:01:18 2025] [::1]:64381 Accepted
+[Wed Nov 26 19:01:18 2025] [::1]:64380 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 19:01:18 2025] [::1]:64382 Accepted
+[Wed Nov 26 19:01:18 2025] [::1]:64381 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 19:01:18 2025] [::1]:64379 Closing
+[Wed Nov 26 19:01:18 2025] [::1]:64382 [200]: GET /css/club-custom.css
+[Wed Nov 26 19:01:18 2025] [::1]:64380 Closing
+[Wed Nov 26 19:01:18 2025] [::1]:64381 Closing
+[Wed Nov 26 19:01:18 2025] [::1]:64382 Closing
+[Wed Nov 26 19:01:18 2025] [::1]:64383 Accepted
+[Wed Nov 26 19:01:18 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:01:18 2025] Dashboard Stats: Teams=33, Players=106, Events=2, Goals=0, Coaches=11
+[Wed Nov 26 19:01:18 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
+[Wed Nov 26 19:01:18 2025] [::1]:64383 [200]: GET /favicon.ico
+[Wed Nov 26 19:01:18 2025] [::1]:64383 Closing
+[Wed Nov 26 19:01:19 2025] [::1]:64386 Accepted
+[Wed Nov 26 19:01:19 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:01:19 2025] Dashboard Stats: Teams=33, Players=106, Events=2, Goals=0, Coaches=11
+[Wed Nov 26 19:01:19 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
+[Wed Nov 26 19:01:19 2025] [::1]:64386 [200]: GET /index.php
+[Wed Nov 26 19:01:19 2025] [::1]:64386 Closing
+[Wed Nov 26 19:01:19 2025] [::1]:64387 Accepted
+[Wed Nov 26 19:01:19 2025] [::1]:64388 Accepted
+[Wed Nov 26 19:01:19 2025] [::1]:64387 [200]: GET /css/vivo-style.css?v=1764176479
+[Wed Nov 26 19:01:19 2025] [::1]:64388 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 19:01:19 2025] [::1]:64387 Closing
+[Wed Nov 26 19:01:19 2025] [::1]:64388 Closing
+[Wed Nov 26 19:01:19 2025] [::1]:64389 Accepted
+[Wed Nov 26 19:01:19 2025] [::1]:64390 Accepted
+[Wed Nov 26 19:01:19 2025] [::1]:64391 Accepted
+[Wed Nov 26 19:01:19 2025] [::1]:64389 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 19:01:19 2025] [::1]:64390 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 19:01:19 2025] [::1]:64392 Accepted
+[Wed Nov 26 19:01:19 2025] [::1]:64391 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 19:01:19 2025] [::1]:64389 Closing
+[Wed Nov 26 19:01:19 2025] [::1]:64392 [200]: GET /css/club-custom.css
+[Wed Nov 26 19:01:19 2025] [::1]:64390 Closing
+[Wed Nov 26 19:01:19 2025] [::1]:64391 Closing
+[Wed Nov 26 19:01:19 2025] [::1]:64392 Closing
+[Wed Nov 26 19:01:19 2025] [::1]:64395 Accepted
+[Wed Nov 26 19:01:19 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:01:19 2025] Dashboard Stats: Teams=33, Players=106, Events=2, Goals=0, Coaches=11
+[Wed Nov 26 19:01:19 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
+[Wed Nov 26 19:01:19 2025] [::1]:64395 [200]: GET /favicon.ico
+[Wed Nov 26 19:01:19 2025] [::1]:64395 Closing
+[Wed Nov 26 19:02:02 2025] [::1]:64418 Accepted
+[Wed Nov 26 19:02:02 2025] [::1]:64418 [302]: GET /
+[Wed Nov 26 19:02:02 2025] [::1]:64418 Closing
+[Wed Nov 26 19:02:49 2025] [::1]:64452 Accepted
+[Wed Nov 26 19:02:49 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:02:49 2025] Dashboard Stats: Teams=33, Players=106, Events=2, Goals=0, Coaches=11
+[Wed Nov 26 19:02:49 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
+[Wed Nov 26 19:02:49 2025] [::1]:64452 [200]: GET /index.php
+[Wed Nov 26 19:02:49 2025] [::1]:64452 Closing
+[Wed Nov 26 19:02:49 2025] [::1]:64453 Accepted
+[Wed Nov 26 19:02:49 2025] [::1]:64453 [200]: GET /css/vivo-style.css?v=1764176569
+[Wed Nov 26 19:02:49 2025] [::1]:64454 Accepted
+[Wed Nov 26 19:02:49 2025] [::1]:64454 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 19:02:49 2025] [::1]:64453 Closing
+[Wed Nov 26 19:02:49 2025] [::1]:64454 Closing
+[Wed Nov 26 19:02:49 2025] [::1]:64455 Accepted
+[Wed Nov 26 19:02:49 2025] [::1]:64456 Accepted
+[Wed Nov 26 19:02:49 2025] [::1]:64457 Accepted
+[Wed Nov 26 19:02:49 2025] [::1]:64455 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 19:02:49 2025] [::1]:64458 Accepted
+[Wed Nov 26 19:02:49 2025] [::1]:64456 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 19:02:49 2025] [::1]:64457 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 19:02:49 2025] [::1]:64458 [200]: GET /css/club-custom.css
+[Wed Nov 26 19:02:49 2025] [::1]:64455 Closing
+[Wed Nov 26 19:02:49 2025] [::1]:64456 Closing
+[Wed Nov 26 19:02:49 2025] [::1]:64457 Closing
+[Wed Nov 26 19:02:49 2025] [::1]:64458 Closing
+[Wed Nov 26 19:02:49 2025] [::1]:64459 Accepted
+[Wed Nov 26 19:02:49 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:02:49 2025] Dashboard Stats: Teams=33, Players=106, Events=2, Goals=0, Coaches=11
+[Wed Nov 26 19:02:49 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
+[Wed Nov 26 19:02:49 2025] [::1]:64459 [200]: GET /favicon.ico
+[Wed Nov 26 19:02:49 2025] [::1]:64459 Closing
+[Wed Nov 26 19:02:51 2025] [::1]:64462 Accepted
+[Wed Nov 26 19:02:51 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:02:51 2025] Dashboard Stats: Teams=33, Players=106, Events=2, Goals=0, Coaches=11
+[Wed Nov 26 19:02:51 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
+[Wed Nov 26 19:02:51 2025] [::1]:64462 [200]: GET /index.php
+[Wed Nov 26 19:02:51 2025] [::1]:64462 Closing
+[Wed Nov 26 19:02:51 2025] [::1]:64463 Accepted
+[Wed Nov 26 19:02:51 2025] [::1]:64464 Accepted
+[Wed Nov 26 19:02:51 2025] [::1]:64463 [200]: GET /css/vivo-style.css?v=1764176571
+[Wed Nov 26 19:02:51 2025] [::1]:64464 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 19:02:51 2025] [::1]:64463 Closing
+[Wed Nov 26 19:02:51 2025] [::1]:64464 Closing
+[Wed Nov 26 19:02:51 2025] [::1]:64465 Accepted
+[Wed Nov 26 19:02:51 2025] [::1]:64466 Accepted
+[Wed Nov 26 19:02:51 2025] [::1]:64467 Accepted
+[Wed Nov 26 19:02:51 2025] [::1]:64468 Accepted
+[Wed Nov 26 19:02:51 2025] [::1]:64465 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 19:02:51 2025] [::1]:64466 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 19:02:51 2025] [::1]:64467 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 19:02:51 2025] [::1]:64468 [200]: GET /css/club-custom.css
+[Wed Nov 26 19:02:51 2025] [::1]:64465 Closing
+[Wed Nov 26 19:02:51 2025] [::1]:64466 Closing
+[Wed Nov 26 19:02:51 2025] [::1]:64467 Closing
+[Wed Nov 26 19:02:51 2025] [::1]:64468 Closing
+[Wed Nov 26 19:02:52 2025] [::1]:64471 Accepted
+[Wed Nov 26 19:02:52 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:02:52 2025] Dashboard Stats: Teams=33, Players=106, Events=2, Goals=0, Coaches=11
+[Wed Nov 26 19:02:52 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
+[Wed Nov 26 19:02:52 2025] [::1]:64471 [200]: GET /favicon.ico
+[Wed Nov 26 19:02:52 2025] [::1]:64471 Closing
+[Wed Nov 26 19:08:09 2025] [::1]:64573 Accepted
+[Wed Nov 26 19:08:09 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:08:09 2025] Dashboard Stats: Teams=33, Players=106, Events=2, Goals=0, Coaches=11
+[Wed Nov 26 19:08:09 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
+[Wed Nov 26 19:08:09 2025] [::1]:64573 [200]: GET /index.php
+[Wed Nov 26 19:08:09 2025] [::1]:64573 Closing
+[Wed Nov 26 19:08:09 2025] [::1]:64574 Accepted
+[Wed Nov 26 19:08:09 2025] [::1]:64575 Accepted
+[Wed Nov 26 19:08:09 2025] [::1]:64574 [200]: GET /css/vivo-style.css?v=1764176889
+[Wed Nov 26 19:08:09 2025] [::1]:64575 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 19:08:09 2025] [::1]:64574 Closing
+[Wed Nov 26 19:08:09 2025] [::1]:64575 Closing
+[Wed Nov 26 19:08:09 2025] [::1]:64577 Accepted
+[Wed Nov 26 19:08:09 2025] [::1]:64578 Accepted
+[Wed Nov 26 19:08:09 2025] [::1]:64579 Accepted
+[Wed Nov 26 19:08:09 2025] [::1]:64577 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 19:08:09 2025] [::1]:64580 Accepted
+[Wed Nov 26 19:08:09 2025] [::1]:64577 Closing
+[Wed Nov 26 19:08:09 2025] [::1]:64578 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 19:08:09 2025] [::1]:64579 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 19:08:09 2025] [::1]:64580 [200]: GET /css/club-custom.css
+[Wed Nov 26 19:08:09 2025] [::1]:64578 Closing
+[Wed Nov 26 19:08:09 2025] [::1]:64579 Closing
+[Wed Nov 26 19:08:09 2025] [::1]:64580 Closing
+[Wed Nov 26 19:08:09 2025] [::1]:64581 Accepted
+[Wed Nov 26 19:08:09 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:08:09 2025] Dashboard Stats: Teams=33, Players=106, Events=2, Goals=0, Coaches=11
+[Wed Nov 26 19:08:09 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
+[Wed Nov 26 19:08:09 2025] [::1]:64581 [200]: GET /favicon.ico
+[Wed Nov 26 19:08:09 2025] [::1]:64581 Closing
+[Wed Nov 26 19:08:24 2025] [::1]:64589 Accepted
+[Wed Nov 26 19:08:24 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:08:24 2025] Dashboard Stats: Teams=33, Players=106, Events=2, Goals=0, Coaches=11
+[Wed Nov 26 19:08:24 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
+[Wed Nov 26 19:08:24 2025] [::1]:64589 [200]: GET /index.php
+[Wed Nov 26 19:08:24 2025] [::1]:64589 Closing
+[Wed Nov 26 19:08:24 2025] [::1]:64590 Accepted
+[Wed Nov 26 19:08:24 2025] [::1]:64591 Accepted
+[Wed Nov 26 19:08:24 2025] [::1]:64590 [200]: GET /css/vivo-style.css?v=1764176904
+[Wed Nov 26 19:08:24 2025] [::1]:64590 Closing
+[Wed Nov 26 19:08:24 2025] [::1]:64591 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 19:08:24 2025] [::1]:64591 Closing
+[Wed Nov 26 19:08:24 2025] [::1]:64592 Accepted
+[Wed Nov 26 19:08:24 2025] [::1]:64593 Accepted
+[Wed Nov 26 19:08:24 2025] [::1]:64594 Accepted
+[Wed Nov 26 19:08:24 2025] [::1]:64592 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 19:08:24 2025] [::1]:64595 Accepted
+[Wed Nov 26 19:08:24 2025] [::1]:64593 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 19:08:24 2025] [::1]:64594 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 19:08:24 2025] [::1]:64595 [200]: GET /css/club-custom.css
+[Wed Nov 26 19:08:24 2025] [::1]:64592 Closing
+[Wed Nov 26 19:08:24 2025] [::1]:64593 Closing
+[Wed Nov 26 19:08:24 2025] [::1]:64594 Closing
+[Wed Nov 26 19:08:24 2025] [::1]:64595 Closing
+[Wed Nov 26 19:08:24 2025] [::1]:64598 Accepted
+[Wed Nov 26 19:08:24 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:08:24 2025] Dashboard Stats: Teams=33, Players=106, Events=2, Goals=0, Coaches=11
+[Wed Nov 26 19:08:24 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
+[Wed Nov 26 19:08:24 2025] [::1]:64598 [200]: GET /favicon.ico
+[Wed Nov 26 19:08:24 2025] [::1]:64598 Closing
+[Wed Nov 26 19:08:28 2025] [::1]:64599 Accepted
+[Wed Nov 26 19:08:28 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:08:28 2025] [::1]:64599 [200]: GET /dashboard.php
+[Wed Nov 26 19:08:28 2025] [::1]:64599 Closing
+[Wed Nov 26 19:08:28 2025] [::1]:64600 Accepted
+[Wed Nov 26 19:08:28 2025] [::1]:64601 Accepted
+[Wed Nov 26 19:08:28 2025] [::1]:64600 [200]: GET /css/vivo-style.css?v=1764176908
+[Wed Nov 26 19:08:28 2025] [::1]:64601 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 19:08:28 2025] [::1]:64600 Closing
+[Wed Nov 26 19:08:28 2025] [::1]:64601 Closing
+[Wed Nov 26 19:08:28 2025] [::1]:64602 Accepted
+[Wed Nov 26 19:08:28 2025] [::1]:64603 Accepted
+[Wed Nov 26 19:08:28 2025] [::1]:64604 Accepted
+[Wed Nov 26 19:08:28 2025] [::1]:64605 Accepted
+[Wed Nov 26 19:08:28 2025] [::1]:64602 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 19:08:28 2025] [::1]:64603 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 19:08:28 2025] [::1]:64604 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 19:08:28 2025] [::1]:64605 [200]: GET /css/club-custom.css
+[Wed Nov 26 19:08:28 2025] [::1]:64602 Closing
+[Wed Nov 26 19:08:28 2025] [::1]:64603 Closing
+[Wed Nov 26 19:08:28 2025] [::1]:64604 Closing
+[Wed Nov 26 19:08:28 2025] [::1]:64605 Closing
+[Wed Nov 26 19:08:29 2025] [::1]:64608 Accepted
+[Wed Nov 26 19:08:29 2025] Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:08:29 2025] Dashboard Stats: Teams=33, Players=106, Events=2, Goals=0, Coaches=11
+[Wed Nov 26 19:08:29 2025] Dashboard Colors: Primary=#0e1052, Secondary=#bd0000
+[Wed Nov 26 19:08:29 2025] [::1]:64608 [200]: GET /favicon.ico
+[Wed Nov 26 19:08:29 2025] [::1]:64608 Closing
+[Wed Nov 26 19:28:37 2025] [::1]:64730 Accepted
+[Wed Nov 26 19:28:37 2025] [::1]:64730 [302]: HEAD /
+[Wed Nov 26 19:28:37 2025] [::1]:64730 Closing
+[Wed Nov 26 19:28:42 2025] [::1]:64737 Accepted
+[Wed Nov 26 19:28:42 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:28:42 2025] [::1]:64737 [200]: GET /dashboard.php
+[Wed Nov 26 19:28:42 2025] [::1]:64737 Closing
+[Wed Nov 26 19:28:42 2025] [::1]:64738 Accepted
+[Wed Nov 26 19:28:42 2025] [::1]:64739 Accepted
+[Wed Nov 26 19:28:42 2025] [::1]:64738 [200]: GET /css/vivo-style.css?v=1764178122
+[Wed Nov 26 19:28:42 2025] [::1]:64739 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 19:28:42 2025] [::1]:64738 Closing
+[Wed Nov 26 19:28:42 2025] [::1]:64739 Closing
+[Wed Nov 26 19:28:42 2025] [::1]:64740 Accepted
+[Wed Nov 26 19:28:42 2025] [::1]:64741 Accepted
+[Wed Nov 26 19:28:42 2025] [::1]:64740 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 19:28:42 2025] [::1]:64741 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 19:28:42 2025] [::1]:64740 Closing
+[Wed Nov 26 19:28:42 2025] [::1]:64742 Accepted
+[Wed Nov 26 19:28:42 2025] [::1]:64741 Closing
+[Wed Nov 26 19:28:42 2025] [::1]:64743 Accepted
+[Wed Nov 26 19:28:42 2025] [::1]:64742 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 19:28:42 2025] [::1]:64743 [200]: GET /css/club-custom.css
+[Wed Nov 26 19:28:42 2025] [::1]:64742 Closing
+[Wed Nov 26 19:28:42 2025] [::1]:64743 Closing
+[Wed Nov 26 19:28:43 2025] [::1]:64744 Accepted
+[Wed Nov 26 19:28:43 2025] [::1]:64744 [302]: GET /favicon.ico
+[Wed Nov 26 19:28:43 2025] [::1]:64744 Closing
+[Wed Nov 26 19:28:43 2025] [::1]:64746 Accepted
+[Wed Nov 26 19:28:43 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:28:43 2025] [::1]:64746 [200]: GET /dashboard.php
+[Wed Nov 26 19:28:43 2025] [::1]:64746 Closing
+[Wed Nov 26 19:28:49 2025] [::1]:64758 Accepted
+[Wed Nov 26 19:28:49 2025] [::1]:64758 [302]: GET /index.php
+[Wed Nov 26 19:28:49 2025] [::1]:64758 Closing
+[Wed Nov 26 19:28:49 2025] [::1]:64759 Accepted
+[Wed Nov 26 19:28:49 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:28:49 2025] [::1]:64759 [200]: GET /dashboard.php
+[Wed Nov 26 19:28:49 2025] [::1]:64759 Closing
+[Wed Nov 26 19:28:49 2025] [::1]:64760 Accepted
+[Wed Nov 26 19:28:49 2025] [::1]:64761 Accepted
+[Wed Nov 26 19:28:49 2025] [::1]:64760 [200]: GET /css/vivo-style.css?v=1764178129
+[Wed Nov 26 19:28:49 2025] [::1]:64761 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 19:28:49 2025] [::1]:64760 Closing
+[Wed Nov 26 19:28:49 2025] [::1]:64761 Closing
+[Wed Nov 26 19:28:50 2025] [::1]:64762 Accepted
+[Wed Nov 26 19:28:50 2025] [::1]:64763 Accepted
+[Wed Nov 26 19:28:50 2025] [::1]:64764 Accepted
+[Wed Nov 26 19:28:50 2025] [::1]:64762 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 19:28:50 2025] [::1]:64765 Accepted
+[Wed Nov 26 19:28:50 2025] [::1]:64763 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 19:28:50 2025] [::1]:64764 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 19:28:50 2025] [::1]:64765 [200]: GET /css/club-custom.css
+[Wed Nov 26 19:28:50 2025] [::1]:64762 Closing
+[Wed Nov 26 19:28:50 2025] [::1]:64763 Closing
+[Wed Nov 26 19:28:50 2025] [::1]:64764 Closing
+[Wed Nov 26 19:28:50 2025] [::1]:64765 Closing
+[Wed Nov 26 19:28:50 2025] [::1]:64768 Accepted
+[Wed Nov 26 19:28:50 2025] [::1]:64768 [302]: GET /favicon.ico
+[Wed Nov 26 19:28:50 2025] [::1]:64768 Closing
+[Wed Nov 26 19:28:50 2025] [::1]:64769 Accepted
+[Wed Nov 26 19:28:50 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:28:50 2025] [::1]:64769 [200]: GET /dashboard.php
+[Wed Nov 26 19:28:50 2025] [::1]:64769 Closing
+[Wed Nov 26 19:28:50 2025] [::1]:64770 Accepted
+[Wed Nov 26 19:28:50 2025] [::1]:64770 [302]: GET /index.php
+[Wed Nov 26 19:28:50 2025] [::1]:64770 Closing
+[Wed Nov 26 19:28:50 2025] [::1]:64771 Accepted
+[Wed Nov 26 19:28:50 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:28:50 2025] [::1]:64771 [200]: GET /dashboard.php
+[Wed Nov 26 19:28:50 2025] [::1]:64771 Closing
+[Wed Nov 26 19:28:50 2025] [::1]:64772 Accepted
+[Wed Nov 26 19:28:50 2025] [::1]:64773 Accepted
+[Wed Nov 26 19:28:50 2025] [::1]:64772 [200]: GET /css/vivo-style.css?v=1764178130
+[Wed Nov 26 19:28:50 2025] [::1]:64773 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 19:28:50 2025] [::1]:64772 Closing
+[Wed Nov 26 19:28:50 2025] [::1]:64773 Closing
+[Wed Nov 26 19:28:50 2025] [::1]:64774 Accepted
+[Wed Nov 26 19:28:50 2025] [::1]:64775 Accepted
+[Wed Nov 26 19:28:50 2025] [::1]:64776 Accepted
+[Wed Nov 26 19:28:50 2025] [::1]:64774 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 19:28:50 2025] [::1]:64777 Accepted
+[Wed Nov 26 19:28:50 2025] [::1]:64775 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 19:28:50 2025] [::1]:64776 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 19:28:50 2025] [::1]:64777 [200]: GET /css/club-custom.css
+[Wed Nov 26 19:28:50 2025] [::1]:64774 Closing
+[Wed Nov 26 19:28:50 2025] [::1]:64775 Closing
+[Wed Nov 26 19:28:50 2025] [::1]:64776 Closing
+[Wed Nov 26 19:28:50 2025] [::1]:64777 Closing
+[Wed Nov 26 19:28:51 2025] [::1]:64780 Accepted
+[Wed Nov 26 19:28:51 2025] [::1]:64780 [302]: GET /favicon.ico
+[Wed Nov 26 19:28:51 2025] [::1]:64780 Closing
+[Wed Nov 26 19:28:51 2025] [::1]:64781 Accepted
+[Wed Nov 26 19:28:51 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:28:51 2025] [::1]:64781 [200]: GET /dashboard.php
+[Wed Nov 26 19:28:51 2025] [::1]:64781 Closing
+[Wed Nov 26 19:28:57 2025] [::1]:64782 Accepted
+[Wed Nov 26 19:28:57 2025] [::1]:64782 [302]: GET /index.php
+[Wed Nov 26 19:28:57 2025] [::1]:64782 Closing
+[Wed Nov 26 19:28:57 2025] [::1]:64783 Accepted
+[Wed Nov 26 19:28:57 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:28:57 2025] [::1]:64783 [200]: GET /dashboard.php
+[Wed Nov 26 19:28:57 2025] [::1]:64783 Closing
+[Wed Nov 26 19:28:57 2025] [::1]:64784 Accepted
+[Wed Nov 26 19:28:57 2025] [::1]:64785 Accepted
+[Wed Nov 26 19:28:57 2025] [::1]:64784 [200]: GET /css/vivo-style.css?v=1764178137
+[Wed Nov 26 19:28:57 2025] [::1]:64785 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 19:28:57 2025] [::1]:64784 Closing
+[Wed Nov 26 19:28:57 2025] [::1]:64785 Closing
+[Wed Nov 26 19:28:57 2025] [::1]:64786 Accepted
+[Wed Nov 26 19:28:57 2025] [::1]:64787 Accepted
+[Wed Nov 26 19:28:57 2025] [::1]:64788 Accepted
+[Wed Nov 26 19:28:57 2025] [::1]:64786 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 19:28:57 2025] [::1]:64789 Accepted
+[Wed Nov 26 19:28:57 2025] [::1]:64787 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 19:28:57 2025] [::1]:64788 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 19:28:57 2025] [::1]:64789 [200]: GET /css/club-custom.css
+[Wed Nov 26 19:28:57 2025] [::1]:64786 Closing
+[Wed Nov 26 19:28:57 2025] [::1]:64787 Closing
+[Wed Nov 26 19:28:57 2025] [::1]:64788 Closing
+[Wed Nov 26 19:28:57 2025] [::1]:64789 Closing
+[Wed Nov 26 19:28:58 2025] [::1]:64792 Accepted
+[Wed Nov 26 19:28:58 2025] [::1]:64792 [302]: GET /favicon.ico
+[Wed Nov 26 19:28:58 2025] [::1]:64792 Closing
+[Wed Nov 26 19:28:58 2025] [::1]:64793 Accepted
+[Wed Nov 26 19:28:58 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:28:58 2025] [::1]:64793 [200]: GET /dashboard.php
+[Wed Nov 26 19:28:58 2025] [::1]:64793 Closing
+[Wed Nov 26 19:33:33 2025] [::1]:64910 Accepted
+[Wed Nov 26 19:33:33 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:33:33 2025] [::1]:64910 [200]: GET /dashboard.php
+[Wed Nov 26 19:33:33 2025] [::1]:64910 Closing
+[Wed Nov 26 19:33:33 2025] [::1]:64911 Accepted
+[Wed Nov 26 19:33:33 2025] [::1]:64912 Accepted
+[Wed Nov 26 19:33:33 2025] [::1]:64911 [200]: GET /css/vivo-style.css?v=1764178413
+[Wed Nov 26 19:33:33 2025] [::1]:64912 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 19:33:33 2025] [::1]:64911 Closing
+[Wed Nov 26 19:33:33 2025] [::1]:64912 Closing
+[Wed Nov 26 19:33:33 2025] [::1]:64913 Accepted
+[Wed Nov 26 19:33:33 2025] [::1]:64914 Accepted
+[Wed Nov 26 19:33:33 2025] [::1]:64915 Accepted
+[Wed Nov 26 19:33:33 2025] [::1]:64913 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 19:33:33 2025] [::1]:64916 Accepted
+[Wed Nov 26 19:33:33 2025] [::1]:64914 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 19:33:33 2025] [::1]:64915 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 19:33:33 2025] [::1]:64916 [200]: GET /css/club-custom.css
+[Wed Nov 26 19:33:33 2025] [::1]:64913 Closing
+[Wed Nov 26 19:33:33 2025] [::1]:64914 Closing
+[Wed Nov 26 19:33:33 2025] [::1]:64915 Closing
+[Wed Nov 26 19:33:33 2025] [::1]:64916 Closing
+[Wed Nov 26 19:33:34 2025] [::1]:64917 Accepted
+[Wed Nov 26 19:33:34 2025] [::1]:64917 [302]: GET /favicon.ico
+[Wed Nov 26 19:33:34 2025] [::1]:64917 Closing
+[Wed Nov 26 19:33:34 2025] [::1]:64918 Accepted
+[Wed Nov 26 19:33:34 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:33:34 2025] [::1]:64918 [200]: GET /dashboard.php
+[Wed Nov 26 19:33:34 2025] [::1]:64918 Closing
+[Wed Nov 26 19:35:59 2025] [::1]:64971 Accepted
+[Wed Nov 26 19:35:59 2025] PHP Fatal error:  Uncaught Error: Call to undefined method DatabaseFactory::getInstance() in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/team_edit.php:8
+Stack trace:
+#0 {main}
+  thrown in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/team_edit.php on line 8
+[Wed Nov 26 19:35:59 2025] [::1]:64971 [200]: GET /team_edit.php?action=add - Uncaught Error: Call to undefined method DatabaseFactory::getInstance() in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/team_edit.php:8
+Stack trace:
+#0 {main}
+  thrown in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/team_edit.php on line 8
+[Wed Nov 26 19:35:59 2025] [::1]:64971 Closing
+[Wed Nov 26 19:35:59 2025] [::1]:64972 Accepted
+[Wed Nov 26 19:35:59 2025] [::1]:64972 [302]: GET /favicon.ico
+[Wed Nov 26 19:35:59 2025] [::1]:64972 Closing
+[Wed Nov 26 19:35:59 2025] [::1]:64973 Accepted
+[Wed Nov 26 19:35:59 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:35:59 2025] [::1]:64973 [200]: GET /dashboard.php
+[Wed Nov 26 19:35:59 2025] [::1]:64973 Closing
+[Wed Nov 26 19:36:01 2025] [::1]:64977 Accepted
+[Wed Nov 26 19:36:01 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:36:01 2025] [::1]:64977 [200]: GET /dashboard.php
+[Wed Nov 26 19:36:01 2025] [::1]:64977 Closing
+[Wed Nov 26 19:36:01 2025] [::1]:64978 Accepted
+[Wed Nov 26 19:36:01 2025] [::1]:64978 [200]: GET /css/vivo-style.css?v=1764178561
+[Wed Nov 26 19:36:01 2025] [::1]:64978 Closing
+[Wed Nov 26 19:36:01 2025] [::1]:64981 Accepted
+[Wed Nov 26 19:36:01 2025] [::1]:64981 [302]: GET /favicon.ico
+[Wed Nov 26 19:36:01 2025] [::1]:64981 Closing
+[Wed Nov 26 19:36:01 2025] [::1]:64982 Accepted
+[Wed Nov 26 19:36:01 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:36:01 2025] [::1]:64982 [200]: GET /dashboard.php
+[Wed Nov 26 19:36:01 2025] [::1]:64982 Closing
+[Wed Nov 26 19:36:02 2025] [::1]:64983 Accepted
+[Wed Nov 26 19:36:02 2025] [::1]:64983 [200]: GET /player_edit.php?action=add
+[Wed Nov 26 19:36:02 2025] [::1]:64983 Closing
+[Wed Nov 26 19:36:02 2025] [::1]:64984 Accepted
+[Wed Nov 26 19:36:02 2025] [::1]:64984 [200]: GET /css/vivo-style.css
+[Wed Nov 26 19:36:02 2025] [::1]:64984 Closing
+[Wed Nov 26 19:36:02 2025] [::1]:64985 Accepted
+[Wed Nov 26 19:36:02 2025] [::1]:64986 Accepted
+[Wed Nov 26 19:36:02 2025] [::1]:64985 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 19:36:02 2025] [::1]:64986 [200]: GET /js/sidebar.js
+[Wed Nov 26 19:36:02 2025] [::1]:64985 Closing
+[Wed Nov 26 19:36:02 2025] [::1]:64986 Closing
+[Wed Nov 26 19:36:02 2025] [::1]:64987 Accepted
+[Wed Nov 26 19:36:02 2025] [::1]:64987 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 19:36:02 2025] [::1]:64988 Accepted
+[Wed Nov 26 19:36:02 2025] [::1]:64989 Accepted
+[Wed Nov 26 19:36:02 2025] [::1]:64990 Accepted
+[Wed Nov 26 19:36:02 2025] [::1]:64987 Closing
+[Wed Nov 26 19:36:02 2025] [::1]:64988 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 19:36:02 2025] [::1]:64989 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 19:36:02 2025] [::1]:64990 [200]: GET /css/club-custom.css
+[Wed Nov 26 19:36:02 2025] [::1]:64988 Closing
+[Wed Nov 26 19:36:02 2025] [::1]:64989 Closing
+[Wed Nov 26 19:36:02 2025] [::1]:64990 Closing
+[Wed Nov 26 19:36:02 2025] [::1]:64993 Accepted
+[Wed Nov 26 19:36:02 2025] [::1]:64993 [302]: GET /favicon.ico
+[Wed Nov 26 19:36:02 2025] [::1]:64993 Closing
+[Wed Nov 26 19:36:02 2025] [::1]:64994 Accepted
+[Wed Nov 26 19:36:02 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:36:02 2025] [::1]:64994 [200]: GET /dashboard.php
+[Wed Nov 26 19:36:02 2025] [::1]:64994 Closing
+[Wed Nov 26 19:36:05 2025] [::1]:64995 Accepted
+[Wed Nov 26 19:36:05 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:36:05 2025] [::1]:64995 [200]: GET /dashboard.php
+[Wed Nov 26 19:36:05 2025] [::1]:64995 Closing
+[Wed Nov 26 19:36:05 2025] [::1]:64996 Accepted
+[Wed Nov 26 19:36:05 2025] [::1]:64996 [200]: GET /css/vivo-style.css?v=1764178565
+[Wed Nov 26 19:36:05 2025] [::1]:64996 Closing
+[Wed Nov 26 19:36:06 2025] [::1]:64999 Accepted
+[Wed Nov 26 19:36:06 2025] [::1]:64999 [302]: GET /favicon.ico
+[Wed Nov 26 19:36:06 2025] [::1]:64999 Closing
+[Wed Nov 26 19:36:06 2025] [::1]:65000 Accepted
+[Wed Nov 26 19:36:06 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:36:06 2025] [::1]:65000 [200]: GET /dashboard.php
+[Wed Nov 26 19:36:06 2025] [::1]:65000 Closing
+[Wed Nov 26 19:36:06 2025] [::1]:65001 Accepted
+[Wed Nov 26 19:36:06 2025] [::1]:65001 [302]: GET /event_edit.php?action=add
+[Wed Nov 26 19:36:06 2025] [::1]:65001 Closing
+[Wed Nov 26 19:36:07 2025] [::1]:65002 Accepted
+[Wed Nov 26 19:36:07 2025] [::1]:65002 [200]: GET /add_event.php
+[Wed Nov 26 19:36:07 2025] [::1]:65002 Closing
+[Wed Nov 26 19:36:07 2025] [::1]:65005 Accepted
+[Wed Nov 26 19:36:07 2025] [::1]:65005 [302]: GET /favicon.ico
+[Wed Nov 26 19:36:07 2025] [::1]:65005 Closing
+[Wed Nov 26 19:36:07 2025] [::1]:65006 Accepted
+[Wed Nov 26 19:36:07 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:36:07 2025] [::1]:65006 [200]: GET /dashboard.php
+[Wed Nov 26 19:36:07 2025] [::1]:65006 Closing
+[Wed Nov 26 19:36:11 2025] [::1]:65007 Accepted
+[Wed Nov 26 19:36:11 2025] [::1]:65007 [200]: GET /events.php
+[Wed Nov 26 19:36:11 2025] [::1]:65007 Closing
+[Wed Nov 26 19:36:11 2025] [::1]:65008 Accepted
+[Wed Nov 26 19:36:11 2025] [::1]:65009 Accepted
+[Wed Nov 26 19:36:11 2025] [::1]:65008 [200]: GET /css/vivo-style.css?v=1764178571
+[Wed Nov 26 19:36:11 2025] [::1]:65009 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 19:36:11 2025] [::1]:65008 Closing
+[Wed Nov 26 19:36:11 2025] [::1]:65009 Closing
+[Wed Nov 26 19:36:11 2025] [::1]:65010 Accepted
+[Wed Nov 26 19:36:11 2025] [::1]:65011 Accepted
+[Wed Nov 26 19:36:11 2025] [::1]:65010 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 19:36:11 2025] [::1]:65010 Closing
+[Wed Nov 26 19:36:11 2025] [::1]:65012 Accepted
+[Wed Nov 26 19:36:11 2025] [::1]:65011 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 19:36:11 2025] [::1]:65013 Accepted
+[Wed Nov 26 19:36:11 2025] [::1]:65012 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 19:36:11 2025] [::1]:65013 [200]: GET /css/club-custom.css
+[Wed Nov 26 19:36:11 2025] [::1]:65011 Closing
+[Wed Nov 26 19:36:11 2025] [::1]:65012 Closing
+[Wed Nov 26 19:36:11 2025] [::1]:65013 Closing
+[Wed Nov 26 19:36:11 2025] [::1]:65016 Accepted
+[Wed Nov 26 19:36:11 2025] [::1]:65016 [302]: GET /favicon.ico
+[Wed Nov 26 19:36:11 2025] [::1]:65016 Closing
+[Wed Nov 26 19:36:11 2025] [::1]:65017 Accepted
+[Wed Nov 26 19:36:11 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:36:11 2025] [::1]:65017 [200]: GET /dashboard.php
+[Wed Nov 26 19:36:11 2025] [::1]:65017 Closing
+[Wed Nov 26 19:36:13 2025] [::1]:65018 Accepted
+[Wed Nov 26 19:36:13 2025] [::1]:65018 [302]: GET /index.php
+[Wed Nov 26 19:36:13 2025] [::1]:65018 Closing
+[Wed Nov 26 19:36:13 2025] [::1]:65019 Accepted
+[Wed Nov 26 19:36:13 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:36:13 2025] [::1]:65019 [200]: GET /dashboard.php
+[Wed Nov 26 19:36:13 2025] [::1]:65019 Closing
+[Wed Nov 26 19:36:13 2025] [::1]:65020 Accepted
+[Wed Nov 26 19:36:13 2025] [::1]:65021 Accepted
+[Wed Nov 26 19:36:13 2025] [::1]:65020 [200]: GET /css/vivo-style.css?v=1764178573
+[Wed Nov 26 19:36:13 2025] [::1]:65021 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 19:36:13 2025] [::1]:65020 Closing
+[Wed Nov 26 19:36:13 2025] [::1]:65022 Accepted
+[Wed Nov 26 19:36:13 2025] [::1]:65021 Closing
+[Wed Nov 26 19:36:13 2025] [::1]:65023 Accepted
+[Wed Nov 26 19:36:13 2025] [::1]:65022 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 19:36:13 2025] [::1]:65024 Accepted
+[Wed Nov 26 19:36:13 2025] [::1]:65023 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 19:36:13 2025] [::1]:65025 Accepted
+[Wed Nov 26 19:36:13 2025] [::1]:65024 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 19:36:13 2025] [::1]:65022 Closing
+[Wed Nov 26 19:36:13 2025] [::1]:65025 [200]: GET /css/club-custom.css
+[Wed Nov 26 19:36:13 2025] [::1]:65023 Closing
+[Wed Nov 26 19:36:13 2025] [::1]:65024 Closing
+[Wed Nov 26 19:36:13 2025] [::1]:65025 Closing
+[Wed Nov 26 19:36:13 2025] [::1]:65029 Accepted
+[Wed Nov 26 19:36:13 2025] [::1]:65029 [302]: GET /favicon.ico
+[Wed Nov 26 19:36:13 2025] [::1]:65029 Closing
+[Wed Nov 26 19:36:13 2025] [::1]:65030 Accepted
+[Wed Nov 26 19:36:13 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:36:13 2025] [::1]:65030 [200]: GET /dashboard.php
+[Wed Nov 26 19:36:13 2025] [::1]:65030 Closing
+[Wed Nov 26 19:36:15 2025] [::1]:65032 Accepted
+[Wed Nov 26 19:36:15 2025] [::1]:65032 [200]: GET /attendance.php
+[Wed Nov 26 19:36:15 2025] [::1]:65032 Closing
+[Wed Nov 26 19:36:15 2025] [::1]:65033 Accepted
+[Wed Nov 26 19:36:15 2025] [::1]:65033 [200]: GET /css/vivo-style.css?v=1764178575
+[Wed Nov 26 19:36:15 2025] [::1]:65033 Closing
+[Wed Nov 26 19:36:15 2025] [::1]:65034 Accepted
+[Wed Nov 26 19:36:15 2025] [::1]:65034 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 19:36:15 2025] [::1]:65034 Closing
+[Wed Nov 26 19:36:15 2025] [::1]:65035 Accepted
+[Wed Nov 26 19:36:15 2025] [::1]:65035 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 19:36:15 2025] [::1]:65036 Accepted
+[Wed Nov 26 19:36:15 2025] [::1]:65037 Accepted
+[Wed Nov 26 19:36:15 2025] [::1]:65035 Closing
+[Wed Nov 26 19:36:15 2025] [::1]:65036 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 19:36:15 2025] [::1]:65038 Accepted
+[Wed Nov 26 19:36:15 2025] [::1]:65037 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 19:36:15 2025] [::1]:65038 [200]: GET /css/club-custom.css
+[Wed Nov 26 19:36:15 2025] [::1]:65036 Closing
+[Wed Nov 26 19:36:15 2025] [::1]:65037 Closing
+[Wed Nov 26 19:36:15 2025] [::1]:65038 Closing
+[Wed Nov 26 19:36:15 2025] [::1]:65041 Accepted
+[Wed Nov 26 19:36:15 2025] [::1]:65041 [302]: GET /favicon.ico
+[Wed Nov 26 19:36:15 2025] [::1]:65041 Closing
+[Wed Nov 26 19:36:15 2025] [::1]:65043 Accepted
+[Wed Nov 26 19:36:15 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:36:15 2025] [::1]:65043 [200]: GET /dashboard.php
+[Wed Nov 26 19:36:15 2025] [::1]:65043 Closing
+[Wed Nov 26 19:36:17 2025] [::1]:65044 Accepted
+[Wed Nov 26 19:36:17 2025] [::1]:65044 [200]: GET /attendance.php?event_id=34
+[Wed Nov 26 19:36:17 2025] [::1]:65044 Closing
+[Wed Nov 26 19:36:17 2025] [::1]:65045 Accepted
+[Wed Nov 26 19:36:17 2025] [::1]:65046 Accepted
+[Wed Nov 26 19:36:17 2025] [::1]:65045 [200]: GET /css/vivo-style.css?v=1764178577
+[Wed Nov 26 19:36:17 2025] [::1]:65046 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 19:36:17 2025] [::1]:65045 Closing
+[Wed Nov 26 19:36:17 2025] [::1]:65047 Accepted
+[Wed Nov 26 19:36:17 2025] [::1]:65046 Closing
+[Wed Nov 26 19:36:17 2025] [::1]:65047 [200]: GET /uploads/players/player_291_profile.png
+[Wed Nov 26 19:36:17 2025] [::1]:65048 Accepted
+[Wed Nov 26 19:36:17 2025] [::1]:65049 Accepted
+[Wed Nov 26 19:36:17 2025] [::1]:65048 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 19:36:17 2025] [::1]:65050 Accepted
+[Wed Nov 26 19:36:17 2025] [::1]:65049 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 19:36:17 2025] [::1]:65051 Accepted
+[Wed Nov 26 19:36:17 2025] [::1]:65050 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 19:36:17 2025] [::1]:65048 Closing
+[Wed Nov 26 19:36:17 2025] [::1]:65051 [200]: GET /css/club-custom.css
+[Wed Nov 26 19:36:17 2025] [::1]:65049 Closing
+[Wed Nov 26 19:36:17 2025] [::1]:65050 Closing
+[Wed Nov 26 19:36:17 2025] [::1]:65051 Closing
+[Wed Nov 26 19:36:17 2025] [::1]:65047 Closing
+[Wed Nov 26 19:36:17 2025] [::1]:65054 Accepted
+[Wed Nov 26 19:36:17 2025] [::1]:65054 [302]: GET /favicon.ico
+[Wed Nov 26 19:36:17 2025] [::1]:65054 Closing
+[Wed Nov 26 19:36:17 2025] [::1]:65055 Accepted
+[Wed Nov 26 19:36:17 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:36:17 2025] [::1]:65055 [200]: GET /dashboard.php
+[Wed Nov 26 19:36:17 2025] [::1]:65055 Closing
+[Wed Nov 26 19:36:18 2025] [::1]:65056 Accepted
+[Wed Nov 26 19:36:18 2025] [::1]:65056 [302]: GET /index.php
+[Wed Nov 26 19:36:18 2025] [::1]:65056 Closing
+[Wed Nov 26 19:36:18 2025] [::1]:65057 Accepted
+[Wed Nov 26 19:36:18 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:36:18 2025] [::1]:65057 [200]: GET /dashboard.php
+[Wed Nov 26 19:36:18 2025] [::1]:65057 Closing
+[Wed Nov 26 19:36:18 2025] [::1]:65058 Accepted
+[Wed Nov 26 19:36:18 2025] [::1]:65058 [200]: GET /css/vivo-style.css?v=1764178578
+[Wed Nov 26 19:36:18 2025] [::1]:65059 Accepted
+[Wed Nov 26 19:36:18 2025] [::1]:65058 Closing
+[Wed Nov 26 19:36:18 2025] [::1]:65059 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 19:36:18 2025] [::1]:65059 Closing
+[Wed Nov 26 19:36:18 2025] [::1]:65060 Accepted
+[Wed Nov 26 19:36:18 2025] [::1]:65061 Accepted
+[Wed Nov 26 19:36:18 2025] [::1]:65062 Accepted
+[Wed Nov 26 19:36:18 2025] [::1]:65060 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 19:36:18 2025] [::1]:65063 Accepted
+[Wed Nov 26 19:36:18 2025] [::1]:65060 Closing
+[Wed Nov 26 19:36:18 2025] [::1]:65061 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 19:36:18 2025] [::1]:65062 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 19:36:18 2025] [::1]:65063 [200]: GET /css/club-custom.css
+[Wed Nov 26 19:36:18 2025] [::1]:65061 Closing
+[Wed Nov 26 19:36:18 2025] [::1]:65062 Closing
+[Wed Nov 26 19:36:18 2025] [::1]:65063 Closing
+[Wed Nov 26 19:36:18 2025] [::1]:65064 Accepted
+[Wed Nov 26 19:36:18 2025] [::1]:65064 [302]: GET /favicon.ico
+[Wed Nov 26 19:36:18 2025] [::1]:65064 Closing
+[Wed Nov 26 19:36:18 2025] [::1]:65067 Accepted
+[Wed Nov 26 19:36:18 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:36:18 2025] [::1]:65067 [200]: GET /dashboard.php
+[Wed Nov 26 19:36:18 2025] [::1]:65067 Closing
+[Wed Nov 26 19:36:18 2025] [::1]:65068 Accepted
+[Wed Nov 26 19:36:18 2025] [::1]:65068 [302]: GET /index.php
+[Wed Nov 26 19:36:18 2025] [::1]:65068 Closing
+[Wed Nov 26 19:36:18 2025] [::1]:65069 Accepted
+[Wed Nov 26 19:36:18 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:36:18 2025] [::1]:65069 [200]: GET /dashboard.php
+[Wed Nov 26 19:36:18 2025] [::1]:65069 Closing
+[Wed Nov 26 19:36:18 2025] [::1]:65070 Accepted
+[Wed Nov 26 19:36:18 2025] [::1]:65070 [200]: GET /css/vivo-style.css?v=1764178578
+[Wed Nov 26 19:36:18 2025] [::1]:65071 Accepted
+[Wed Nov 26 19:36:18 2025] [::1]:65070 Closing
+[Wed Nov 26 19:36:18 2025] [::1]:65071 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 19:36:18 2025] [::1]:65071 Closing
+[Wed Nov 26 19:36:18 2025] [::1]:65072 Accepted
+[Wed Nov 26 19:36:18 2025] [::1]:65073 Accepted
+[Wed Nov 26 19:36:18 2025] [::1]:65074 Accepted
+[Wed Nov 26 19:36:18 2025] [::1]:65072 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 19:36:18 2025] [::1]:65075 Accepted
+[Wed Nov 26 19:36:18 2025] [::1]:65072 Closing
+[Wed Nov 26 19:36:18 2025] [::1]:65073 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 19:36:18 2025] [::1]:65074 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 19:36:18 2025] [::1]:65073 Closing
+[Wed Nov 26 19:36:18 2025] [::1]:65075 [200]: GET /css/club-custom.css
+[Wed Nov 26 19:36:18 2025] [::1]:65074 Closing
+[Wed Nov 26 19:36:18 2025] [::1]:65075 Closing
+[Wed Nov 26 19:36:19 2025] [::1]:65076 Accepted
+[Wed Nov 26 19:36:19 2025] [::1]:65076 [302]: GET /favicon.ico
+[Wed Nov 26 19:36:19 2025] [::1]:65076 Closing
+[Wed Nov 26 19:36:19 2025] [::1]:65077 Accepted
+[Wed Nov 26 19:36:19 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:36:19 2025] [::1]:65077 [200]: GET /dashboard.php
+[Wed Nov 26 19:36:19 2025] [::1]:65077 Closing
+[Wed Nov 26 19:36:20 2025] [::1]:65080 Accepted
+[Wed Nov 26 19:36:20 2025] PHP Fatal error:  Uncaught Error: Call to undefined method DatabaseFactory::getInstance() in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/team_edit.php:8
+Stack trace:
+#0 {main}
+  thrown in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/team_edit.php on line 8
+[Wed Nov 26 19:36:20 2025] [::1]:65080 [200]: GET /team_edit.php?action=add - Uncaught Error: Call to undefined method DatabaseFactory::getInstance() in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/team_edit.php:8
+Stack trace:
+#0 {main}
+  thrown in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/team_edit.php on line 8
+[Wed Nov 26 19:36:20 2025] [::1]:65080 Closing
+[Wed Nov 26 19:36:20 2025] [::1]:65081 Accepted
+[Wed Nov 26 19:36:20 2025] [::1]:65081 [302]: GET /favicon.ico
+[Wed Nov 26 19:36:20 2025] [::1]:65081 Closing
+[Wed Nov 26 19:36:20 2025] [::1]:65082 Accepted
+[Wed Nov 26 19:36:20 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:36:20 2025] [::1]:65082 [200]: GET /dashboard.php
+[Wed Nov 26 19:36:20 2025] [::1]:65082 Closing
+[Wed Nov 26 19:36:21 2025] [::1]:65086 Accepted
+[Wed Nov 26 19:36:21 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:36:21 2025] [::1]:65086 [200]: GET /dashboard.php
+[Wed Nov 26 19:36:21 2025] [::1]:65086 Closing
+[Wed Nov 26 19:36:21 2025] [::1]:65087 Accepted
+[Wed Nov 26 19:36:21 2025] [::1]:65087 [200]: GET /css/vivo-style.css?v=1764178581
+[Wed Nov 26 19:36:21 2025] [::1]:65087 Closing
+[Wed Nov 26 19:36:22 2025] [::1]:65088 Accepted
+[Wed Nov 26 19:36:22 2025] [::1]:65088 [302]: GET /favicon.ico
+[Wed Nov 26 19:36:22 2025] [::1]:65088 Closing
+[Wed Nov 26 19:36:22 2025] [::1]:65089 Accepted
+[Wed Nov 26 19:36:22 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:36:22 2025] [::1]:65089 [200]: GET /dashboard.php
+[Wed Nov 26 19:36:22 2025] [::1]:65089 Closing
+[Wed Nov 26 19:41:15 2025] [::1]:65284 Accepted
+[Wed Nov 26 19:41:15 2025] [::1]:65284 [302]: HEAD /dashboard.php
+[Wed Nov 26 19:41:15 2025] [::1]:65284 Closing
+[Wed Nov 26 19:42:37 2025] [::1]:65330 Accepted
+[Wed Nov 26 19:42:37 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:42:37 2025] [::1]:65330 [200]: GET /dashboard.php
+[Wed Nov 26 19:42:37 2025] [::1]:65330 Closing
+[Wed Nov 26 19:42:37 2025] [::1]:65331 Accepted
+[Wed Nov 26 19:42:37 2025] [::1]:65332 Accepted
+[Wed Nov 26 19:42:37 2025] [::1]:65331 [200]: GET /css/vivo-style.css?v=1764178957
+[Wed Nov 26 19:42:37 2025] [::1]:65332 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 19:42:37 2025] [::1]:65331 Closing
+[Wed Nov 26 19:42:37 2025] [::1]:65332 Closing
+[Wed Nov 26 19:42:37 2025] [::1]:65333 Accepted
+[Wed Nov 26 19:42:37 2025] [::1]:65334 Accepted
+[Wed Nov 26 19:42:37 2025] [::1]:65333 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 19:42:37 2025] [::1]:65335 Accepted
+[Wed Nov 26 19:42:37 2025] [::1]:65334 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 19:42:37 2025] [::1]:65336 Accepted
+[Wed Nov 26 19:42:37 2025] [::1]:65335 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 19:42:37 2025] [::1]:65333 Closing
+[Wed Nov 26 19:42:37 2025] [::1]:65336 [200]: GET /css/club-custom.css
+[Wed Nov 26 19:42:37 2025] [::1]:65334 Closing
+[Wed Nov 26 19:42:37 2025] [::1]:65335 Closing
+[Wed Nov 26 19:42:37 2025] [::1]:65336 Closing
+[Wed Nov 26 19:42:38 2025] [::1]:65337 Accepted
+[Wed Nov 26 19:42:38 2025] [::1]:65337 [302]: GET /favicon.ico
+[Wed Nov 26 19:42:38 2025] [::1]:65337 Closing
+[Wed Nov 26 19:42:38 2025] [::1]:65340 Accepted
+[Wed Nov 26 19:42:38 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:42:38 2025] [::1]:65340 [200]: GET /dashboard.php
+[Wed Nov 26 19:42:38 2025] [::1]:65340 Closing
+[Wed Nov 26 19:42:41 2025] [::1]:65342 Accepted
+[Wed Nov 26 19:42:41 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:42:41 2025] [::1]:65342 [200]: GET /dashboard.php
+[Wed Nov 26 19:42:41 2025] [::1]:65342 Closing
+[Wed Nov 26 19:42:41 2025] [::1]:65343 Accepted
+[Wed Nov 26 19:42:41 2025] [::1]:65343 [200]: GET /css/vivo-style.css?v=1764178961
+[Wed Nov 26 19:42:41 2025] [::1]:65344 Accepted
+[Wed Nov 26 19:42:41 2025] [::1]:65343 Closing
+[Wed Nov 26 19:42:41 2025] [::1]:65344 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 19:42:41 2025] [::1]:65344 Closing
+[Wed Nov 26 19:42:41 2025] [::1]:65345 Accepted
+[Wed Nov 26 19:42:41 2025] [::1]:65346 Accepted
+[Wed Nov 26 19:42:41 2025] [::1]:65347 Accepted
+[Wed Nov 26 19:42:41 2025] [::1]:65345 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 19:42:41 2025] [::1]:65348 Accepted
+[Wed Nov 26 19:42:41 2025] [::1]:65346 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 19:42:41 2025] [::1]:65345 Closing
+[Wed Nov 26 19:42:41 2025] [::1]:65347 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 19:42:41 2025] [::1]:65348 [200]: GET /css/club-custom.css
+[Wed Nov 26 19:42:41 2025] [::1]:65346 Closing
+[Wed Nov 26 19:42:41 2025] [::1]:65347 Closing
+[Wed Nov 26 19:42:41 2025] [::1]:65348 Closing
+[Wed Nov 26 19:42:41 2025] [::1]:65351 Accepted
+[Wed Nov 26 19:42:41 2025] [::1]:65351 [302]: GET /favicon.ico
+[Wed Nov 26 19:42:41 2025] [::1]:65351 Closing
+[Wed Nov 26 19:42:41 2025] [::1]:65352 Accepted
+[Wed Nov 26 19:42:41 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:42:41 2025] [::1]:65352 [200]: GET /dashboard.php
+[Wed Nov 26 19:42:41 2025] [::1]:65352 Closing
+[Wed Nov 26 19:43:16 2025] [::1]:65360 Accepted
+[Wed Nov 26 19:43:16 2025] [::1]:65360 [200]: GET /player_edit.php?action=add
+[Wed Nov 26 19:43:16 2025] [::1]:65360 Closing
+[Wed Nov 26 19:43:16 2025] [::1]:65361 Accepted
+[Wed Nov 26 19:43:16 2025] [::1]:65361 [200]: GET /css/vivo-style.css
+[Wed Nov 26 19:43:16 2025] [::1]:65361 Closing
+[Wed Nov 26 19:43:16 2025] [::1]:65362 Accepted
+[Wed Nov 26 19:43:16 2025] [::1]:65363 Accepted
+[Wed Nov 26 19:43:16 2025] [::1]:65362 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 19:43:16 2025] [::1]:65363 [200]: GET /js/sidebar.js
+[Wed Nov 26 19:43:16 2025] [::1]:65362 Closing
+[Wed Nov 26 19:43:16 2025] [::1]:65364 Accepted
+[Wed Nov 26 19:43:16 2025] [::1]:65363 Closing
+[Wed Nov 26 19:43:16 2025] [::1]:65365 Accepted
+[Wed Nov 26 19:43:16 2025] [::1]:65364 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 19:43:16 2025] [::1]:65366 Accepted
+[Wed Nov 26 19:43:16 2025] [::1]:65365 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 19:43:16 2025] [::1]:65367 Accepted
+[Wed Nov 26 19:43:16 2025] [::1]:65366 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 19:43:16 2025] [::1]:65364 Closing
+[Wed Nov 26 19:43:16 2025] [::1]:65367 [200]: GET /css/club-custom.css
+[Wed Nov 26 19:43:16 2025] [::1]:65365 Closing
+[Wed Nov 26 19:43:16 2025] [::1]:65366 Closing
+[Wed Nov 26 19:43:16 2025] [::1]:65367 Closing
+[Wed Nov 26 19:43:16 2025] [::1]:65368 Accepted
+[Wed Nov 26 19:43:16 2025] [::1]:65368 [302]: GET /favicon.ico
+[Wed Nov 26 19:43:16 2025] [::1]:65368 Closing
+[Wed Nov 26 19:43:16 2025] [::1]:65369 Accepted
+[Wed Nov 26 19:43:16 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:43:16 2025] [::1]:65369 [200]: GET /dashboard.php
+[Wed Nov 26 19:43:16 2025] [::1]:65369 Closing
+[Wed Nov 26 19:43:17 2025] [::1]:65372 Accepted
+[Wed Nov 26 19:43:17 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:43:17 2025] [::1]:65372 [200]: GET /dashboard.php
+[Wed Nov 26 19:43:17 2025] [::1]:65372 Closing
+[Wed Nov 26 19:43:17 2025] [::1]:65373 Accepted
+[Wed Nov 26 19:43:17 2025] [::1]:65373 [200]: GET /css/vivo-style.css?v=1764178997
+[Wed Nov 26 19:43:17 2025] [::1]:65373 Closing
+[Wed Nov 26 19:43:17 2025] [::1]:65376 Accepted
+[Wed Nov 26 19:43:17 2025] [::1]:65376 [302]: GET /favicon.ico
+[Wed Nov 26 19:43:17 2025] [::1]:65376 Closing
+[Wed Nov 26 19:43:17 2025] [::1]:65377 Accepted
+[Wed Nov 26 19:43:17 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:43:17 2025] [::1]:65377 [200]: GET /dashboard.php
+[Wed Nov 26 19:43:17 2025] [::1]:65377 Closing
+[Wed Nov 26 19:43:30 2025] [::1]:65385 Accepted
+[Wed Nov 26 19:43:30 2025] PHP Fatal error:  Uncaught Error: Call to undefined method DatabaseFactory::getInstance() in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/team_edit.php:8
+Stack trace:
+#0 {main}
+  thrown in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/team_edit.php on line 8
+[Wed Nov 26 19:43:30 2025] [::1]:65385 [200]: GET /team_edit.php?action=add - Uncaught Error: Call to undefined method DatabaseFactory::getInstance() in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/team_edit.php:8
+Stack trace:
+#0 {main}
+  thrown in /Users/edwinbrooks/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/VIVOAPP/latest working live/team_edit.php on line 8
+[Wed Nov 26 19:43:30 2025] [::1]:65385 Closing
+[Wed Nov 26 19:43:30 2025] [::1]:65387 Accepted
+[Wed Nov 26 19:43:30 2025] [::1]:65387 [302]: GET /favicon.ico
+[Wed Nov 26 19:43:30 2025] [::1]:65387 Closing
+[Wed Nov 26 19:43:30 2025] [::1]:65388 Accepted
+[Wed Nov 26 19:43:30 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:43:30 2025] [::1]:65388 [200]: GET /dashboard.php
+[Wed Nov 26 19:43:30 2025] [::1]:65388 Closing
+[Wed Nov 26 19:43:32 2025] [::1]:65392 Accepted
+[Wed Nov 26 19:43:32 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:43:32 2025] [::1]:65392 [200]: GET /dashboard.php
+[Wed Nov 26 19:43:32 2025] [::1]:65392 Closing
+[Wed Nov 26 19:43:32 2025] [::1]:65393 Accepted
+[Wed Nov 26 19:43:32 2025] [::1]:65393 [200]: GET /css/vivo-style.css?v=1764179012
+[Wed Nov 26 19:43:32 2025] [::1]:65393 Closing
+[Wed Nov 26 19:43:32 2025] [::1]:65394 Accepted
+[Wed Nov 26 19:43:32 2025] [::1]:65394 [302]: GET /favicon.ico
+[Wed Nov 26 19:43:32 2025] [::1]:65394 Closing
+[Wed Nov 26 19:43:32 2025] [::1]:65395 Accepted
+[Wed Nov 26 19:43:32 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:43:32 2025] [::1]:65395 [200]: GET /dashboard.php
+[Wed Nov 26 19:43:32 2025] [::1]:65395 Closing
+[Wed Nov 26 19:43:39 2025] [::1]:65406 Accepted
+[Wed Nov 26 19:43:39 2025] [::1]:65406 [302]: GET /logout.php
+[Wed Nov 26 19:43:39 2025] [::1]:65406 Closing
+[Wed Nov 26 19:43:39 2025] [::1]:65407 Accepted
+[Wed Nov 26 19:43:39 2025] [::1]:65407 [200]: GET /login.php?logged_out=1
+[Wed Nov 26 19:43:39 2025] [::1]:65407 Closing
+[Wed Nov 26 19:43:39 2025] [::1]:65408 Accepted
+[Wed Nov 26 19:43:39 2025] [::1]:65408 [200]: GET /css/vivo-style.css?v=1764179019
+[Wed Nov 26 19:43:39 2025] [::1]:65408 Closing
+[Wed Nov 26 19:43:39 2025] [::1]:65409 Accepted
+[Wed Nov 26 19:43:39 2025] [::1]:65410 Accepted
+[Wed Nov 26 19:43:39 2025] [::1]:65411 Accepted
+[Wed Nov 26 19:43:39 2025] [::1]:65409 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 19:43:39 2025] [::1]:65410 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 19:43:39 2025] [::1]:65412 Accepted
+[Wed Nov 26 19:43:39 2025] [::1]:65409 Closing
+[Wed Nov 26 19:43:39 2025] [::1]:65411 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 19:43:39 2025] [::1]:65412 [200]: GET /css/club-custom.css
+[Wed Nov 26 19:43:39 2025] [::1]:65410 Closing
+[Wed Nov 26 19:43:39 2025] [::1]:65411 Closing
+[Wed Nov 26 19:43:39 2025] [::1]:65412 Closing
+[Wed Nov 26 19:43:39 2025] [::1]:65413 Accepted
+[Wed Nov 26 19:43:39 2025] [::1]:65413 [302]: GET /favicon.ico
+[Wed Nov 26 19:43:39 2025] [::1]:65413 Closing
+[Wed Nov 26 19:43:39 2025] [::1]:65414 Accepted
+[Wed Nov 26 19:43:39 2025] [::1]:65414 [200]: GET /login.php
+[Wed Nov 26 19:43:39 2025] [::1]:65414 Closing
+[Wed Nov 26 19:43:44 2025] [::1]:65421 Accepted
+[Wed Nov 26 19:43:45 2025] [::1]:65421 [302]: POST /login.php?logged_out=1
+[Wed Nov 26 19:43:45 2025] [::1]:65421 Closing
+[Wed Nov 26 19:43:45 2025] [::1]:65423 Accepted
+[Wed Nov 26 19:43:45 2025] [::1]:65423 [302]: GET /index.php
+[Wed Nov 26 19:43:45 2025] [::1]:65423 Closing
+[Wed Nov 26 19:43:45 2025] [::1]:65424 Accepted
+[Wed Nov 26 19:43:45 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:43:45 2025] [::1]:65424 [200]: GET /dashboard.php
+[Wed Nov 26 19:43:45 2025] [::1]:65424 Closing
+[Wed Nov 26 19:43:45 2025] [::1]:65425 Accepted
+[Wed Nov 26 19:43:45 2025] [::1]:65425 [200]: GET /css/vivo-style.css?v=1764179025
+[Wed Nov 26 19:43:45 2025] [::1]:65426 Accepted
+[Wed Nov 26 19:43:45 2025] [::1]:65425 Closing
+[Wed Nov 26 19:43:45 2025] [::1]:65426 [200]: GET /uploads/club_logo_20251018_100929.png
+[Wed Nov 26 19:43:45 2025] [::1]:65426 Closing
+[Wed Nov 26 19:43:45 2025] [::1]:65427 Accepted
+[Wed Nov 26 19:43:45 2025] [::1]:65428 Accepted
+[Wed Nov 26 19:43:45 2025] [::1]:65427 [200]: GET /css/vivo-red-modern.css
+[Wed Nov 26 19:43:45 2025] [::1]:65429 Accepted
+[Wed Nov 26 19:43:45 2025] [::1]:65428 [200]: GET /css/vivo-compact.css
+[Wed Nov 26 19:43:45 2025] [::1]:65430 Accepted
+[Wed Nov 26 19:43:45 2025] [::1]:65429 [200]: GET /css/vivo-sidebar-override.css
+[Wed Nov 26 19:43:45 2025] [::1]:65427 Closing
+[Wed Nov 26 19:43:45 2025] [::1]:65430 [200]: GET /css/club-custom.css
+[Wed Nov 26 19:43:45 2025] [::1]:65428 Closing
+[Wed Nov 26 19:43:45 2025] [::1]:65429 Closing
+[Wed Nov 26 19:43:45 2025] [::1]:65430 Closing
+[Wed Nov 26 19:43:45 2025] [::1]:65433 Accepted
+[Wed Nov 26 19:43:45 2025] [::1]:65433 [302]: GET /favicon.ico
+[Wed Nov 26 19:43:45 2025] [::1]:65433 Closing
+[Wed Nov 26 19:43:45 2025] [::1]:65434 Accepted
+[Wed Nov 26 19:43:45 2025] Dashboard - Club settings loaded: {"color_primary":"#0e1052","color_secondary":"#bd0000","color_accent":"#eff6ff","color_success":"#22c55e","color_warning":"#eab308","color_danger":"#ef4444","club_name":"VIVO United","club_description":"","club_address":"","club_phone":"","club_email":"","club_website":"","club_logo":"uploads\/club_logo_20251018_100929.png"}
+[Wed Nov 26 19:43:45 2025] [::1]:65434 [200]: GET /dashboard.php
+[Wed Nov 26 19:43:45 2025] [::1]:65434 Closing
