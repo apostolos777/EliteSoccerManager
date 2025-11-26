@@ -412,20 +412,20 @@ try {
                 <!-- Statistics Grid -->
                 <div class="stats-grid">
                     <!-- Debug: Links should be clickable -->
-                    <a href="teams.php" class="stat-card animate-fade-up" style="text-decoration: none; color: inherit;" title="Click to view teams">
-                        <div class="stat-number"><?php echo $total_teams; ?></div>
+                    <a href="teams.php" class="stat-card fc-card animate-fade-up" style="text-decoration: none; color: inherit;" title="Click to view teams">
+                        <div class="stat-number num"><?php echo $total_teams; ?></div>
                         <div class="stat-label">Teams</div>
                     </a>
-                    <a href="players.php" class="stat-card animate-fade-up" style="animation-delay: 0.1s; text-decoration: none; color: inherit;" title="Click to view players">
-                        <div class="stat-number"><?php echo $total_players; ?></div>
+                    <a href="players.php" class="stat-card fc-card animate-fade-up" style="animation-delay: 0.1s; text-decoration: none; color: inherit;" title="Click to view players">
+                        <div class="stat-number num"><?php echo $total_players; ?></div>
                         <div class="stat-label">Players</div>
                     </a>
-                    <a href="events.php" class="stat-card animate-fade-up" style="animation-delay: 0.2s; text-decoration: none; color: inherit;" title="Click to view events">
-                        <div class="stat-number"><?php echo $total_events; ?></div>
+                    <a href="events.php" class="stat-card fc-card animate-fade-up" style="animation-delay: 0.2s; text-decoration: none; color: inherit;" title="Click to view events">
+                        <div class="stat-number num"><?php echo $total_events; ?></div>
                         <div class="stat-label">Events</div>
                     </a>
-                    <a href="players.php?status=active" class="stat-card animate-fade-up" style="animation-delay: 0.3s; text-decoration: none; color: inherit;" title="Click to view active players">
-                        <div class="stat-number"><?php echo $active_players; ?></div>
+                    <a href="players.php?status=active" class="stat-card fc-card animate-fade-up" style="animation-delay: 0.3s; text-decoration: none; color: inherit;" title="Click to view active players">
+                        <div class="stat-number num"><?php echo $active_players; ?></div>
                         <div class="stat-label">Active Players</div>
                     </a>
                 </div>
@@ -481,17 +481,17 @@ try {
                         <!-- Compact widgets are in the left stacked pane -->
                     <!-- Main large actions area (three tall columns) -->
                     <div class="main-actions" role="region" aria-label="Primary actions">
-                        <a href="player_edit.php?action=add" class="action-card action-card--tall">
+                        <a href="player_edit.php?action=add" class="action-card action-card--tall fc-card">
                             <div class="action-icon"><i class="fas fa-user-plus"></i></div>
                             <h3>Add New Player</h3>
                             <p>Register a new player</p>
                         </a>
-                        <a href="event_edit.php?action=add" class="action-card action-card--tall">
+                        <a href="event_edit.php?action=add" class="action-card action-card--tall fc-card">
                             <div class="action-icon"><i class="fas fa-calendar-plus"></i></div>
                             <h3>Schedule Event</h3>
                             <p>Create a new match or training</p>
                         </a>
-                        <a href="attendance.php" class="action-card action-card--tall">
+                        <a href="attendance.php" class="action-card action-card--tall fc-card">
                             <div class="action-icon"><i class="fas fa-clipboard-check"></i></div>
                             <h3>Take Attendance</h3>
                             <p>Record player attendance</p>
@@ -608,7 +608,7 @@ try {
                             </div>
 
                             <!-- Player Gallery -->
-                            <div class="player-gallery card animate-fade-up" style="margin-top: var(--space-6); padding: var(--space-4);">
+                            <div class="player-gallery card fc-card animate-fade-up" style="margin-top: var(--space-6); padding: var(--space-4);">
                                 <h4 class="card-title" style="margin-bottom: var(--space-3);"><i class="fas fa-images" style="color:var(--primary-green); margin-right:8px"></i>Player Gallery</h4>
                                 <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-3);">
                                     <?php if (!empty($players_gallery)): ?>
