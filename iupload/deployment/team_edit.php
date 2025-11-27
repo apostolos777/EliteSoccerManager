@@ -5,7 +5,7 @@ require_once 'includes/auth.php';
 requireLogin();
 $currentPage = 'teams';
 
-$db = DatabaseFactory::getInstance()->getConnection();
+ $db = DatabaseFactory::getConnection();
 $message = '';
 $error = '';
 
@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             throw new Exception("Team name and age group are required.");
         }
 
-        $stmt = $db->prepare("INSERT INTO teams (name, description, coach, assistant_coach, age_group, contact_email, contact_phone) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $stmt = $db->prepare("INSERT INTO teams (name, description, coach_name, assistant_coach, age_group, contact_email, contact_phone) VALUES (?, ?, ?, ?, ?, ?, ?)");
         $stmt->execute([
             $_POST['name'],
             $_POST['description'] ?? '',

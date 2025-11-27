@@ -80,10 +80,10 @@ try {
     
     // Event statistics
     $total_events = $db->query("SELECT COUNT(*) FROM events")->fetchColumn();
-    $upcoming_events = $db->query("
-        SELECT COUNT(*) 
+    $upcoming_events = $db->query(
+        "SELECT COUNT(*) 
         FROM events 
-        WHERE date >= date('now') AND status = 'Scheduled'
+        WHERE COALESCE(event_date, date) >= date('now') AND status = 'Scheduled'
     ")->fetchColumn();
     
     // Attendance statistics
@@ -105,12 +105,12 @@ try {
 
     // Upcoming matches / fixtures
     $upcoming_matches = $db->query(
-        "SELECT e.*, t.name as team_name FROM events e LEFT JOIN teams t ON e.team_id = t.id WHERE date >= date('now') ORDER BY date ASC LIMIT 5"
+        "SELECT e.*, t.name as team_name FROM events e LEFT JOIN teams t ON e.team_id = t.id WHERE COALESCE(e.event_date, e.date) >= date('now') ORDER BY COALESCE(e.event_date, e.date) ASC LIMIT 5"
     )->fetchAll();
 
     // Recent results (completed matches)
     $recent_results = $db->query(
-        "SELECT e.*, t.name as team_name FROM events e LEFT JOIN teams t ON e.team_id = t.id WHERE date < date('now') ORDER BY date DESC LIMIT 5"
+        "SELECT e.*, t.name as team_name FROM events e LEFT JOIN teams t ON e.team_id = t.id WHERE COALESCE(e.event_date, e.date) < date('now') ORDER BY COALESCE(e.event_date, e.date) DESC LIMIT 5"
     )->fetchAll();
 
     // Simple standings approximation (teams ordered by number of active players)
@@ -394,6 +394,44 @@ try {
                         <i class="fas fa-calendar"></i> <?php echo date('l, F j, Y'); ?>
                     </div>
                 </div>
+
+                <!-- Fixtures + Upcoming Matches Row (directly under add-buttons) -->
+                <div class="matches-row animate-fade-up" style="display:grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); margin-bottom: var(--space-6);">
+                    <!-- Fixtures (list of upcoming matches) -->
+                    <div class="card fixtures-card" style="padding: var(--space-4);">
+                        <h4 class="card-title" style="margin-bottom: var(--space-3);"><i class="fas fa-calendar-alt" style="color:var(--secondary-orange); margin-right:8px"></i> Fixtures</h4>
+                        <?php if (!empty($upcoming_matches)): ?>
+                            <?php foreach ($upcoming_matches as $match): ?>
+                                <div style="display:flex; justify-content:space-between; padding:8px 6px; border-bottom:1px solid var(--border-light);">
+                                    <div>
+                                        <div style="font-weight:700"><?php echo htmlspecialchars($match['team_name'] ?: 'Club'); ?></div>
+                                        <div style="font-size:0.9rem; color:var(--text-secondary);"><?php echo date('M j, Y', strtotime($match['date'])); ?> • <?php echo htmlspecialchars($match['time'] ?? 'TBA'); ?></div>
+                                    </div>
+                                    <div style="text-align:right; font-size:0.85rem; color:var(--text-secondary);">
+                                        <?php echo htmlspecialchars($match['opponent'] ?? 'Opponent'); ?><br/>
+                                        <span style="font-weight:600; color:var(--primary-green);"><?php echo !empty($match['is_home_game']) ? 'Home' : 'Away'; ?></span>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <div class="text-center" style="padding: var(--space-6); color:var(--text-secondary);">No upcoming matches.</div>
+                        <?php endif; ?>
+                    </div>
+
+                    <!-- Upcoming Matches widget (compact list / next match) -->
+                    <div class="card" style="padding: var(--space-4);">
+                        <h4 class="card-title" style="margin-bottom: var(--space-3);"><i class="fas fa-stopwatch" style="color:var(--primary-green); margin-right:8px"></i> Upcoming Matches</h4>
+                        <?php if (!empty($upcoming_matches)): ?>
+                            <ul style="margin:0; padding-left:1.05rem; color:var(--text-secondary);">
+                                <?php foreach (array_slice($upcoming_matches, 0, 6) as $m): ?>
+                                    <li style="margin-bottom:.5rem;"><strong><?php echo htmlspecialchars($m['team_name'] ?: 'Club'); ?></strong> v <?php echo htmlspecialchars($m['opponent'] ?? 'Opp'); ?> — <em><?php echo date('D, M j', strtotime($m['date'])); ?></em></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        <?php else: ?>
+                            <div style="padding: var(--space-6); color:var(--text-secondary);">No upcoming matches scheduled.</div>
+                        <?php endif; ?>
+                    </div>
+                </div>
             </div>
             
             <!-- Content Section -->
@@ -420,34 +458,9 @@ try {
                 <!-- Dashboard Grid (main body) -->
                 <div class="dashboard-grid">
                     
-                        <!-- Main Left Column: Fixtures / Results / Standings / Player Gallery -->
+                        <!-- Main Left Column: Results / Standings / Player Gallery (Fixtures moved above) -->
                         <div>
-                            <div class="scoreboard-row animate-fade-up" style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--space-4);">
-                                <!-- Fixtures -->
-                                <div class="card fixtures-card" style="padding: var(--space-4);">
-                                    <h4 class="card-title" style="margin-bottom: var(--space-3);">
-                                        <i class="fas fa-calendar-day" style="color: var(--secondary-orange); margin-right:8px"></i>
-                                        Fixtures
-                                    </h4>
-                                    <?php if (!empty($upcoming_matches)): ?>
-                                        <?php foreach ($upcoming_matches as $match): ?>
-                                            <div style="display:flex; justify-content:space-between; padding:8px 6px; border-bottom:1px solid var(--border-light);">
-                                                <div>
-                                                    <div style="font-weight:700"><?php echo htmlspecialchars($match['team_name'] ?: 'Club'); ?></div>
-                                                    <div style="font-size:0.9rem; color:var(--text-secondary);"><?php echo date('M j, Y', strtotime($match['date'])); ?> • <?php echo htmlspecialchars($match['time'] ?? 'TBA'); ?></div>
-                                                </div>
-                                                <div style="text-align:right; font-size:0.85rem; color:var(--text-secondary);">
-                                                    <?php echo htmlspecialchars($match['opponent'] ?? 'Opponent'); ?><br/>
-                                                    <span style="font-weight:600; color:var(--primary-green);"><?php echo !empty($match['is_home_game']) ? 'Home' : 'Away'; ?></span>
-                                                </div>
-                                            </div>
-                                        <?php endforeach; ?>
-                                    <?php else: ?>
-                                        <div class="text-center" style="padding: var(--space-6); color:var(--text-secondary);">
-                                            No upcoming matches.
-                                        </div>
-                                    <?php endif; ?>
-                                </div>
+                            <div class="scoreboard-row animate-fade-up" style="display:grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
 
                                 <!-- Results -->
                                 <div class="card results-card" style="padding: var(--space-4);">

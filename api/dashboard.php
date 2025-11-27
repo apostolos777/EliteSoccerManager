@@ -18,7 +18,7 @@ try {
         $stats = [
             'players' => $db->query("SELECT COUNT(*) FROM players")->fetchColumn(),
             'teams' => $db->query("SELECT COUNT(*) FROM teams")->fetchColumn(),
-            'events' => $db->query("SELECT COUNT(*) FROM events WHERE date >= date('now')")->fetchColumn()
+            'events' => $db->query("SELECT COUNT(*) FROM events WHERE COALESCE(event_date, date) >= date('now')")->fetchColumn()
         ];
         
         echo json_encode(['stats' => $stats]);
