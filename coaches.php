@@ -89,7 +89,7 @@ $message = $_GET['message'] ?? '';
             <p class="page-subtitle">Manage coaches, staff, and volunteers</p>
 
             <div class="page-actions">
-                <a href="edit_coach.php?action=add" class="btn btn-primary">
+                <a href="add_coach.php" class="btn btn-primary">
                     <i class="fas fa-plus-circle"></i>
                     Add New Coach
                 </a>
@@ -124,8 +124,8 @@ $message = $_GET['message'] ?? '';
         <?php else: ?>
             <div class="coaches-grid">
                 <?php foreach ($coaches as $coach): ?>
-                    <div class="coach-card">
-                        <div class="coach-card-header">
+                    <div class="team-card coach-item" onclick="window.location='edit_coach.php?id=<?php echo $coach['id']; ?>&view=profile'">
+                                <div class="tc-header coach-card-header">
                             <?php if ($coach['photo_url']): ?>
                                 <img src="<?php echo htmlspecialchars($coach['photo_url']); ?>" alt="<?php echo htmlspecialchars($coach['name']); ?>" class="coach-photo">
                             <?php else: ?>
@@ -145,17 +145,15 @@ $message = $_GET['message'] ?? '';
                                     <i class="<?php echo $selectedIcon; ?>"></i>
                                 </div>
                             <?php endif; ?>
-                            <div class="coach-info">
-                                <h3>
-                                    <a href="edit_coach.php?id=<?php echo $coach['id']; ?>&view=profile" class="coach-name-link">
-                                        <?php echo htmlspecialchars($coach['name']); ?>
-                                    </a>
+                            <div class="tc-head-text coach-info">
+                                <h3 class="tc-name">
+                                    <?php echo htmlspecialchars($coach['name']); ?>
                                 </h3>
-                                <span class="coach-role"><?php echo htmlspecialchars($coach['role']); ?></span>
+                                <span class="coach-role tc-created"><?php echo htmlspecialchars($coach['role']); ?></span>
                             </div>
                         </div>
 
-                        <div class="coach-card-body">
+                        <div class="tc-body coach-card-body">
                             <?php if ($coach['email']): ?>
                                 <div class="coach-detail">
                                     <i class="fas fa-envelope"></i>
@@ -176,15 +174,14 @@ $message = $_GET['message'] ?? '';
                             </div>
                         </div>
 
-                        <div class="coach-card-actions">
-                            <a href="edit_coach.php?id=<?php echo $coach['id']; ?>&view=profile" class="btn btn-primary btn-sm">
+                        <div class="tc-actions coach-card-actions">
+                            <a href="edit_coach.php?id=<?php echo $coach['id']; ?>&view=profile" class="btn btn-primary btn-sm" onclick="event.stopPropagation();">
                                 <i class="fas fa-user"></i> View Profile
                             </a>
-                            <a href="edit_coach.php?id=<?php echo $coach['id']; ?>" class="btn btn-secondary btn-sm">
+                            <a href="edit_coach.php?id=<?php echo $coach['id']; ?>" class="btn btn-secondary btn-sm" onclick="event.stopPropagation();">
                                 <i class="fas fa-edit"></i> Edit
                             </a>
-                            <a href="coaches.php?action=delete&id=<?php echo $coach['id']; ?>" class="btn btn-danger btn-sm"
-                               onclick="return confirm('Are you sure you want to delete this coach?')">
+                            <a href="coaches.php?action=delete&id=<?php echo $coach['id']; ?>" class="btn btn-danger btn-sm" onclick="event.stopPropagation(); return confirm('Are you sure you want to delete this coach?')">
                                 <i class="fas fa-trash"></i> Delete
                             </a>
                         </div>
@@ -212,7 +209,7 @@ $message = $_GET['message'] ?? '';
     }
 }
 
-.coach-card {
+.team-card, .coach-card {
     background: var(--white);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-sm);
@@ -221,7 +218,7 @@ $message = $_GET['message'] ?? '';
     border: 1px solid var(--border-color);
 }
 
-.coach-card:hover {
+.team-card:hover, .coach-card:hover {
     box-shadow: var(--shadow-md);
     transform: translateY(-2px);
 }
@@ -233,6 +230,31 @@ $message = $_GET['message'] ?? '';
     display: flex;
     align-items: center;
     gap: 1rem;
+}
+
+/* team-card (shared card style with teams.php) */
+.team-card {
+    background:#fff;
+    border:1px solid var(--border-color);
+    border-radius:12px;
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    overflow:hidden;
+    transition:transform .18s ease, box-shadow .18s ease;
+}
+.team-card .tc-header { display:flex; align-items:center; gap:.7rem; padding:.9rem .9rem .7rem; }
+.team-card .tc-icon { width:56px; height:56px; background:#eef0f3; border-radius:10px; display:flex; align-items:center; justify-content:center; color:#374151; font-size:1.2rem; }
+.team-card .tc-body { padding:0 .9rem .9rem; flex:1; display:flex; flex-direction:column; }
+.team-card .tc-name { font-size:1rem; font-weight:700; margin:0 0 .1rem; }
+.team-card .tc-created { font-size:.7rem; text-transform:uppercase; letter-spacing:.05em; color:#6b7280; margin-bottom:.5rem; }
+.team-card .tc-description { font-size:.9rem; color:#4b5563; margin:0 0 .6rem; }
+.team-card .tc-meta { display:grid; grid-template-columns:repeat(3,1fr); gap:.5rem; margin-bottom:.6rem; }
+.team-card .tc-stat { background:#f3f4f6; border-radius:6px; padding:.5rem; text-align:center; }
+.team-card .tc-actions { display:flex; gap:.4rem; margin-top:auto; }
+
+@media (max-width:520px) {
+    .coaches-grid { grid-template-columns: 1fr !important; }
 }
 
 .coach-photo {

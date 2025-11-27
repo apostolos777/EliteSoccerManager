@@ -3,13 +3,34 @@
 /* Dashboard Stats Grid - React powered */
 #react-dashboard-stats {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: var(--space-4);
     margin-bottom: var(--space-8);
 }
 
 #react-dashboard-stats .dashboard-stats {
     display: contents;
+}
+
+/* Make stat numbers larger and bolder for React-powered cards */
+#react-dashboard-stats .stat-card .num,
+#react-dashboard-stats .stat-card .stat-number {
+    font-size: 3.2rem;
+    font-weight: 900;
+    color: var(--primary-red);
+    line-height: 1.02;
+}
+
+#react-dashboard-stats .stat-card .label,
+#react-dashboard-stats .stat-card .stat-label {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+@media (max-width: 780px) {
+    #react-dashboard-stats { grid-template-columns: 1fr !important; }
+    #react-dashboard-stats .stat-card .num { font-size: 3.6rem; }
 }
 
 /* Widget Styling for React Components */

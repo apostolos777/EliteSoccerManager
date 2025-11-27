@@ -23,6 +23,14 @@ try {
     
     $players = [];
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        // prefer local profile_image (uploaded file) if present, otherwise use photo_url
+        $chosenPhoto = null;
+        if (!empty($row['profile_image'])) {
+            $chosenPhoto = $row['profile_image'];
+        } elseif (!empty($row['photo_url'])) {
+            $chosenPhoto = $row['photo_url'];
+        }
+
         $players[] = [
             'id' => $row['id'],
             'first_name' => $row['name'] ?? '',
@@ -32,7 +40,7 @@ try {
             'jersey_number' => $row['jersey_number'] ?? null,
             'team_id' => $row['team_id'] ?? null,
             'team_name' => $row['team_name'] ?? null,
-            'photo_url' => $row['photo_url'] ?? null
+            'photo_url' => $chosenPhoto
         ];
     }
     

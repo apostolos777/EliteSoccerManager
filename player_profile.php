@@ -52,9 +52,21 @@ try {
         exit;
     }
     
-    // Fetch all teams from team_ids
+    // Fetch all teams from team_ids OR join table player_teams
     $allTeams = [];
-    if (!empty($player['team_ids'])) {
+
+    // If player_teams join table exists, prefer it for authoritative list of teams
+    try {
+        $r = $db->query("SELECT name FROM sqlite_master WHERE type='table' AND name='player_teams'")->fetch(PDO::FETCH_ASSOC);
+        if ($r) {
+            $stmtPt = $db->prepare('SELECT t.id, t.name FROM player_teams pt JOIN teams t ON pt.team_id = t.id WHERE pt.player_id = ? ORDER BY t.name');
+            $stmtPt->execute([$player_id]);
+            $allTeams = $stmtPt->fetchAll(PDO::FETCH_ASSOC);
+        }
+    } catch (Exception $e) { /* ignore */ }
+
+    // Fallback to CSV column on players.team_ids if no rows were returned from player_teams
+    if (empty($allTeams) && !empty($player['team_ids'])) {
         $teamIds = array_map('trim', explode(',', $player['team_ids']));
         $teamIds = array_filter($teamIds, function($id) { return !empty($id); });
         
@@ -66,7 +78,7 @@ try {
             $allTeams = $stmtTeams->fetchAll(PDO::FETCH_ASSOC);
         }
     }
-    // Fallback to primary team if no team_ids
+    // Fallback to primary team if no team_ids / no player_teams entries
     if (empty($allTeams) && !empty($player['team_id'])) {
         $allTeams = [['id' => $player['team_id'], 'name' => $player['team_name']]];
     }
@@ -92,7 +104,24 @@ try {
 // lookups
 $teams = [];
 try { $teams = $db->query("SELECT * FROM teams ORDER BY name")->fetchAll(PDO::FETCH_ASSOC); } catch (Exception $e) { }
-$positions = [ 'Goalkeeper','Defender','Midfielder','Forward','Left Wing','Right Wing','Centre-Back','Left-Back','Right-Back','Striker' ];
+$positionOptions = [
+    'GK' => 'Goalkeeper',
+    'RB' => 'Right Back',
+    'LB' => 'Left Back',
+    'CB' => 'Centre Back',
+    'RWB' => 'Right Wing Back',
+    'LWB' => 'Left Wing Back',
+    'CDM' => 'Central Defensive Midfielder',
+    'CM' => 'Central Midfielder',
+    'CAM' => 'Central Attacking Midfielder',
+    'RM' => 'Right Midfielder',
+    'LM' => 'Left Midfielder',
+    'RW' => 'Right Winger',
+    'LW' => 'Left Winger',
+    'CF' => 'Centre Forward',
+    'SS' => 'Second Striker',
+    'ST' => 'Striker',
+];
 $ageGroups = [ 'U6','U7','U8','U9','U10','U11','U12','U13','U14','U15','U16','U17','U18','U19','U20','U21','Senior' ];
 
 // fragment modal
@@ -110,10 +139,16 @@ if ($fragment) {
             <h4 class="mb-0"><?= htmlspecialchars($playerName) ?></h4>
             <?php if (!empty($player['nickname'])): ?><div class="text-muted">"<?= htmlspecialchars($player['nickname']) ?>"</div><?php endif; ?>
         </div>
-        <div class="player-meta small">
+            <div class="player-meta small">
             <div><strong>Teams:</strong> <?= !empty($allTeams) ? htmlspecialchars(implode(', ', array_column($allTeams, 'name'))) : 'Not assigned' ?></div>
             <div><strong>Number:</strong> <?= htmlspecialchars($player['jersey_number'] ?? '—') ?></div>
-            <div><strong>Primary:</strong> <?= htmlspecialchars($player['primary_position'] ?? '—') ?></div>
+            <div><strong>Primary:</strong>
+                <?php
+                    $pp = $player['primary_position'] ?? '';
+                    if ($pp === '') echo '—';
+                    else echo htmlspecialchars(isset($positionOptions[$pp]) ? $positionOptions[$pp] . " ($pp)" : $pp);
+                ?>
+            </div>
             <div><strong>Age Group:</strong> <?= htmlspecialchars($player['age_group'] ?? '—') ?></div>
         </div>
     </div>
@@ -138,6 +173,11 @@ vivo_include_head_css($db);
             grid-template-columns: 1fr 1fr;
             gap: 0.6rem; /* tightened vertical and horizontal spacing */
         }
+        .form-grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0.6rem;
+        }
         .form-grid .form-group {
             margin-bottom: 0.45rem; /* reduced row padding */
         }
@@ -146,6 +186,7 @@ vivo_include_head_css($db);
 
         @media (max-width: 768px) {
             .form-grid { grid-template-columns: 1fr; }
+            .form-grid-3 { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -222,17 +263,22 @@ vivo_include_head_css($db);
                         <div class="card-header"><h5 class="card-title">Football Information</h5></div>
                         <div class="card-body">
                             <form>
-                                <div class="form-grid">
+                                <div class="form-grid-3">
                                     <div class="form-group">
                                         <label>Primary Position</label>
-                                        <select class="form-select" disabled>
-                                            <option value="">Select Position</option>
-                                            <?php foreach ($positions as $pos): ?>
-                                            <option <?= (isset($player['primary_position']) && $player['primary_position'] == $pos) ? 'selected' : '' ?>><?= htmlspecialchars($pos) ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
+                                        <input type="text" class="form-control" disabled value="<?= htmlspecialchars(isset($positionOptions[$player['primary_position'] ?? '']) ? $positionOptions[$player['primary_position']] . ' (' . ($player['primary_position'] ?? '') . ')' : ($player['primary_position'] ?? '')) ?>">
                                     </div>
-                                    <?php if (in_array('age_group', $schemaColumns)): ?>
+                                    <div class="form-group">
+                                        <label>Secondary Position</label>
+                                        <input type="text" class="form-control" disabled value="<?= htmlspecialchars(isset($positionOptions[$player['secondary_position'] ?? '']) ? $positionOptions[$player['secondary_position']] . ' (' . ($player['secondary_position'] ?? '') . ')' : ($player['secondary_position'] ?? '')) ?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Third Position</label>
+                                        <input type="text" class="form-control" disabled value="<?= htmlspecialchars(isset($positionOptions[$player['third_position'] ?? '']) ? $positionOptions[$player['third_position']] . ' (' . ($player['third_position'] ?? '') . ')' : ($player['third_position'] ?? '')) ?>">
+                                    </div>
+                                </div>
+                                <?php if (in_array('age_group', $schemaColumns)): ?>
+                                <div class="form-grid">
                                     <div class="form-group">
                                         <label>Age Group</label>
                                         <select class="form-select" disabled>
@@ -242,16 +288,8 @@ vivo_include_head_css($db);
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
-                                    <?php endif; ?>
-                                    <div class="form-group">
-                                        <label>Secondary Position</label>
-                                        <select class="form-select" disabled>
-                                            <option value="">Select Position</option>
-                                            <?php foreach ($positions as $pos): ?>
-                                            <option <?= (isset($player['secondary_position']) && $player['secondary_position'] == $pos) ? 'selected' : '' ?>><?= htmlspecialchars($pos) ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
-                                    </div>
+                                </div>
+                                <?php endif; ?>
 
                                     <div class="form-group">
                                         <label>Preferred Foot</label>

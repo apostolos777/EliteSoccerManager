@@ -263,21 +263,22 @@ body {
     margin-bottom: 0;
 }
 
-.stat-header {
+
+.stat-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: var(--space-8) var(--space-6);
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: var(--space-2);
+    gap: var(--space-6);
+    position: relative;
+    overflow: hidden;
+    min-width: 0;
+    min-height: 140px;
+    border-top: 6px solid var(--primary-red);
+    transition: box-shadow var(--transition-fast), transform var(--transition-fast);
 }
-
-.stat-name {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--neutral-700);
-}
-
-.stat-value {
-    font-size: 0.875rem;
     font-weight: 600;
     color: var(--neutral-900);
 }
@@ -1009,15 +1010,16 @@ body.sidebar-collapsed .main-content,
 }
 
 .stat-icon {
-    width: 48px;
-    height: 48px;
+    width: 64px;
+    height: 64px;
     border-radius: var(--radius-lg);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.25rem;
+    font-size: 2.2rem;
     color: var(--white);
     flex-shrink: 0;
+    box-shadow: 0 2px 12px rgba(220,38,38,0.12);
 }
 
 .stat-card.primary .stat-icon {
@@ -1072,20 +1074,23 @@ body.sidebar-collapsed .main-content,
 
 .stat-number {
     font-family: var(--font-display);
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--neutral-700);
-    margin-bottom: var(--space-1);
-    line-height: 1;
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--primary-red);
+    margin-bottom: var(--space-2);
+    line-height: 1.05;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 8px rgba(220,38,38,0.08);
 }
 
 .stat-label {
-    font-family: var(--font-primary);
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--neutral-700);
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--neutral-900);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
+    margin-top: 2px;
 }
 
 .stat-trend {

@@ -204,6 +204,15 @@ if (isset($_GET['error'])) {
         .pp-empty { text-align:center; padding:2.25rem 1rem; border:2px dashed #d5dae0; border-radius:12px; background:#fff; }
         .pp-empty h3 { margin:.35rem 0; font-size:1.1rem; }
     @media (max-width:520px){ .player-list-grid { grid-template-columns:1fr; } .pcm-photo { height:125px; } }
+
+    /* Make player items use the same card styling as teams (team-card) */
+    .team-card {
+        background:#fff; border:1px solid var(--border-light); border-radius:12px; display:flex; flex-direction:column; overflow:hidden; transition: transform .18s ease, box-shadow .18s ease; box-shadow:var(--shadow-sm);
+    }
+    .team-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); }
+    .team-card .pcm-photo { width:100%; height:140px; object-fit:cover; border-bottom:1px solid rgba(0,0,0,0.04); }
+    .team-card .pcm-body { padding: .9rem; }
+    @media (max-width:520px){ .player-list-grid { grid-template-columns: 1fr !important; } }
     </style>
 </head>
 <body>
@@ -215,7 +224,7 @@ if (isset($_GET['error'])) {
             <p class="page-subtitle">Squad overview and player profiles</p>
         </div>
         <div class="page-actions">
-            <a href="player_profile.php?action=add" class="btn btn-primary"><i class="fas fa-user-plus"></i> Add Player</a>
+            <a href="add_player.php" class="btn btn-primary"><i class="fas fa-user-plus"></i> Add Player</a>
             <button id="bulkDeleteBtn" class="btn btn-danger" style="margin-left:.5rem; display:none;" onclick="bulkDeleteSelected()"><i class="fas fa-trash"></i> Delete Selected</button>
         </div>
     </div>
@@ -284,7 +293,7 @@ if (isset($_GET['error'])) {
             <h3>No Players Yet</h3>
             <p>Add your first player to get started</p>
             <a href="add_player.php" class="btn btn-primary"><i class="fas fa-plus"></i> Add Player</a>
-                        <a href="player_profile.php?action=add" class="btn btn-primary"><i class="fas fa-plus"></i> Add Player</a>
+                        <a href="add_player.php" class="btn btn-primary"><i class="fas fa-plus"></i> Add Player</a>
         </div>
     <?php else: ?>
         <div style="margin:0 0 1rem; display:flex; gap:.5rem; align-items:center;">
@@ -319,7 +328,7 @@ if (isset($_GET['error'])) {
                 $heightDisplay = !empty($p['height']) ? (is_numeric($p['height']) ? number_format($p['height']/100,2).'m' : htmlspecialchars($p['height'])) : '-';
                 $weightDisplay = !empty($p['weight']) ? (is_numeric($p['weight']) ? intval($p['weight']).'kg' : htmlspecialchars($p['weight'])) : '-';
             ?>
-            <div class="player-card-mini player-card" tabindex="0" aria-expanded="false" data-player-id="<?= $p['id'] ?>" data-player-name="<?= strtolower($fullName) ?>" data-team="<?= strtolower($p['team_name'] ?? '') ?>" data-position="<?= strtolower($p['position'] ?? '') ?>" data-age-group="<?= htmlspecialchars($p['age_group'] ?? '') ?>">
+            <div class="team-card player-item" tabindex="0" aria-expanded="false" data-player-id="<?= $p['id'] ?>" data-player-name="<?= strtolower($fullName) ?>" data-team="<?= strtolower($p['team_name'] ?? '') ?>" data-position="<?= strtolower($p['position'] ?? '') ?>" data-age-group="<?= htmlspecialchars($p['age_group'] ?? '') ?>" onclick="window.location='player_profile.php?id=<?= $p['id'] ?>'">
                 <input type="checkbox" class="player-select-checkbox" value="<?= $p['id'] ?>" style="position:absolute;left:.6rem;top:.6rem;z-index:5;" onclick="event.stopPropagation();updateBulkUI();">
                 <div class="pcm-photo">
                     <?php if (!empty($p['profile_image']) && file_exists($p['profile_image'])): ?>
@@ -346,12 +355,12 @@ if (isset($_GET['error'])) {
                         <div class="pcm-stat"><span class="l">ID</span><span class="v"><?= !empty($p['vivo_id']) ? htmlspecialchars(substr($p['vivo_id'],-4)) : htmlspecialchars($p['id']) ?></span></div>
                     </div>
                     <div class="pcm-actions">
-                        <a href="player_profile.php?id=<?= $p['id'] ?>" class="btn-view"><i class="fas fa-eye"></i> View</a>
-                        <a href="player_profile.php?id=<?= $p['id'] ?>&action=edit" class="btn-edit"><i class="fas fa-edit"></i> Edit</a>
+                        <a href="player_profile.php?id=<?= $p['id'] ?>" class="btn-view" onclick="event.stopPropagation();"><i class="fas fa-eye"></i> View</a>
+                        <a href="player_profile.php?id=<?= $p['id'] ?>&action=edit" class="btn-edit" onclick="event.stopPropagation();"><i class="fas fa-edit"></i> Edit</a>
                         <?php if (function_exists('isAdmin') && isAdmin()): ?>
-                        <a href="delete_player.php?id=<?= $p['id'] ?>" class="btn-delete" onclick="return confirm('Are you sure you want to permanently delete this player? This action cannot be undone and will remove all player data including attendance records.')" style="background:var(--primary);color:white !important;"><i class="fas fa-trash"></i> Delete</a>
+                        <a href="delete_player.php?id=<?= $p['id'] ?>" class="btn-delete" onclick="event.stopPropagation(); return confirm('Are you sure you want to permanently delete this player? This action cannot be undone and will remove all player data including attendance records.');" style="background:var(--primary);color:white !important;"><i class="fas fa-trash"></i> Delete</a>
                         <?php endif; ?>
-                        <a href="player_card_print.php?id=<?= $p['id'] ?>" class="btn-secondary" target="_blank" style="flex:1;display:inline-flex;align-items:center;justify-content:center;gap:.25rem;font-size:.65rem;background:#6c757d;color:white !important;text-decoration:none;border-radius:6px;padding:.45rem .4rem;font-weight:600;"><i class="fas fa-print"></i> Card</a>
+                        <a href="player_card_print.php?id=<?= $p['id'] ?>" class="btn-secondary" target="_blank" style="flex:1;display:inline-flex;align-items:center;justify-content:center;gap:.25rem;font-size:.65rem;background:#6c757d;color:white !important;text-decoration:none;border-radius:6px;padding:.45rem .4rem;font-weight:600;" onclick="event.stopPropagation();"><i class="fas fa-print"></i> Card</a>
                     </div>
                     <div class="pcm-details-panel" aria-hidden="true">
                         <div class="pcm-tags">

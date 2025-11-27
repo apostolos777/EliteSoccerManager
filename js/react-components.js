@@ -33,8 +33,11 @@ async function fetchAPI(endpoint) {
 /**
  * Dashboard Stats Card Component
  */
-function DashboardStatCard({ icon, label, value, trend, loading }) {
-    return React.createElement('div', { className: 'fc-card stat-card' },
+function DashboardStatCard({ icon, label, value, trend, loading, href }) {
+    // make stat card clickable if href provided
+    const props = { className: 'fc-card stat-card' };
+    if (href) { props.onClick = () => { window.location.href = href; }; props.role = 'link'; props.tabIndex = 0; }
+    return React.createElement('div', props,
         loading ?
             React.createElement('div', { className: 'loading' }, 'Loading...') :
             [
@@ -89,6 +92,7 @@ function DashboardStats() {
                 icon: card.icon,
                 label: card.label,
                 value: loading ? '...' : (stats ? (stats[card.key] || 0) + (card.suffix || '') : '0'),
+                href: card.key === 'players' ? 'players.php' : (card.key === 'teams' ? 'teams.php' : 'events.php'),
                 loading: loading
             })
         )
@@ -173,7 +177,7 @@ function TopScorers() {
 function PlayerCard({ player, onEdit, onDelete }) {
     const photoUrl = player.photo_url || 'https://via.placeholder.com/150x150/081224/ffffff?text=' + (player.first_name?.[0] || 'P') + (player.last_name?.[0] || '');
 
-    return React.createElement('div', { className: 'fc-card player-card' },
+    return React.createElement('a', { href: 'player_profile.php?id=' + player.id, className: 'fc-card player-card react-player-link', style: { textDecoration: 'none', color: 'inherit' } },
         React.createElement('div', { className: 'player-photo' },
             React.createElement('img', {
                 src: photoUrl,
@@ -200,14 +204,15 @@ function PlayerCard({ player, onEdit, onDelete }) {
                 React.createElement('span', { className: 'value' }, player.email)
             )
         ),
-        React.createElement('div', { className: 'player-actions' },
+        // Keep legacy edit/delete buttons hidden inside player page; still render for programmatic access
+        React.createElement('div', { className: 'player-actions', style: { display: 'none' } },
             React.createElement('button', {
                 className: 'btn-secondary',
-                onClick: () => onEdit(player.id)
+                onClick: (e) => { e.preventDefault(); onEdit(player.id); }
             }, 'Edit'),
             React.createElement('button', {
                 className: 'btn-danger',
-                onClick: () => onDelete(player.id)
+                onClick: (e) => { e.preventDefault(); onDelete(player.id); }
             }, 'Delete')
         )
     );

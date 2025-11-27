@@ -325,17 +325,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
         
-        // Sync multi-team relationship (player_teams join table) if available
-        try {
-            $hasPlayerTeams = (bool)$db->query("SELECT name FROM sqlite_master WHERE type='table' AND name='player_teams'")->fetch(PDO::FETCH_ASSOC);
-        } catch (Exception $e) {
-            $hasPlayerTeams = false;
-        }
-
-        if (!empty($selectedTeams) || $hasPlayerTeams) {
+        // Sync multi-team relationship (player_teams join table) if available.
+        // We only update the join table if the form actually submitted the `team_ids` input —
+        // this prevents accidental deletion when user hasn't interacted with the multi-select.
+        $submittedTeamIds = array_key_exists('team_ids', $_POST);
+        if ($submittedTeamIds) {
             try {
+                // Ensure the join table exists if user submitted team selections
+                if (!empty($selectedTeams) && is_array($selectedTeams)) {
+                    $db->exec("CREATE TABLE IF NOT EXISTS player_teams (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        player_id INTEGER NOT NULL,
+                        team_id INTEGER NOT NULL,
+                        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+                        updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+                        UNIQUE(player_id, team_id)
+                    )");
+                    $hasPlayerTeams = true;
+                } else {
+                    $hasPlayerTeams = (bool)$db->query("SELECT name FROM sqlite_master WHERE type='table' AND name='player_teams'")->fetch(PDO::FETCH_ASSOC);
+                }
+
                 if ($hasPlayerTeams) {
-                    // ensure existing mappings are cleared and new ones inserted
+                    // Clear existing mappings and insert the new selection (possibly empty to clear)
                     $db->prepare('DELETE FROM player_teams WHERE player_id = ?')->execute([$player_id]);
                     if (!empty($selectedTeams) && is_array($selectedTeams)) {
                         $insertStmt = $db->prepare('INSERT INTO player_teams (player_id, team_id) VALUES (?, ?)');
@@ -344,14 +356,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         }
                     }
                 }
-                // Keep legacy compatibility: update players.team_ids and team_id
-                // (players table may store a CSV of team ids for older installs)
+
+                // Keep legacy compatibility: update players.team_ids and team_id (CSV or primary)
                 $teamIdsString = !empty($selectedTeams) ? implode(',', $selectedTeams) : '';
                 if (in_array('team_ids', $schemaColumns)) {
                     $updateData['team_ids'] = $teamIdsString;
                 }
-                if (!empty($selectedTeams) && in_array('team_id', $schemaColumns)) {
-                    $updateData['team_id'] = (int)$selectedTeams[0];
+                // If the players table supports a single team_id, set it to first selected (or NULL if none selected)
+                if (in_array('team_id', $schemaColumns)) {
+                    $updateData['team_id'] = (!empty($selectedTeams) && is_array($selectedTeams)) ? (int)$selectedTeams[0] : null;
                 }
             } catch (Exception $e) {
                 // ignore errors syncing teams
@@ -556,6 +569,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <i class="fas fa-futbol"></i> Football Information
                 </h2>
                 <div class="form-grid-3">
+                    <!-- Primary / Secondary / Third positions grouped in one 3-column row -->
+                    <!-- Primary / Secondary / Third positions, keep on same row for clarity -->
                     <div class="form-group">
                         <label for="primary_position">Primary Position</label>
                         <select id="primary_position" name="primary_position">
@@ -586,25 +601,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             ?>
                         </select>
                     </div>
-                    <?php if (in_array('age_group', $schemaColumns)): ?>
-                    <div class="form-group">
-                        <label for="age_group">Age Group</label>
-                        <select id="age_group" name="age_group" class="form-control">
-                            <option value="">Select Age Group</option>
-                            <?php foreach ($ageGroups as $ag): ?>
-                                <option value="<?= htmlspecialchars($ag) ?>" <?= (isset($player['age_group']) && $player['age_group'] === $ag) ? 'selected' : '' ?>><?= htmlspecialchars($ag) ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <?php endif; ?>
                     <div class="form-group">
                         <label for="secondary_position">Secondary Position</label>
                         <select id="secondary_position" name="secondary_position">
                             <option value="">Select Position</option>
-                            <option value="Goalkeeper" <?= ($player['secondary_position'] ?? '') === 'Goalkeeper' ? 'selected' : '' ?>>Goalkeeper</option>
-                            <option value="Defender" <?= ($player['secondary_position'] ?? '') === 'Defender' ? 'selected' : '' ?>>Defender</option>
-                            <option value="Midfielder" <?= ($player['secondary_position'] ?? '') === 'Midfielder' ? 'selected' : '' ?>>Midfielder</option>
-                            <option value="Forward" <?= ($player['secondary_position'] ?? '') === 'Forward' ? 'selected' : '' ?>>Forward</option>
+                            <?php
+                            foreach ($positionOptions as $k => $label) {
+                                $sel = (($player['secondary_position'] ?? '') === $k) ? 'selected' : '';
+                                echo "<option value=\"$k\" $sel>$label ($k)</option>\n";
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="third_position">Third Position</label>
+                        <select id="third_position" name="third_position">
+                            <option value="">Select Position</option>
+                            <?php
+                            foreach ($positionOptions as $k => $label) {
+                                $sel = (($player['third_position'] ?? '') === $k) ? 'selected' : '';
+                                echo "<option value=\"$k\" $sel>$label ($k)</option>\n";
+                            }
+                            ?>
                         </select>
                     </div>
                     <div class="form-group">
@@ -639,32 +657,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </select>
                         <small style="display: block; margin-top: 0.5rem; color: var(--neutral-600);">Hold Ctrl (Windows) or Cmd (Mac) to select multiple teams</small>
                     </div>
-                    <div class="form-group">
-                        <label for="secondary_position">Secondary Position</label>
-                        <select id="secondary_position" name="secondary_position">
-                            <option value="">Select Position</option>
-                            <?php
-                            foreach ($positionOptions as $k => $label) {
-                                $sel = (($player['secondary_position'] ?? '') === $k) ? 'selected' : '';
-                                echo "<option value=\"$k\" $sel>$label ($k)</option>\n";
-                            }
-                            ?>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="third_position">Third Position</label>
-                        <select id="third_position" name="third_position">
-                            <option value="">Select Position</option>
-                            <?php
-                            foreach ($positionOptions as $k => $label) {
-                                $sel = (($player['third_position'] ?? '') === $k) ? 'selected' : '';
-                                echo "<option value=\"$k\" $sel>$label ($k)</option>\n";
-                            }
-                            ?>
-                        </select>
-                        <small class="text-muted">You can select up to 3 positions. Primary is the main role.</small>
-                    </div>
+                    <!-- (moved Secondary / Third position selects into the top-of-section 3-column row) -->
                 </div>
             </div>
 

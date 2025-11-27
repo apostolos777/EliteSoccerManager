@@ -244,10 +244,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute();
         $newPlayerId = $db->lastInsertId();
 
-        // If player_teams table exists, insert selected teams into join table
+        // If the user selected multiple teams we'll persist them to a join table.
+        // Ensure the join table exists (create if missing) so older installs without migrations still get the feature.
         try {
-            $hasPlayerTeams = (bool)$db->query("SELECT name FROM sqlite_master WHERE type='table' AND name='player_teams'")->fetch(PDO::FETCH_ASSOC);
+            if (!empty($selectedTeams) && is_array($selectedTeams)) {
+                // Create the join table if it doesn't exist yet (safe operation)
+                $db->exec("CREATE TABLE IF NOT EXISTS player_teams (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    player_id INTEGER NOT NULL,
+                    team_id INTEGER NOT NULL,
+                    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+                    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+                    UNIQUE(player_id, team_id)
+                )");
+                $hasPlayerTeams = true;
+            } else {
+                $hasPlayerTeams = (bool)$db->query("SELECT name FROM sqlite_master WHERE type='table' AND name='player_teams'")->fetch(PDO::FETCH_ASSOC);
+            }
         } catch (Exception $e) {
+            // On any failure, gracefully fallback to keeping team_ids stored on the players table
             $hasPlayerTeams = false;
         }
 
@@ -315,19 +330,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// Position options
-$positions = [
-    'Goalkeeper',
-    'Centre-Back',
-    'Left-Back',
-    'Right-Back',
-    'Defensive Midfielder',
-    'Central Midfielder',
-    'Attacking Midfielder',
-    'Left Winger',
-    'Right Winger',
-    'Striker',
-    'Centre-Forward'
+// Use the same soccer position codes / labels as edit_player.php for consistent data and UI
+$positionOptions = [
+    'GK' => 'Goalkeeper',
+    'RB' => 'Right Back',
+    'LB' => 'Left Back',
+    'CB' => 'Centre Back',
+    'RWB' => 'Right Wing Back',
+    'LWB' => 'Left Wing Back',
+    'CDM' => 'Central Defensive Midfielder',
+    'CM' => 'Central Midfielder',
+    'CAM' => 'Central Attacking Midfielder',
+    'RM' => 'Right Midfielder',
+    'LM' => 'Left Midfielder',
+    'RW' => 'Right Winger',
+    'LW' => 'Left Winger',
+    'CF' => 'Centre Forward',
+    'SS' => 'Second Striker',
+    'ST' => 'Striker',
 ];
 
 // Age groups
@@ -456,30 +476,30 @@ $evenAgeGroups = [
                                             <label for="jersey_number" class="form-label">Jersey Number</label>
                                             <input type="number" class="form-control" id="jersey_number" name="jersey_number" min="1" max="99">
                                         </div>
-                                        <div class="col-md-6 mb-3">
+                                        <div class="col-md-4 mb-3">
                                             <label for="primary_position" class="form-label">Primary Position</label>
                                             <select class="form-select" id="primary_position" name="primary_position">
-                                                <option value="">Select Position</option>
-                                                <?php foreach ($positions as $position): ?>
-                                                <option value="<?php echo $position; ?>"><?php echo $position; ?></option>
-                                                <?php endforeach; ?>
-                                            </select>
+                                                    <option value="">Select Position</option>
+                                                    <?php foreach ($positionOptions as $key => $label): ?>
+                                                    <option value="<?php echo $key; ?>"><?php echo htmlspecialchars($label . ' (' . $key . ')'); ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
                                         </div>
-                                        <div class="col-md-6 mb-3">
+                                        <div class="col-md-4 mb-3">
                                             <label for="secondary_position" class="form-label">Secondary Position</label>
                                             <select class="form-select" id="secondary_position" name="secondary_position">
                                                 <option value="">Select Position</option>
-                                                <?php foreach ($positions as $position): ?>
-                                                <option value="<?php echo $position; ?>"><?php echo $position; ?></option>
+                                                <?php foreach ($positionOptions as $key => $label): ?>
+                                                <option value="<?php echo $key; ?>"><?php echo htmlspecialchars($label . ' (' . $key . ')'); ?></option>
                                                 <?php endforeach; ?>
                                             </select>
                                         </div>
-                                        <div class="col-md-6 mb-3">
+                                        <div class="col-md-4 mb-3">
                                             <label for="third_position" class="form-label">Third Position</label>
                                             <select class="form-select" id="third_position" name="third_position">
                                                 <option value="">Select Position</option>
-                                                <?php foreach ($positions as $position): ?>
-                                                <option value="<?php echo $position; ?>"><?php echo $position; ?></option>
+                                                <?php foreach ($positionOptions as $key => $label): ?>
+                                                <option value="<?php echo $key; ?>"><?php echo htmlspecialchars($label . ' (' . $key . ')'); ?></option>
                                                 <?php endforeach; ?>
                                             </select>
                                             <small class="text-muted">Optional — another role they can play on the field</small>

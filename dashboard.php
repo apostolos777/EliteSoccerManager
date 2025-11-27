@@ -119,9 +119,31 @@ try {
     )->fetchAll();
 
     // Player gallery (active players with possible images)
-    $players_gallery = $db->query(
-        "SELECT id, first_name, last_name, jersey_number FROM players WHERE is_active = 1 ORDER BY last_name LIMIT 8"
-    )->fetchAll();
+    // Build robust players_gallery query: some DBs use first_name/last_name, others 'name' or 'surname'.
+    try {
+        $colsStmt = $db->query("PRAGMA table_info(players)");
+        $colsInfo = $colsStmt ? $colsStmt->fetchAll(PDO::FETCH_ASSOC) : [];
+        $cols = array_column($colsInfo, 'name');
+
+        if (in_array('first_name', $cols) && in_array('last_name', $cols)) {
+            $nameExpr = "TRIM(COALESCE(first_name,'') || ' ' || COALESCE(last_name,'')) AS display_name";
+        } elseif (in_array('name', $cols)) {
+            $nameExpr = "name AS display_name";
+        } elseif (in_array('surname', $cols) && in_array('name', $cols)) {
+            $nameExpr = "TRIM(COALESCE(name,'') || ' ' || COALESCE(surname,'')) AS display_name";
+        } else {
+            $nameExpr = "id || '' AS display_name"; // fallback
+        }
+
+        $profileCol = in_array('profile_image', $cols) ? 'profile_image' : (in_array('photo_url', $cols) ? 'photo_url' : "'' AS profile_image");
+        $jerseyCol = in_array('jersey_number', $cols) ? 'jersey_number' : "'' AS jersey_number";
+
+        $players_gallery = $db->query(
+            "SELECT id, $nameExpr, $profileCol, $jerseyCol FROM players ORDER BY COALESCE(last_name, name, display_name, id) LIMIT 8"
+        )->fetchAll(PDO::FETCH_ASSOC);
+    } catch (Exception $e) {
+        $players_gallery = [];
+    }
 
     // Top scorers from player_stats if available
     $top_scorers = [];
@@ -255,20 +277,21 @@ try {
         }
         
         .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--primary-green);
-            line-height: 1;
+            font-size: 3.6rem;
+            font-weight: 900;
+            color: var(--primary-red);
+            line-height: 1.02;
             margin-bottom: var(--space-2);
             font-family: var(--font-display);
+            text-shadow: 0 2px 8px rgba(220,38,38,0.06);
         }
         
         .stat-label {
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--text-secondary);
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-primary);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.08em;
         }
         
         .quick-actions {
@@ -307,6 +330,37 @@ try {
             display: grid;
             grid-template-columns: 2fr 1fr;
             gap: var(--space-8);
+        }
+
+        /* Mobile layout: stack everything vertically and make buttons 2x2 */
+        @media (max-width: 780px) {
+            /* Stack dashboard columns */
+            .dashboard-grid { grid-template-columns: 1fr !important; }
+
+            /* Make stats display full width and larger spacing */
+            .stats-grid { grid-template-columns: 1fr !important; }
+
+            /* Player gallery responsive layout */
+                .player-grid { grid-template-columns: repeat(4, 1fr); gap: var(--space-3); }
+                @media (max-width: 980px) {
+                    .player-grid { grid-template-columns: repeat(2, 1fr) !important; }
+                }
+                @media (max-width: 520px) {
+                    .player-grid { grid-template-columns: 1fr !important; }
+                }
+
+            /* Add buttons 2 x 2 */
+            .add-buttons-row { display: grid !important; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+            .add-buttons-row .btn { width: 100%; }
+
+            /* Make stacked widgets flow vertically */
+            .left-stack { width: 100%; flex-direction: column; gap: var(--space-4); overflow:auto; }
+
+            /* Ensure scoreboard row stacks */
+            .scoreboard-row { grid-template-columns: 1fr !important; }
+
+            /* Make all cards full width and stacked */
+            .card, .dashboard-card, .fc-card { width: 100%; display:block; }
         }
         
         .recent-activity {
@@ -396,6 +450,30 @@ try {
                 </div>
 
                 <!-- Fixtures + Upcoming Matches Row (directly under add-buttons) -->
+                <!-- Removed fixtures and upcoming matches row from header. Will move below stats. -->
+            </div>
+            
+            <!-- Content Section -->
+            <div class="content-section">
+                <!-- React-powered Statistics Grid -->
+                <div id="react-dashboard-stats"></div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions animate-fade-up">
+                    <!-- Add buttons row (moved directly under stats) -->
+                    <div class="add-buttons-row" style="display:flex; gap:1.5rem; margin-bottom:2rem;">
+                        <a href="team_edit.php?action=add" class="btn btn-primary"><i class="fas fa-plus"></i> Add Team</a>
+                        <a href="add_player.php" class="btn btn-primary"><i class="fas fa-user-plus"></i> Add Player</a>
+                        <a href="event_edit.php?action=add" class="btn btn-primary"><i class="fas fa-calendar-plus"></i> Add Event</a>
+                        <a href="attendance.php" class="btn btn-primary"><i class="fas fa-clipboard-check"></i> Take Attendance</a>
+                    </div>
+                    <!-- Left stacked sidebar (React-powered widgets) -->
+                    <aside class="left-stack" aria-label="Quick widgets">
+                        <!-- Removed Upcoming Matches and Top Scorers cards -->
+                    </aside>
+                </div>
+
+                <!-- Fixtures + Upcoming Matches Row (now below buttons) -->
                 <div class="matches-row animate-fade-up" style="display:grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); margin-bottom: var(--space-6);">
                     <!-- Fixtures (list of upcoming matches) -->
                     <div class="card fixtures-card" style="padding: var(--space-4);">
@@ -417,7 +495,6 @@ try {
                             <div class="text-center" style="padding: var(--space-6); color:var(--text-secondary);">No upcoming matches.</div>
                         <?php endif; ?>
                     </div>
-
                     <!-- Upcoming Matches widget (compact list / next match) -->
                     <div class="card" style="padding: var(--space-4);">
                         <h4 class="card-title" style="margin-bottom: var(--space-3);"><i class="fas fa-stopwatch" style="color:var(--primary-green); margin-right:8px"></i> Upcoming Matches</h4>
@@ -432,28 +509,8 @@ try {
                         <?php endif; ?>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Content Section -->
-            <div class="content-section">
-                <!-- React-powered Statistics Grid -->
-                <div id="react-dashboard-stats"></div>
 
-                <!-- Quick Actions -->
-                <div class="quick-actions animate-fade-up">
-                    <!-- Add buttons row -->
-                    <div class="add-buttons-row" style="display:flex; gap:1.5rem; margin-bottom:2rem;">
-                        <a href="team_edit.php?action=add" class="btn btn-primary"><i class="fas fa-plus"></i> Add Team</a>
-                        <a href="player_profile.php?action=add" class="btn btn-primary"><i class="fas fa-user-plus"></i> Add Player</a>
-                        <a href="event_edit.php?action=add" class="btn btn-primary"><i class="fas fa-calendar-plus"></i> Add Event</a>
-                        <a href="attendance.php" class="btn btn-primary"><i class="fas fa-clipboard-check"></i> Take Attendance</a>
-                    </div>
-                    <!-- Left stacked sidebar (React-powered widgets) -->
-                    <aside class="left-stack" aria-label="Quick widgets">
-                        <div id="react-upcoming-matches"></div>
-                        <div id="react-top-scorers"></div>
-                    </aside>
-                </div>
+                <!-- quick-actions removed from here (moved above) -->
 
                 <!-- Dashboard Grid (main body) -->
                 <div class="dashboard-grid">
@@ -527,20 +584,19 @@ try {
                             <!-- Player Gallery -->
                             <div class="player-gallery card fc-card animate-fade-up" style="margin-top: var(--space-6); padding: var(--space-4);">
                                 <h4 class="card-title" style="margin-bottom: var(--space-3);"><i class="fas fa-images" style="color:var(--primary-green); margin-right:8px"></i>Player Gallery</h4>
-                                <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-3);">
+                                <div class="player-grid" style="display:grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-3);">
                                     <?php if (!empty($players_gallery)): ?>
                                         <?php foreach ($players_gallery as $p): ?>
-                                            <div style="text-align:center; background:var(--white); padding:8px; border-radius:6px; box-shadow:var(--shadow-sm);">
+                                            <a href="player_profile.php?id=<?php echo intval($p['id']); ?>" style="text-align:center; background:var(--white); padding:8px; border-radius:6px; box-shadow:var(--shadow-sm); text-decoration:none; color:inherit; display:block;">
                                                 <?php
                                                 // Try to detect a player image file in uploads/players/player_<id>_profile.png or jpg
                                                 $img1 = 'uploads/players/player_' . intval($p['id']) . '_profile.png';
                                                 $img2 = 'uploads/players/player_' . intval($p['id']) . '_profile.jpg';
                                                 $profileImg = file_exists($img1) ? $img1 : (file_exists($img2) ? $img2 : 'uploads/testlogo.png');
                                                 ?>
-                                                <img src="<?php echo $profileImg; ?>" alt="<?php echo htmlspecialchars($p['first_name'] . ' ' . $p['last_name']); ?>" style="width:100%; height:90px; object-fit:cover; border-radius:6px; margin-bottom:6px;"/>
-                                                <div style="font-weight:700; font-size:0.9rem;"><?php echo htmlspecialchars($p['first_name'] . ' ' . $p['last_name']); ?></div>
-                                                <div style="font-size:0.8rem; color:var(--text-secondary);">#<?php echo htmlspecialchars($p['jersey_number'] ?? '—'); ?></div>
-                                            </div>
+                                                <img src="<?php echo $profileImg; ?>" alt="<?php echo htmlspecialchars($p['first_name'] . ' ' . $p['last_name']); ?>" style="width:100%; height:110px; object-fit:cover; border-radius:6px; margin-bottom:8px;"/>
+                                                <div style="font-weight:700; font-size:1rem;"><?php echo htmlspecialchars($p['first_name'] . ' ' . $p['last_name']); ?></div>
+                                            </a>
                                         <?php endforeach; ?>
                                     <?php else: ?>
                                         <div style="grid-column: 1 / -1; text-align:center; color:var(--text-secondary); padding:12px;">No players to display</div>

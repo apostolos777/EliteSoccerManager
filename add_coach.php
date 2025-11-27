@@ -68,10 +68,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         // Clear form data after successful submission
         $_POST = [];
-        
-        // Optional: Uncomment the next two lines if you want to redirect immediately
-        // header('Location: coaches.php');
-        // exit();
+
+        // Redirect to edit page for the newly created coach so downstream flows which expect an ID work.
+        if (!empty($coachId)) {
+            header('Location: edit_coach.php?id=' . (int)$coachId);
+            exit;
+        }
     } catch (Exception $e) {
         $error = "Error adding coach: " . $e->getMessage();
     }
