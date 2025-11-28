@@ -233,7 +233,11 @@ if (!$logoExists) {
 }
 
 .sidebar.collapsed {
-    width: var(--sidebar-collapsed-width);
+    /* enforce a small collapsed width and make it resilient if CSS variables are missing */
+    width: var(--sidebar-collapsed-width, 60px) !important;
+    min-width: var(--sidebar-collapsed-width, 60px) !important;
+    max-width: var(--sidebar-collapsed-width, 60px) !important;
+    overflow: hidden !important;
 }
 
 .sidebar .logo-text,
@@ -264,7 +268,9 @@ if (!$logoExists) {
     transition: margin-left 220ms cubic-bezier(.2,.8,.2,1);
 }
 
-body.sidebar-collapsed { --sidebar-width: var(--sidebar-collapsed-width); }
+/* When the body has sidebar-collapsed class, keep the global --sidebar-width variable in sync
+    so the content margin-left always matches the visible sidebar width */
+body.sidebar-collapsed { --sidebar-width: var(--sidebar-collapsed-width, 60px); }
 body:not(.sidebar-collapsed) { --sidebar-width: var(--sidebar-expanded-width); }
 
 /* Mobile Menu Overlay */
@@ -349,9 +355,10 @@ body:not(.mobile-view) .main-content {
     transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* ensure content margin-left matches the collapsed sidebar width to prevent overlap */
 body.sidebar-collapsed:not(.mobile-view) .content-main,
 body.sidebar-collapsed:not(.mobile-view) .main-content {
-    margin-left: var(--sidebar-collapsed-width, 60px);
+    margin-left: var(--sidebar-collapsed-width, 60px) !important;
 }
 
 @media (max-width:768px){

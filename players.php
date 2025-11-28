@@ -115,7 +115,20 @@ try {
     foreach ($players as &$p) {
         $p['all_teams'] = []; // Initialize
         
-        if (!empty($p['team_ids'])) {
+        // Prefer a modern join-table mapping (player_teams) if present — this is authoritative
+        $allTeamsFromJoin = [];
+        try {
+            $r = $db->query("SELECT name FROM sqlite_master WHERE type='table' AND name='player_teams'")->fetch(PDO::FETCH_ASSOC);
+            if ($r) {
+                $ptStmt = $db->prepare('SELECT t.name FROM player_teams pt JOIN teams t ON pt.team_id = t.id WHERE pt.player_id = ? ORDER BY t.name');
+                $ptStmt->execute([$p['id']]);
+                $allTeamsFromJoin = $ptStmt->fetchAll(PDO::FETCH_COLUMN, 0);
+            }
+        } catch (Exception $e) { /* ignore */ }
+
+        if (!empty($allTeamsFromJoin)) {
+            $p['all_teams'] = $allTeamsFromJoin;
+        } elseif (!empty($p['team_ids'])) {
             $teamIds = array_map('trim', explode(',', $p['team_ids']));
             $teamIds = array_filter($teamIds, function($id) { return !empty($id); });
             
