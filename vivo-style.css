@@ -270,6 +270,133 @@ textarea:hover {
     gap: var(--space-2);
 }
 
+/* -----------------------------------------------------
+     Added Component Styles: Fixtures, Results, League, Countdown,
+     Calendar, Upcoming Matches, Player Gallery
+     (Converted from VivoComponents.jsx injectCSS snippets)
+----------------------------------------------------- */
+
+/* Fixtures */
+.fixtures_card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.fixtures_date { font-size: 14px; color: #666; }
+.fixtures_time { font-size: 18px; font-weight: bold; margin: 5px 0; }
+.fixtures_teams {
+    font-family: "Roboto Condensed", sans-serif;
+    text-transform: uppercase;
+    color: #c40000;
+}
+
+/* Results */
+.results_card {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 12px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+.results_date { font-size: 13px; color: #666; }
+.results_score { font-size: 22px; font-weight: bold; margin: 4px 0; }
+.results_teams {
+    font-family: "Roboto Condensed", sans-serif;
+    text-transform: uppercase;
+    color: #c40000;
+}
+
+/* League table */
+.league_table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.league_header {
+    background: #c40000;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: "Roboto Condensed", sans-serif;
+}
+.league_cell { padding: 10px; border-bottom: 1px solid #ddd; text-align: center; }
+.league_row:nth-child(even) { background: #fafafa; }
+.league_club { display: flex; align-items: center; gap: 6px; }
+
+/* Countdown */
+.count_box {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+.count_title {
+    font-family: "Roboto Condensed", sans-serif;
+    text-transform: uppercase;
+    color: #c40000;
+    margin-bottom: 12px;
+}
+.count_values { display: flex; justify-content: center; gap: 20px; }
+.count_item { text-align: center; }
+.count_num { font-size: 28px; font-weight: bold; }
+.count_label { font-size: 12px; color: #666; }
+
+/* Calendar */
+.cal_box {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 12px;
+}
+.cal_table { width: 100%; text-align: center; }
+.cal_header { color: #c40000; font-weight: bold; }
+.cal_today {
+    background: #c40000;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 50%;
+}
+
+/* Upcoming Matches */
+.um_list {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 12px;
+}
+.um_row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+.um_date { color: #444; }
+.um_teams {
+    font-family: "Roboto Condensed", sans-serif;
+    text-transform: uppercase;
+}
+
+/* Player gallery */
+.pg_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 20px;
+}
+.pg_card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    text-align: center;
+    padding: 10px;
+}
+.pg_img { width: 100%; border-radius: 6px; }
+.pg_name { margin-top: 8px; font-weight: bold; }
+
+
 .table-title i {
     color: var(--primary-red);
 }
