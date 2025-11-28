@@ -106,20 +106,25 @@ $teams = [];
 try { $teams = $db->query("SELECT * FROM teams ORDER BY name")->fetchAll(PDO::FETCH_ASSOC); } catch (Exception $e) { }
 $positionOptions = [
     'GK' => 'Goalkeeper',
+    'SW' => 'Sweeper',
     'RB' => 'Right Back',
     'LB' => 'Left Back',
     'CB' => 'Centre Back',
+    'LCB' => 'Left Centre Back',
+    'RCB' => 'Right Centre Back',
     'RWB' => 'Right Wing Back',
     'LWB' => 'Left Wing Back',
     'CDM' => 'Central Defensive Midfielder',
     'CM' => 'Central Midfielder',
+    'LCM' => 'Left Central Midfielder',
+    'RCM' => 'Right Central Midfielder',
     'CAM' => 'Central Attacking Midfielder',
     'RM' => 'Right Midfielder',
     'LM' => 'Left Midfielder',
     'RW' => 'Right Winger',
     'LW' => 'Left Winger',
-    'CF' => 'Centre Forward',
     'SS' => 'Second Striker',
+    'CF' => 'Centre Forward',
     'ST' => 'Striker',
 ];
 $ageGroups = [ 'U6','U7','U8','U9','U10','U11','U12','U13','U14','U15','U16','U17','U18','U19','U20','U21','Senior' ];
@@ -129,6 +134,11 @@ if ($fragment) {
     require_once 'includes/css_helper.php';
     vivo_include_head_css($db);
     ?>
+    <?php
+    // compute flag if nationality present
+    require_once 'includes/country_helper.php';
+    $playerFlag = !empty($player['nationality']) ? vivo_get_flag_for_nationality($player['nationality']) : '';
+    ?>
     <div class="player-profile-modal p-3">
         <div class="text-center mb-3">
             <?php if (!empty($player['profile_image'])): ?>
@@ -136,7 +146,7 @@ if ($fragment) {
             <?php else: ?>
                 <div class="player-placeholder-large mb-2"><i class="fas fa-user fa-3x"></i></div>
             <?php endif; ?>
-            <h4 class="mb-0"><?= htmlspecialchars($playerName) ?></h4>
+            <h4 class="mb-0"><?= ($playerFlag ? htmlspecialchars($playerFlag) . ' ' : '') . htmlspecialchars($playerName) ?></h4>
             <?php if (!empty($player['nickname'])): ?><div class="text-muted">"<?= htmlspecialchars($player['nickname']) ?>"</div><?php endif; ?>
         </div>
             <div class="player-meta small">
@@ -208,7 +218,7 @@ vivo_include_head_css($db);
                         <?php endif; ?>
                     </div>
                     <div class="text-end">
-                        <div class="fw-bold"><?= htmlspecialchars($playerName) ?></div>
+                        <div class="fw-bold"><?= ($playerFlag ? htmlspecialchars($playerFlag) . ' ' : '') . htmlspecialchars($playerName) ?></div>
                         <?php if (!empty($player['nickname'])): ?><div class="text-muted">"<?= htmlspecialchars($player['nickname']) ?>"</div><?php endif; ?>
                         <div class="small"><strong>Teams:</strong> <?= !empty($allTeams) ? htmlspecialchars(implode(', ', array_column($allTeams, 'name'))) : 'Not assigned' ?> &nbsp; <strong>#</strong><?= htmlspecialchars($player['jersey_number'] ?? '—') ?></div>
                     </div>
@@ -222,7 +232,7 @@ vivo_include_head_css($db);
 
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-9">
                     <div class="card form-section">
                         <div class="card-header"><h5 class="card-title">Basic Information</h5></div>
                         <div class="card-body">
@@ -378,7 +388,9 @@ vivo_include_head_css($db);
 
                 </div>
 
-                <!-- right column profile card removed to avoid duplication; header shows image/name -->
+                </div>
+                <div class="col-lg-3">
+                <!-- right column (narrower) - profile header shows image/name -->
                     <?php if (in_array('why_started_playing', $schemaColumns) || in_array('personal_talents', $schemaColumns) || in_array('off_field_interests', $schemaColumns)): ?>
                     <div class="card shadow-sm mb-4">
                         <div class="card-header"><h6 class="card-title mb-0">Background & Interests</h6></div>

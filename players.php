@@ -6,6 +6,7 @@
 // Load configuration and authentication
 require_once 'includes/color_system.php';
 require_once 'includes/auth.php';
+require_once 'includes/country_helper.php';
 
 // Check authentication
 if (!isLoggedIn()) {
@@ -357,7 +358,8 @@ if (isset($_GET['error'])) {
                     <?php if (!empty($p['jersey_number'])): ?><div class="pcm-number">#<?= htmlspecialchars($p['jersey_number'] ?: '') ?></div><?php endif; ?>
                 </div>
                 <div class="pcm-body">
-                    <h2 class="pcm-name"><?= htmlspecialchars($fullName) ?><?php if(!empty($p['position'])): ?><span class="pcm-pos"><?= htmlspecialchars(strtoupper($p['position'] ?: '')) ?></span><?php endif; ?></h2>
+                    <?php $flag = !empty($p['nationality']) ? vivo_get_flag_for_nationality($p['nationality']) : ''; ?>
+                    <h2 class="pcm-name"><?= ($flag ? htmlspecialchars($flag) . ' ' : '') . htmlspecialchars($fullName) ?><?php if(!empty($p['position'])): ?><span class="pcm-pos"><?= htmlspecialchars(strtoupper($p['position'] ?: '')) ?></span><?php endif; ?></h2>
                     <p class="pcm-team"><?= !empty($p['all_teams']) ? htmlspecialchars(implode(', ', $p['all_teams'])) : 'No Team' ?></p>
                     <div class="pcm-meta">
                         <div class="pcm-stat"><span class="l">AGE</span><span class="v"><?= $age !== null ? $age : '-' ?></span></div>

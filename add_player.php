@@ -333,20 +333,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // Use the same soccer position codes / labels as edit_player.php for consistent data and UI
 $positionOptions = [
     'GK' => 'Goalkeeper',
+    'SW' => 'Sweeper',
     'RB' => 'Right Back',
     'LB' => 'Left Back',
     'CB' => 'Centre Back',
+    'LCB' => 'Left Centre Back',
+    'RCB' => 'Right Centre Back',
     'RWB' => 'Right Wing Back',
     'LWB' => 'Left Wing Back',
     'CDM' => 'Central Defensive Midfielder',
     'CM' => 'Central Midfielder',
+    'LCM' => 'Left Central Midfielder',
+    'RCM' => 'Right Central Midfielder',
     'CAM' => 'Central Attacking Midfielder',
     'RM' => 'Right Midfielder',
     'LM' => 'Left Midfielder',
     'RW' => 'Right Winger',
     'LW' => 'Left Winger',
-    'CF' => 'Centre Forward',
     'SS' => 'Second Striker',
+    'CF' => 'Centre Forward',
     'ST' => 'Striker',
 ];
 

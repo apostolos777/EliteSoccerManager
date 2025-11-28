@@ -238,6 +238,7 @@ if (!$logoExists) {
     min-width: var(--sidebar-collapsed-width, 60px) !important;
     max-width: var(--sidebar-collapsed-width, 60px) !important;
     overflow: hidden !important;
+    padding-right: 10px; /* a little breathing room on the right when collapsed */
 }
 
 .sidebar .logo-text,
@@ -255,9 +256,10 @@ if (!$logoExists) {
     pointer-events: none;
 }
 
-.sidebar.collapsed .sidebar-header { padding: 20px 10px; }
+.sidebar.collapsed .sidebar-header { padding: 12px 8px; }
 .sidebar.collapsed .logo-container { justify-content: center; }
-.sidebar.collapsed .nav-link { justify-content: center; padding: 12px; width: 44px; margin: 4px auto; }
+.sidebar.collapsed .logo-image { width:48px; height:48px; border-radius:8px; padding:4px; }
+.sidebar.collapsed .nav-link { justify-content: center; padding: 12px; width: 44px; min-width:44px; margin: 4px auto; }
 .sidebar.collapsed .nav-link i { margin-right: 0; }
 
 /* Fix content area adjustment */
@@ -356,10 +358,18 @@ body:not(.mobile-view) .main-content {
 }
 
 /* ensure content margin-left matches the collapsed sidebar width to prevent overlap */
+/* When the sidebar is collapsed, let the page content occupy the full width; the collapsed
+   sidebar is visually narrow and will overlay on top — this allows the main content to use
+   all available horizontal space instead of leaving a reserved margin. */
 body.sidebar-collapsed:not(.mobile-view) .content-main,
 body.sidebar-collapsed:not(.mobile-view) .main-content {
-    margin-left: var(--sidebar-collapsed-width, 60px) !important;
+    margin-left: 0 !important;
+    width: 100% !important;
 }
+
+/* Hide logout and user-info when collapsed to reduce clutter */
+.sidebar.collapsed .sidebar-footer .auth-section .logout-btn,
+.sidebar.collapsed .sidebar-footer .auth-section .user-info { display: none !important; }
 
 @media (max-width:768px){
     .club-logo-img{max-width:50px;max-height:50px}
