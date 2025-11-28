@@ -396,6 +396,26 @@ textarea:hover {
 .pg_img { width: 100%; border-radius: 6px; }
 .pg_name { margin-top: 8px; font-weight: bold; }
 
+/* -----------------------------------------------------------------
+   Card-ish elements: unify base look for all card types used across
+   PHP pages & JS components so the UI looks consistent by default.
+   These are intentionally conservative so existing page-level
+   overrides still apply.
+------------------------------------------------------------------ */
+.card, .fc-card, .player-card, .team-card, .coach-card, .player-card-pro, .player-card-mini, .attendance-card {
+    background: #fff;
+    border: 1px solid #e6e9ed; /* neutral light border */
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 2px 6px rgba(11,20,32,0.04);
+}
+
+/* Slight lift on hover for interactive cards */
+.card:hover, .fc-card:hover, .player-card:hover, .team-card:hover, .coach-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(11,20,32,0.08);
+}
+
 
 .table-title i {
     color: var(--primary-red);
