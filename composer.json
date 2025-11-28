@@ -1,0 +1,13 @@
+{
+  "name": "vivounited/elite-soccer-manager",
+  "description": "VIVO United - Elite Soccer Manager (tests + dev setup)",
+  "type": "project",
+  "require-dev": {
+    "phpunit/phpunit": "^9.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  }
+}
