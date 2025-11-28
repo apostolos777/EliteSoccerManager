@@ -21,12 +21,14 @@ function vivo_include_dynamic_css($db_connection = null) {
 function vivo_include_head_css($db_connection = null) {
     // Add FC United inspired theme first so it defines the main design system
     // Keep the app specific overrides/utility styles after the theme
-    echo '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">' . "\n";
-        // Add FC United inspired theme first so it defines the main design system
-        echo '<link rel="stylesheet" href="css/fcunited-theme.css?v=' . time() . "'>" . "\n";
-        // Keep the app specific overrides/utility styles after the theme
-        echo '<link rel="stylesheet" href="css/vivo-style.css?v=' . time() . "'>" . "\n";
-        echo '<link rel="stylesheet" href="css/react-components.css?v=' . time() . "'>" . "\n";
+        // Load fonts (kept as external so we can safely cache / use CDN)
+        echo '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">' . "\n";
+
+        // Use absolute (/css/...) URLs so assets load reliably no matter which page path is used.
+        // Cache-busting kept via timestamp for development; production could use versioning instead.
+        echo "<link rel=\"stylesheet\" href=\"/css/fcunited-theme.css?v=" . time() . "\">\n";
+        echo "<link rel=\"stylesheet\" href=\"/css/vivo-style.css?v=" . time() . "\">\n";
+        echo "<link rel=\"stylesheet\" href=\"/css/react-components.css?v=" . time() . "\">\n";
     echo '<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">' . "\n";
     vivo_include_dynamic_css($db_connection);
 }
@@ -37,7 +39,8 @@ function vivo_include_head_css($db_connection = null) {
 function vivo_include_react_scripts() {
     echo '<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>' . "\n";
     echo '<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>' . "\n";
-    echo '<script src="js/react-components.js?v=' . time() . '"></script>' . "\n";
+        // Use an absolute path for the app script too to avoid relative path failures
+        echo "<script src=\"/js/react-components.js?v=" . time() . "\"></script>\n";
 }
 
 /**
