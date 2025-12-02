@@ -63,6 +63,14 @@ try {
         header('Location: players.php');
         exit;
     }
+
+    // Restrict edit access - only the linked player user or admin can edit
+    if (!isAdmin()) {
+        if (function_exists('currentUserOwnsPlayer') && !currentUserOwnsPlayer($player_id)) {
+            header('Location: players.php?error=' . urlencode('Access denied. You may only edit your own profile.'));
+            exit;
+        }
+    }
     
     // Normalize player data for consistent access regardless of schema
     if ($hasFirstLastName && !$hasNameSurname) {

@@ -172,21 +172,23 @@ if (isset($_GET['error'])) {
     vivo_include_react_scripts();
     ?>
     <style>
-    /* Compact card grid layout; force 4 columns on desktop and constrain image height */
-    /* Use 3 columns per row as requested */
-    .player-list-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; }
-    @media (max-width:1100px){ .player-list-grid { grid-template-columns:repeat(2,1fr); } }
-    @media (max-width:800px){ .player-list-grid { grid-template-columns:repeat(2,1fr); } }
+    /* Compact card grid layout: 4 cols on large, 3 medium, 2 small, 1 mobile */
+    .player-list-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1rem; }
+    @media (max-width:1400px){ .player-list-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+    @media (max-width:1000px){ .player-list-grid { grid-template-columns:repeat(2,1fr); } }
+    @media (max-width:520px){ .player-list-grid { grid-template-columns:1fr; } }
     @media (max-width:520px){ .player-list-grid { grid-template-columns:1fr; } }
 
      /* Constrain player photo height so images don't dominate the card
          Use a tighter height so 4 cards comfortably fit per row on desktop */
-    .pcm-photo { width:90px; height:125px; max-height:140px; background:#f0f2f5; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; flex-shrink:0; }
+    /* Player media area—keep a strong visual presence on desktop, scale down on mobile */
+    .pcm-photo { width:100%; height:160px; max-height:220px; background:#f0f2f5; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
     .pcm-photo img { width:100%; height:100%; object-fit:cover; display:block; max-width:none; }
         .pcm-photo .placeholder { font-size:3rem; color:#94a3b8; }
         .pcm-number { position:absolute; left:0; bottom:0; background:#1f2933; color:#fff; padding:.3rem .6rem; font-size:.75rem; font-weight:600; border-top-right-radius:6px; letter-spacing:.5px; }
-        .pcm-body { padding:.7rem .75rem .75rem; display:flex; flex-direction:column; flex:1; }
+        .pcm-body { padding:.9rem 1rem 1rem; display:flex; flex-direction:column; flex:1; }
         .pcm-name { font-size:.95rem; font-weight:600; margin:0 0 .15rem; display:flex; flex-wrap:wrap; gap:.35rem; align-items:center; }
+        .pcm-flag { width:20px; height:14px; object-fit:cover; display:inline-block; margin-right:8px; border-radius:2px; }
         .pcm-pos { background:#1f9d94; color:#fff; font-size:.55rem; padding:.2rem .4rem; border-radius:4px; font-weight:600; letter-spacing:.5px; }
         .pcm-team { font-size:.65rem; font-weight:500; color:#64748b; margin:0 0 .4rem; text-transform:uppercase; letter-spacing:.6px; }
         .pcm-meta { display:grid; grid-template-columns:repeat(3,1fr); gap:.35rem; margin-bottom:.55rem; }
@@ -226,6 +228,37 @@ if (isset($_GET['error'])) {
     .team-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); }
     .team-card .pcm-photo { width:100%; height:140px; object-fit:cover; border-bottom:1px solid rgba(0,0,0,0.04); }
     .team-card .pcm-body { padding: .9rem; }
+    /* Dark / profile style for player cards (screenshot inspired) */
+    .player-card.player-card-dark { background: linear-gradient(180deg,#071229,#0b2133); color: #e6f3ff; border-radius:12px; overflow:hidden; display:flex; flex-direction:column; box-shadow: 0 10px 30px rgba(3,6,20,0.3); }
+    .player-card.player-card-dark .player-card-media { height:180px; background:#0b2133; display:flex; align-items:center; justify-content:center; }
+    .player-card.player-card-dark .player-card-media img { width:100%; height:100%; object-fit:cover; object-position:center; }
+    .player-card.player-card-dark .player-card-body { padding:1rem; background: linear-gradient(180deg, rgba(8,18,36,0.9), rgba(6,10,18,0.95)); display:flex; flex-direction:column; gap:8px; }
+    .player-card.player-card-dark .player-name { font-size:1.1rem; color: #39a7ff; font-weight:800; margin:0; display:flex; align-items:center; gap:.5rem; }
+    .player-card.player-card-dark .player-sub { color: rgba(255,255,255,0.7); font-size:0.95rem; margin-bottom:6px; }
+    .player-card.player-card-dark .player-details { list-style:none; padding:0; margin:0 0 .6rem 0; display:grid; grid-template-columns: 1fr; gap:6px; color: rgba(255,255,255,0.85); }
+    .player-card.player-card-dark .player-details li { display:flex; gap:8px; align-items:center; font-size:0.93rem; }
+    .player-card.player-card-dark .skill-pill { background: rgba(255,255,255,0.06); color:#cfe9ff; padding:.25rem .6rem; border-radius:999px; font-size:0.85rem; display:inline-block; margin-right:.4rem; }
+    .player-card.player-card-dark .player-card-actions { display:flex; gap:.5rem; margin-top:auto; }
+
+    /* Responsive tweaks: stack content vertically on narrow screens and reduce image height */
+    @media (max-width: 700px) {
+        .player-card { flex-direction: row; gap: 0.8rem; align-items: stretch; }
+        .player-card .player-card-media { width:120px; height:120px; flex:0 0 120px; }
+        .player-card .player-card-body { padding:0.7rem; }
+        .pcm-photo { height:120px; }
+        .pcm-body .player-name { font-size:0.98rem }
+        .player-card.player-card-dark .player-name { font-size:1rem }
+    }
+
+    @media (max-width: 420px) {
+        .player-card .player-card-media { width:100px; height:100px; flex:0 0 100px; }
+        .player-card .player-card-body { padding:0.6rem; }
+        .pcm-photo { height:100px; }
+        .player-card .pcm-actions a { padding:0.35rem; font-size:0.64rem }
+    }
+    .player-card.player-card-dark .player-card-actions a { padding:.6rem .9rem; border-radius:8px; text-decoration:none; color:#fff; font-weight:700; }
+    .player-card.player-card-dark .btn-view { background: transparent; border: 1px solid rgba(255,255,255,0.08); color:#7cc5ff; }
+    .player-card.player-card-dark .btn-edit { background: transparent; border: 1px solid rgba(255,255,255,0.08); color:#9bd8ff; }
     @media (max-width:520px){ .player-list-grid { grid-template-columns: 1fr !important; } }
     </style>
 </head>
@@ -342,9 +375,16 @@ if (isset($_GET['error'])) {
                 $heightDisplay = !empty($p['height']) ? (is_numeric($p['height']) ? number_format($p['height']/100,2).'m' : htmlspecialchars($p['height'])) : '-';
                 $weightDisplay = !empty($p['weight']) ? (is_numeric($p['weight']) ? intval($p['weight']).'kg' : htmlspecialchars($p['weight'])) : '-';
             ?>
-            <div class="team-card player-item" tabindex="0" aria-expanded="false" data-player-id="<?= $p['id'] ?>" data-player-name="<?= strtolower($fullName) ?>" data-team="<?= strtolower($p['team_name'] ?? '') ?>" data-position="<?= strtolower($p['position'] ?? '') ?>" data-age-group="<?= htmlspecialchars($p['age_group'] ?? '') ?>" onclick="window.location='player_profile.php?id=<?= $p['id'] ?>'">
+            <?php
+                // Determine if the current viewer may access this player's full profile (admins always can)
+                $canAccess = false;
+                if (function_exists('isAdmin') && isAdmin()) { $canAccess = true; }
+                elseif (function_exists('currentUserOwnsPlayer') && isLoggedIn() && currentUserOwnsPlayer($p['id'])) { $canAccess = true; }
+                $cardOnClick = $canAccess ? "window.location='player_profile.php?id={$p['id']}'" : "";
+            ?>
+            <div class="player-card player-card-dark" tabindex="0" aria-expanded="false" data-player-id="<?= $p['id'] ?>" data-player-name="<?= strtolower($fullName) ?>" data-team="<?= strtolower($p['team_name'] ?? '') ?>" data-position="<?= strtolower($p['position'] ?? '') ?>" data-age-group="<?= htmlspecialchars($p['age_group'] ?? '') ?>" <?= $cardOnClick ? 'onclick="' . $cardOnClick . '"' : '' ?> >
                 <input type="checkbox" class="player-select-checkbox" value="<?= $p['id'] ?>" style="position:absolute;left:.6rem;top:.6rem;z-index:5;" onclick="event.stopPropagation();updateBulkUI();">
-                <div class="pcm-photo">
+                <div class="pcm-photo player-card-media">
                     <?php if (!empty($p['profile_image']) && file_exists($p['profile_image'])): ?>
                         <img src="<?= htmlspecialchars($p['profile_image'] ?: '') ?>" alt="<?= htmlspecialchars($fullName) ?>">
                     <?php else: ?>
@@ -357,21 +397,37 @@ if (isset($_GET['error'])) {
                     <?php endif; ?>
                     <?php if (!empty($p['jersey_number'])): ?><div class="pcm-number">#<?= htmlspecialchars($p['jersey_number'] ?: '') ?></div><?php endif; ?>
                 </div>
-                <div class="pcm-body">
-                    <?php $flag = !empty($p['nationality']) ? vivo_get_flag_for_nationality($p['nationality']) : ''; ?>
-                    <h2 class="pcm-name"><?= ($flag ? htmlspecialchars($flag) . ' ' : '') . htmlspecialchars($fullName) ?><?php if(!empty($p['position'])): ?><span class="pcm-pos"><?= htmlspecialchars(strtoupper($p['position'] ?: '')) ?></span><?php endif; ?></h2>
-                    <p class="pcm-team"><?= !empty($p['all_teams']) ? htmlspecialchars(implode(', ', $p['all_teams'])) : 'No Team' ?></p>
-                    <div class="pcm-meta">
-                        <div class="pcm-stat"><span class="l">AGE</span><span class="v"><?= $age !== null ? $age : '-' ?></span></div>
-                        <div class="pcm-stat"><span class="l">HT</span><span class="v"><?= $heightDisplay ?></span></div>
-                        <div class="pcm-stat"><span class="l">WT</span><span class="v"><?= $weightDisplay ?></span></div>
-                        <div class="pcm-stat"><span class="l">POS</span><span class="v"><?= htmlspecialchars(substr($p['position'] ?? '-',0,3)) ?></span></div>
-                        <div class="pcm-stat"><span class="l">GRP</span><span class="v"><?= htmlspecialchars($p['age_group'] ?? '-') ?></span></div>
-                        <div class="pcm-stat"><span class="l">ID</span><span class="v"><?= !empty($p['vivo_id']) ? htmlspecialchars(substr($p['vivo_id'],-4)) : htmlspecialchars($p['id']) ?></span></div>
-                    </div>
-                    <div class="pcm-actions">
-                        <a href="player_profile.php?id=<?= $p['id'] ?>" class="btn-view" onclick="event.stopPropagation();"><i class="fas fa-eye"></i> View</a>
-                        <a href="player_profile.php?id=<?= $p['id'] ?>&action=edit" class="btn-edit" onclick="event.stopPropagation();"><i class="fas fa-edit"></i> Edit</a>
+                <div class="pcm-body player-card-body">
+                    <?php $flagImgTag = !empty($p['nationality']) ? vivo_flag_img_tag($p['nationality'], 20, $p['nationality']) : ''; ?>
+                    <h2 class="player-name"><?= ($flagImgTag ? $flagImgTag : '') . htmlspecialchars($fullName) ?><?php if(!empty($p['position'])): ?><span class="pcm-pos" style="margin-left:.5rem;font-size:0.75rem;padding:.15rem .4rem;border-radius:6px;background:rgba(255,255,255,0.06);"><?= htmlspecialchars(strtoupper($p['position'] ?: '')) ?></span><?php endif; ?></h2>
+                    <div class="player-sub"><?= ($age !== null ? htmlspecialchars($age) . ' years old' : '-') ?><?= !empty($p['nationality']) ? ' | ' . htmlspecialchars($p['nationality']) : '' ?></div>
+                    <ul class="player-details">
+                        <li><i class="fas fa-tshirt"></i> <strong>Position:</strong> <?= htmlspecialchars($p['position'] ?: ($p['primary_position'] ?? '—')) ?></li>
+                        <li><i class="fas fa-shield-alt"></i> <strong>Club:</strong> <?= !empty($p['all_teams']) ? htmlspecialchars($p['all_teams'][0]) : htmlspecialchars($p['team_name'] ?? '—') ?></li>
+                        <li><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> <?= htmlspecialchars($p['nationality'] ?: '—') ?></li>
+                        <li><i class="fas fa-star"></i> <strong>Skill:</strong> <?= htmlspecialchars($p['playing_style'] ?? '—') ?></li>
+                    </ul>
+                    <?php /* Top skills tags (personal_talents field if any) */ ?>
+                    <?php if (!empty($p['personal_talents'])): ?>
+                        <div class="top-skills" style="margin-bottom:6px;">
+                            <?php $skills = array_filter(array_map('trim', explode(',', $p['personal_talents'])));
+                                $skills = array_slice($skills,0,3);
+                                foreach ($skills as $sk): ?>
+                                    <span class="skill-pill"><?= htmlspecialchars($sk) ?></span>
+                                <?php endforeach; ?>
+                        </div>
+                    <?php endif; ?>
+                    <div class="pcm-actions player-card-actions">
+                        <?php if ($canAccess): ?>
+                            <a href="player_profile.php?id=<?= $p['id'] ?>" class="btn-view" onclick="event.stopPropagation();"><i class="fas fa-eye"></i> View</a>
+                            <a href="player_profile.php?id=<?= $p['id'] ?>&action=edit" class="btn-edit" onclick="event.stopPropagation();"><i class="fas fa-edit"></i> Edit</a>
+                        <?php else: ?>
+                            <?php if (!isLoggedIn()): ?>
+                                <a href="login.php" class="btn-view" onclick="event.stopPropagation();"><i class="fas fa-sign-in-alt"></i> Login to view</a>
+                            <?php else: ?>
+                                <span class="btn-disabled" title="You may only view/edit your own profile">Restricted</span>
+                            <?php endif; ?>
+                        <?php endif; ?>
                         <?php if (function_exists('isAdmin') && isAdmin()): ?>
                         <a href="delete_player.php?id=<?= $p['id'] ?>" class="btn-delete" onclick="event.stopPropagation(); return confirm('Are you sure you want to permanently delete this player? This action cannot be undone and will remove all player data including attendance records.');" style="background:var(--primary);color:white !important;"><i class="fas fa-trash"></i> Delete</a>
                         <?php endif; ?>

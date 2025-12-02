@@ -7,7 +7,8 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 function isLoggedIn() {
-    return isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true;
+    // Support both legacy and new session keys
+    return (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] === true) || (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true);
 }
 
 function requireLogin() {
@@ -56,33 +57,94 @@ function logout() {
 }
 
 function login($username, $password) {
-    // Enhanced authentication with better security
-    $valid_users = [
-        'vivoadmin' => password_hash('password123', PASSWORD_DEFAULT),
-        'admin' => password_hash('admin123', PASSWORD_DEFAULT)
-    ];
+    // If a DB is available with a users table, use it
+    try {
+        if (class_exists('DatabaseFactory')) {
+            $db = DatabaseFactory::getConnection();
 
-    // Check if user exists and password is correct
-    if (isset($valid_users[$username])) {
-        // For demo purposes, we'll use simple password check
-        // In production, use: password_verify($password, $valid_users[$username])
-        $simple_passwords = [
-            'vivoadmin' => 'password123',
-            'admin' => 'admin123'
-        ];
-
-        if (isset($simple_passwords[$username]) && $simple_passwords[$username] === $password) {
-            $_SESSION['user_logged_in'] = true;
-            $_SESSION['username'] = $username;
-            $_SESSION['user_role'] = 'admin';
-            $_SESSION['login_time'] = time();
-
-            // Clear the logout flag on successful login
-            unset($_SESSION['just_logged_out']);
-            return true;
+            // detect users table
+            $tables = $db->query("SELECT name FROM sqlite_master WHERE type='table' AND name='users'")->fetchAll();
+            if (count($tables) > 0) {
+                $stmt = $db->prepare("SELECT * FROM users WHERE (email = ? OR username = ?) AND status = 'active' LIMIT 1");
+                $stmt->execute([$username, $username]);
+                $user = $stmt->fetch(PDO::FETCH_ASSOC);
+                if ($user && isset($user['password_hash']) && password_verify($password, $user['password_hash'])) {
+                    // Successful login
+                    $_SESSION['user_logged_in'] = true;
+                    $_SESSION['logged_in'] = true; // legacy key used elsewhere
+                    $_SESSION['user_id'] = $user['id'];
+                    $_SESSION['user_email'] = $user['email'];
+                    $_SESSION['username'] = $user['username'] ?? $user['email'];
+                    $_SESSION['user_role'] = $user['role'] ?? 'player';
+                    $_SESSION['login_time'] = time();
+                    unset($_SESSION['just_logged_out']);
+                    return true;
+                }
+            }
         }
+    } catch (Exception $e) {
+        error_log('Auth login error: ' . $e->getMessage());
     }
+
+    // Fallback to legacy hard-coded users (kept for backward compatibility)
+    $valid_users = [
+        'vivoadmin' => 'password123',
+        'admin' => 'admin123'
+    ];
+    if (isset($valid_users[$username]) && $valid_users[$username] === $password) {
+        $_SESSION['user_logged_in'] = true;
+        $_SESSION['username'] = $username;
+        $_SESSION['user_role'] = 'admin';
+        $_SESSION['login_time'] = time();
+        unset($_SESSION['just_logged_out']);
+        return true;
+    }
+
     return false;
+}
+
+/**
+ * Returns true when the current user (session) owns the provided player id.
+ * Admins always return true.
+ */
+function currentUserOwnsPlayer($player_id) {
+    if (!isLoggedIn()) return false;
+    if (isAdmin()) return true;
+
+    $uid = $_SESSION['user_id'] ?? null;
+    if (!$uid) return false;
+
+    try {
+        // Prefer the central DatabaseFactory connection if available
+        if (class_exists('DatabaseFactory')) {
+            $db = DatabaseFactory::getConnection();
+        } elseif (isset($GLOBALS['db']) && $GLOBALS['db'] instanceof PDO) {
+            // Some pages set a local $db (like player_profile demo). Use it when provided.
+            $db = $GLOBALS['db'];
+        } else {
+            // Fallback: attempt to open the default app database file
+            $dbFile = __DIR__ . '/../database.db';
+            if (!is_file($dbFile)) return false;
+            $db = new PDO('sqlite:' . $dbFile);
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        }
+
+        // Ensure players table supports user_id
+        $cols = $db->query("PRAGMA table_info(players)")->fetchAll(PDO::FETCH_ASSOC);
+        $names = array_column($cols, 'name');
+        if (!in_array('user_id', $names)) return false;
+
+        $stmt = $db->prepare("SELECT user_id FROM players WHERE id = ? LIMIT 1");
+        $stmt->execute([$player_id]);
+        $player = $stmt->fetch(PDO::FETCH_ASSOC);
+        if (!$player) return false;
+
+        return ((int)($player['user_id'] ?? 0) === (int)$uid);
+    } catch (Exception $e) {
+        // If something unexpected happens, deny access safely
+        error_log('currentUserOwnsPlayer error: ' . $e->getMessage());
+        return false;
+    }
 }
 
 function checkSessionTimeout() {

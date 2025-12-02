@@ -118,6 +118,20 @@ class DatabaseFactory {
                     FOREIGN KEY (team_id) REFERENCES teams(id)
                 )
             ");
+
+                // Create users table for app authentication (lightweight)
+                $pdo->exec("CREATE TABLE IF NOT EXISTS users (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    email TEXT UNIQUE NOT NULL,
+                    username TEXT UNIQUE,
+                    password_hash TEXT NOT NULL,
+                    role TEXT DEFAULT 'player',
+                    player_id INTEGER DEFAULT NULL,
+                    status TEXT DEFAULT 'active',
+                    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+                    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+                    FOREIGN KEY (player_id) REFERENCES players(id) ON DELETE SET NULL
+                )");
             
             // Create events table
             $pdo->exec("
