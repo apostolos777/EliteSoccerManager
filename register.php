@@ -46,16 +46,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     // update players.user_id
                     $db->prepare('UPDATE players SET user_id = ? WHERE id = ?')->execute([$newId, $playerId]);
 
-                    // auto-login
-                    $_SESSION['user_logged_in'] = true;
-                    $_SESSION['logged_in'] = true;
-                    $_SESSION['user_id'] = $newId;
-                    $_SESSION['username'] = $username;
-                    $_SESSION['user_email'] = $email;
-                    $_SESSION['user_role'] = 'player';
+                    // Create verification token (expire in 48 hours)
+                    if (function_exists('createEmailVerificationToken')) {
+                        $token = createEmailVerificationToken((int)$newId, 48);
+                    } else {
+                        // fallback: store token manually
+                        $token = bin2hex(random_bytes(16));
+                        $expires = (new DateTime())->add(new DateInterval('PT172800S'))->format('Y-m-d H:i:s');
+                        $db->prepare('UPDATE users SET verification_token=?, verification_expires=? WHERE id=?')->execute([$token, $expires, $newId]);
+                    }
 
-                    header('Location: player_profile.php?id=' . $playerId);
-                    exit;
+                    // Show verification link for dev/ref (don't auto-login until verified)
+                    $verifyLink = sprintf('%s/verify_email.php?token=%s', rtrim((isset($_SERVER['HTTP_HOST']) ? (isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] : ''), '/'), $token);
+                    // For dev environments, display the link so testers can verify
+                    $message = 'Account created. Please verify your email address using the link provided.';
+                    $message .= "<div style=\"margin-top:10px;\"><a href=\"{$verifyLink}\">Verify email &rarr;</a></div>";
                 } catch (Exception $e) {
                     $error = 'Failed to create account - email might already be taken.';
                 }

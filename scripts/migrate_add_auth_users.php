@@ -69,3 +69,19 @@ if ($existing && (int)$existing['c'] === 0) {
 }
 
 echo "🔐 Authentication migration completed.\n";
+
+// Ensure new verification columns exist for email verification flow
+$cols = $db->query("PRAGMA table_info(users)")->fetchAll(PDO::FETCH_ASSOC);
+$colNames = array_column($cols, 'name');
+if (!in_array('email_verified', $colNames)) {
+    echo "➕ Adding users.email_verified column...\n";
+    try { $db->exec("ALTER TABLE users ADD COLUMN email_verified INTEGER DEFAULT 0"); echo "  ✅ email_verified added\n"; } catch (Exception $e) { echo "  ❌ Failed to add email_verified: " . $e->getMessage() . "\n"; }
+}
+if (!in_array('verification_token', $colNames)) {
+    echo "➕ Adding users.verification_token column...\n";
+    try { $db->exec("ALTER TABLE users ADD COLUMN verification_token TEXT DEFAULT NULL"); echo "  ✅ verification_token added\n"; } catch (Exception $e) { echo "  ❌ Failed to add verification_token: " . $e->getMessage() . "\n"; }
+}
+if (!in_array('verification_expires', $colNames)) {
+    echo "➕ Adding users.verification_expires column...\n";
+    try { $db->exec("ALTER TABLE users ADD COLUMN verification_expires DATETIME DEFAULT NULL"); echo "  ✅ verification_expires added\n"; } catch (Exception $e) { echo "  ❌ Failed to add verification_expires: " . $e->getMessage() . "\n"; }
+}

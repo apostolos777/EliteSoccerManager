@@ -147,6 +147,64 @@ function currentUserOwnsPlayer($player_id) {
     }
 }
 
+/**
+ * Generate and store a verification token for a user (valid for $hours validity).
+ * Returns the token string on success or null on failure.
+ */
+function createEmailVerificationToken(int $userId, int $hours = 48): ?string {
+    try {
+        if (class_exists('DatabaseFactory')) {
+            $db = DatabaseFactory::getConnection();
+        } elseif (isset($GLOBALS['db']) && $GLOBALS['db'] instanceof PDO) {
+            $db = $GLOBALS['db'];
+        } else {
+            $db = new PDO('sqlite:' . __DIR__ . '/../database.db');
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        }
+
+        $token = bin2hex(random_bytes(16));
+        $expires = (new DateTime())->add(new DateInterval('PT' . ($hours*3600) . 'S'))->format('Y-m-d H:i:s');
+
+        $stmt = $db->prepare('UPDATE users SET verification_token = ?, verification_expires = ?, email_verified = 0 WHERE id = ?');
+        $stmt->execute([$token, $expires, $userId]);
+        return $token;
+    } catch (Exception $e) {
+        error_log('createEmailVerificationToken error: ' . $e->getMessage());
+        return null;
+    }
+}
+
+/**
+ * Verify an email token. If successful, mark email_verified and clear token and expiry.
+ * On success, returns the user row; on failure, returns null.
+ */
+function verifyEmailToken(string $token): ?array {
+    try {
+        if (class_exists('DatabaseFactory')) {
+            $db = DatabaseFactory::getConnection();
+        } elseif (isset($GLOBALS['db']) && $GLOBALS['db'] instanceof PDO) {
+            $db = $GLOBALS['db'];
+        } else {
+            $db = new PDO('sqlite:' . __DIR__ . '/../database.db');
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        }
+
+        $now = (new DateTime())->format('Y-m-d H:i:s');
+        $stmt = $db->prepare('SELECT * FROM users WHERE verification_token = ? AND (verification_expires IS NULL OR verification_expires >= ?) LIMIT 1');
+        $stmt->execute([$token, $now]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        if (!$user) return null;
+
+        $update = $db->prepare('UPDATE users SET email_verified = 1, verification_token = NULL, verification_expires = NULL WHERE id = ?');
+        $update->execute([$user['id']]);
+
+        return $user;
+    } catch (Exception $e) {
+        error_log('verifyEmailToken error: ' . $e->getMessage());
+        return null;
+    }
+}
+
 function checkSessionTimeout() {
     $timeout = 3600; // 1 hour
     if (isset($_SESSION['login_time']) && (time() - $_SESSION['login_time']) > $timeout) {
