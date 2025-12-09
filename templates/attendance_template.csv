@@ -1,0 +1,32 @@
+player_id,event_id,status,notes
+183,31,present,Player arrived on time
+199,37,absent,Not available
+255,37,late,Arrived 15 minutes late
+217,37,excused,Excused due to injury
+278,37,present,Present
+250,37,late,Delayed due to traffic
+300,38,present,
+304,38,absent,Personal appointment
+305,38,present,
+306,38,present,
+307,38,late,
+308,38,present,
+309,38,excused,Injured - recovery in progress
+310,38,present,
+311,38,absent,
+312,39,present,
+313,39,present,
+314,39,late,
+315,39,present,
+316,39,absent,
+317,39,present,
+318,39,excused,
+319,39,present,
+320,39,present,
+321,40,present,Good performance
+322,40,present,
+323,40,absent,
+324,40,late,
+325,40,present,
+326,40,excused,
+327,40,present,

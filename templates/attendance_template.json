@@ -1,0 +1,122 @@
+[
+    {
+        "player_id": 183,
+        "event_id": 31,
+        "status": "present",
+        "notes": "Player arrived on time"
+    },
+    {
+        "player_id": 199,
+        "event_id": 37,
+        "status": "absent",
+        "notes": "Not available"
+    },
+    {
+        "player_id": 255,
+        "event_id": 37,
+        "status": "late",
+        "notes": "Arrived 15 minutes late"
+    },
+    {
+        "player_id": 217,
+        "event_id": 37,
+        "status": "excused",
+        "notes": "Excused due to injury"
+    },
+    {
+        "player_id": 278,
+        "event_id": 37,
+        "status": "present",
+        "notes": ""
+    },
+    {
+        "player_id": 250,
+        "event_id": 37,
+        "status": "late",
+        "notes": "Delayed due to traffic"
+    },
+    {
+        "player_id": 300,
+        "event_id": 38,
+        "status": "present",
+        "notes": ""
+    },
+    {
+        "player_id": 304,
+        "event_id": 38,
+        "status": "absent",
+        "notes": "Personal appointment"
+    },
+    {
+        "player_id": 305,
+        "event_id": 38,
+        "status": "present",
+        "notes": ""
+    },
+    {
+        "player_id": 306,
+        "event_id": 38,
+        "status": "present",
+        "notes": ""
+    },
+    {
+        "player_id": 307,
+        "event_id": 38,
+        "status": "late",
+        "notes": ""
+    },
+    {
+        "player_id": 308,
+        "event_id": 38,
+        "status": "present",
+        "notes": ""
+    },
+    {
+        "player_id": 309,
+        "event_id": 38,
+        "status": "excused",
+        "notes": "Injured - recovery in progress"
+    },
+    {
+        "player_id": 310,
+        "event_id": 38,
+        "status": "present",
+        "notes": ""
+    },
+    {
+        "player_id": 311,
+        "event_id": 38,
+        "status": "absent",
+        "notes": ""
+    },
+    {
+        "player_id": 312,
+        "event_id": 39,
+        "status": "present",
+        "notes": ""
+    },
+    {
+        "player_id": 313,
+        "event_id": 39,
+        "status": "present",
+        "notes": ""
+    },
+    {
+        "player_id": 314,
+        "event_id": 39,
+        "status": "late",
+        "notes": ""
+    },
+    {
+        "player_id": 315,
+        "event_id": 39,
+        "status": "present",
+        "notes": ""
+    },
+    {
+        "player_id": 316,
+        "event_id": 39,
+        "status": "absent",
+        "notes": ""
+    }
+]
