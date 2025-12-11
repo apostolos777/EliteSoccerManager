@@ -28,20 +28,32 @@ try {
 $clubSettings = [];
 try {
     $stmt = $db->query("SELECT setting_key, setting_value FROM club_settings");
-    if ($stmt) {
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            if (!empty($row['setting_key'])) {
-                $clubSettings[$row['setting_key']] = $row['setting_value'] ?? '';
-            }
+    if ($team) {
+        // Get player count and average age separately. Prefer join table if present.
+        try {
+            $r = $db->query("SELECT name FROM sqlite_master WHERE type='table' AND name='player_teams'")->fetch(PDO::FETCH_ASSOC);
+            $hasPlayerTeams = (bool)$r;
+        } catch (Exception $e) {
+            $hasPlayerTeams = false;
         }
-    }
-} catch (Exception $e) {
-    error_log("Team Details - Failed to load club settings: " . $e->getMessage());
-}
 
-// Get team ID from URL
-$team_id = $_GET['id'] ?? null;
-if (!$team_id) {
+        if ($hasPlayerTeams) {
+            $stmt = $db->prepare("\n                SELECT COUNT(DISTINCT p.id) as player_count, ROUND(AVG(CASE WHEN p.age IS NOT NULL THEN p.age END),1) as avg_age\n                FROM players p\n                JOIN player_teams pt ON p.id = pt.player_id\n                WHERE pt.team_id = ? AND p.status = 'active'\n            ");
+            // If multi-team join table exists, use it for listing; otherwise fall back to players.team_id
+            $r = $db->query("SELECT name FROM sqlite_master WHERE type='table' AND name='player_teams'")->fetch(PDO::FETCH_ASSOC);
+
+            $stmt->execute([$team_id]);
+            $stats = $stmt->fetch(PDO::FETCH_ASSOC);
+        } else {
+            $stmt = $db->prepare("\n                SELECT COUNT(id) as player_count, ROUND(AVG(CASE WHEN age IS NOT NULL THEN age END), 1) as avg_age\n                FROM players \n                WHERE team_id = ? AND status = 'active'\n            ");
+            $stmt->execute([$team_id]);
+            $stats = $stmt->fetch(PDO::FETCH_ASSOC);
+        }
+
+        // Add stats to team array
+        $team['player_count'] = $stats['player_count'] ?? 0;
+        $team['avg_age'] = $stats['avg_age'];
+    }
     header('Location: teams.php');
     exit;
 }
@@ -50,31 +62,56 @@ if (!$team_id) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['action'])) {
         $player_id = $_POST['player_id'] ?? null;
+        // detect if the player_teams join table exists (multi-team support)
+        try {
+            $r = $db->query("SELECT name FROM sqlite_master WHERE type='table' AND name='player_teams'")->fetch(PDO::FETCH_ASSOC);
+            $hasPlayerTeams = (bool)$r;
+        } catch (Exception $e) {
+            $hasPlayerTeams = false;
+        }
         
         if ($_POST['action'] === 'add_player' && $player_id) {
-            // Add player to team
+            // Add player to team. If multi-team support exists, use the join table; otherwise fall back to legacy single team column.
             try {
-                $stmt = $db->prepare("UPDATE players SET team_id = ? WHERE id = ?");
-                $result = $stmt->execute([$team_id, $player_id]);
-                
-                if ($result) {
-                    $success = "Player successfully added to team!";
+                if ($hasPlayerTeams) {
+                    $stmt = $db->prepare("INSERT OR IGNORE INTO player_teams (player_id, team_id) VALUES (?, ?)");
+                    $result = $stmt->execute([$player_id, $team_id]);
+                    if ($result) {
+                        $success = "Player successfully added to team!";
+                    } else {
+                        $error = "Error adding player to team.";
+                    }
                 } else {
-                    $error = "Error adding player to team.";
+                    $stmt = $db->prepare("UPDATE players SET team_id = ? WHERE id = ?");
+                    $result = $stmt->execute([$team_id, $player_id]);
+                    if ($result) {
+                        $success = "Player successfully added to team!";
+                    } else {
+                        $error = "Error adding player to team.";
+                    }
                 }
             } catch (Exception $e) {
                 $error = "Error adding player to team: " . $e->getMessage();
             }
         } elseif ($_POST['action'] === 'remove_player' && $player_id) {
-            // Remove player from team
+            // Remove player from team (respect join table if present)
             try {
-                $stmt = $db->prepare("UPDATE players SET team_id = NULL WHERE id = ?");
-                $result = $stmt->execute([$player_id]);
-                
-                if ($result) {
-                    $success = "Player successfully removed from team!";
+                if ($hasPlayerTeams) {
+                    $stmt = $db->prepare("DELETE FROM player_teams WHERE player_id = ? AND team_id = ?");
+                    $result = $stmt->execute([$player_id, $team_id]);
+                    if ($result) {
+                        $success = "Player successfully removed from team!";
+                    } else {
+                        $error = "Error removing player from team.";
+                    }
                 } else {
-                    $error = "Error removing player from team.";
+                    $stmt = $db->prepare("UPDATE players SET team_id = NULL WHERE id = ?");
+                    $result = $stmt->execute([$player_id]);
+                    if ($result) {
+                        $success = "Player successfully removed from team!";
+                    } else {
+                        $error = "Error removing player from team.";
+                    }
                 }
             } catch (Exception $e) {
                 $error = "Error removing player from team: " . $e->getMessage();
@@ -117,33 +154,43 @@ if (!$team) {
 
 // Get team players
 try {
-    $stmt = $db->prepare("
-        SELECT p.*, 
-               p.age as age
-        FROM players p
-        WHERE p.team_id = ? AND p.status = 'active'
-        ORDER BY p.position, p.name
-    ");
-    $stmt->execute([$team_id]);
-    $team_players = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    // If multi-team join table exists, use it for listing; otherwise fall back to players.team_id
+    $r = $db->query("SELECT name FROM sqlite_master WHERE type='table' AND name='player_teams'")->fetch(PDO::FETCH_ASSOC);
+    $hasPlayerTeams = (bool)$r;
+    if ($hasPlayerTeams) {
+        $stmt = $db->prepare("
+            SELECT p.*, p.age as age 
+            FROM players p 
+            JOIN player_teams pt ON p.id = pt.player_id 
+            WHERE pt.team_id = ? AND p.status = 'active'
+            ORDER BY p.position, p.name
+        ");
+        $stmt->execute([$team_id]);
+        $team_players = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } else {
+        $stmt = $db->prepare("
+            SELECT p.*, p.age as age
+            FROM players p
+            WHERE p.team_id = ? AND p.status = 'active'
+            ORDER BY p.position, p.name
+        ");
+        $stmt->execute([$team_id]);
+        $team_players = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 } catch (Exception $e) {
-    $team_players = [];
-    error_log("Error loading team players: " . $e->getMessage());
-}
-
-// Get unassigned players AND players from other teams (available to transfer)
-try {
-    $stmt = $db->prepare("
-        SELECT p.*, 
-               p.age as age,
-               t.name as current_team_name
-        FROM players p
-        LEFT JOIN teams t ON p.team_id = t.id
-        WHERE (p.team_id IS NULL OR p.team_id = '' OR p.team_id != ?) AND p.status = 'active'
-        ORDER BY p.name
-    ");
-    $stmt->execute([$team_id]);
-    $available_players = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $clubSettings = [];
+    try {
+        $stmt = $db->query("SELECT setting_key, setting_value FROM club_settings");
+        if ($stmt) {
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                if (!empty($row['setting_key'])) {
+                    $clubSettings[$row['setting_key']] = $row['setting_value'] ?? '';
+                }
+            }
+        }
+    } catch (Exception $e) {
+        error_log("Team Details - Failed to load club settings: " . $e->getMessage());
+    }
 } catch (Exception $e) {
     $available_players = [];
     error_log("Error loading available players: " . $e->getMessage());
@@ -177,39 +224,19 @@ try {
     $stmt->execute([$team_id]);
     $team_coaches = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (Exception $e) {
-    $team_coaches = [];
-    error_log("Error loading team coaches: " . $e->getMessage());
-}
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= htmlspecialchars($team['name'] ?? 'Unknown Team') ?> - Team Details - VIVO United Manager</title>
-    <?php 
-    require_once 'includes/css_helper.php';
-    vivo_include_head_css($db);
-    ?>
-    
-    <style>
-        .gap-2 > * + * {
-            margin-top: 0.5rem;
+    $clubSettings = [];
+    try {
+        $stmt = $db->query("SELECT setting_key, setting_value FROM club_settings");
+        if ($stmt) {
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                if (!empty($row['setting_key'])) {
+                    $clubSettings[$row['setting_key']] = $row['setting_value'] ?? '';
+                }
+            }
         }
-        .h-100 {
-            height: 100% !important;
-        }
-        
-        /* Team switch button styling */
-        .btn-outline-primary {
-            background-color: transparent !important;
-            border-color: var(--primary) !important;
-            color: var(--primary) !important;
-        }
-        .btn-outline-primary:hover {
-            background-color: var(--primary) !important;
-            border-color: var(--primary) !important;
-            color: white !important;
+    } catch (Exception $e) {
+        error_log("Team Details - Failed to load club settings: " . $e->getMessage());
+    }
         }
         .btn-outline-primary:focus {
             box-shadow: 0 0 0 0.2rem rgba(<?= hexdec(substr($clubSettings['color_primary'] ?? '#2563eb', 1, 2)) ?>, <?= hexdec(substr($clubSettings['color_primary'] ?? '#2563eb', 3, 2)) ?>, <?= hexdec(substr($clubSettings['color_primary'] ?? '#2563eb', 5, 2)) ?>, 0.25) !important;
@@ -333,7 +360,7 @@ try {
 <div class="content-main">
     <?php if (isset($success)): ?>
         <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <i class="fas fa-check-circle"></i> <?= htmlspecialchars($success) ?>
+            <i class="fas fa-check-circle"></i> <?= htmlspecialchars($success ?? '') ?>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -342,7 +369,7 @@ try {
     
     <?php if (isset($error)): ?>
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <i class="fas fa-exclamation-circle"></i> <?= htmlspecialchars($error) ?>
+            <i class="fas fa-exclamation-circle"></i> <?= htmlspecialchars($error ?? '') ?>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -353,7 +380,7 @@ try {
         <div class="page-header-content">
             <h1 class="page-title">
                 <i class="fas fa-shield-alt"></i> 
-                <?= htmlspecialchars($team['name']) ?>
+                <?= htmlspecialchars($team['name'] ?? 'Unknown Team') ?>
             </h1>
             <p class="page-subtitle">Team Details & Squad Management</p>
         </div>
@@ -397,7 +424,7 @@ try {
                         ?>
                             <a href="team_details.php?id=<?= $t['id'] ?>#squad-list" 
                                class="btn team-switch-btn <?= $t['id'] == $team_id ? 'active' : '' ?> btn-sm mb-1">
-                                <?= htmlspecialchars($t['name']) ?>
+                                <?= htmlspecialchars($t['name'] ?? '') ?>
                             </a>
                         <?php endforeach; ?>
                     </div>
@@ -419,7 +446,7 @@ try {
                                 <i class="fas fa-shield-alt"></i>
                             </div>
                             <div class="stat-content">
-                                <div class="stat-number"><?= htmlspecialchars($team['name']) ?></div>
+                                <div class="stat-number"><?= htmlspecialchars($team['name'] ?? '') ?></div>
                                 <div class="stat-label">Team Name</div>
                             </div>
                         </div>
@@ -473,7 +500,7 @@ try {
                                                         </div>
                                                         <div class="flex-grow-1">
                                                             <h6 class="mb-0">
-                                                                <strong><?= htmlspecialchars($coach['name']) ?></strong>
+                                                                <strong><?= htmlspecialchars($coach['name'] ?? '') ?></strong>
                                                             </h6>
                                                             <small class="text-muted">
                                                                 <i class="fas fa-tag"></i> <?= ucwords(str_replace('_', ' ', $coach['role'])) ?>
@@ -485,16 +512,16 @@ try {
                                                             <?php if (!empty($coach['email'])): ?>
                                                                 <small class="d-block">
                                                                     <i class="fas fa-envelope text-muted"></i>
-                                                                    <a href="mailto:<?= htmlspecialchars($coach['email']) ?>" class="text-decoration-none">
-                                                                        <?= htmlspecialchars($coach['email']) ?>
+                                                                    <a href="mailto:<?= htmlspecialchars($coach['email'] ?? '') ?>" class="text-decoration-none">
+                                                                        <?= htmlspecialchars($coach['email'] ?? '') ?>
                                                                     </a>
                                                                 </small>
                                                             <?php endif; ?>
                                                             <?php if (!empty($coach['phone'])): ?>
                                                                 <small class="d-block">
                                                                     <i class="fas fa-phone text-muted"></i>
-                                                                    <a href="tel:<?= htmlspecialchars($coach['phone']) ?>" class="text-decoration-none">
-                                                                        <?= htmlspecialchars($coach['phone']) ?>
+                                                                    <a href="tel:<?= htmlspecialchars($coach['phone'] ?? '') ?>" class="text-decoration-none">
+                                                                        <?= htmlspecialchars($coach['phone'] ?? '') ?>
                                                                     </a>
                                                                 </small>
                                                             <?php endif; ?>
@@ -567,9 +594,9 @@ try {
                             <?php foreach ($team_players as $player): ?>
                                 <tr>
                                     <td>
-                                        <strong><?= htmlspecialchars($player['name']) ?> <?= htmlspecialchars($player['surname']) ?></strong>
+                                        <strong><?= htmlspecialchars($player['name'] ?? '') ?> <?= htmlspecialchars($player['surname'] ?? '') ?></strong>
                                     </td>
-                                    <td><?= htmlspecialchars($player['position']) ?></td>
+                                    <td><?= htmlspecialchars($player['position'] ?? '') ?></td>
                                     <td>
                                         <?php if ($player['jersey_number']): ?>
                                             <span class="badge badge-primary">#<?= $player['jersey_number'] ?></span>
@@ -619,15 +646,15 @@ try {
                             <option value="">Select a player to add...</option>
                             <?php foreach ($available_players as $player): ?>
                                 <option value="<?= $player['id'] ?>">
-                                    <?= htmlspecialchars($player['name']) ?>
+                                    <?= htmlspecialchars($player['name'] ?? '') ?>
                                     <?php if ($player['age']): ?>
                                         (<?= $player['age'] ?> years)
                                     <?php endif; ?>
                                     <?php if ($player['position']): ?>
-                                        - <?= htmlspecialchars($player['position']) ?>
+                                        - <?= htmlspecialchars($player['position'] ?? '') ?>
                                     <?php endif; ?>
                                     <?php if ($player['current_team_name']): ?>
-                                        - Currently: <?= htmlspecialchars($player['current_team_name']) ?>
+                                        - Currently: <?= htmlspecialchars($player['current_team_name'] ?? '') ?>
                                     <?php else: ?>
                                         - Unassigned
                                     <?php endif; ?>
@@ -680,7 +707,7 @@ try {
                     <?php foreach ($recent_events as $event): ?>
                         <div class="list-group-item d-flex justify-content-between align-items-center">
                             <div>
-                                <strong><?= htmlspecialchars($event['title']) ?></strong><br>
+                                <strong><?= htmlspecialchars($event['title'] ?? '') ?></strong><br>
                                 <small class="text-muted">
                                     <?= date('M j, Y', strtotime($event['event_date'])) ?> • 
                                     <?= ucfirst($event['event_type']) ?>
@@ -845,7 +872,7 @@ window.onclick = function(event) {
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">
-                    <i class="fas fa-user-tie"></i> Manage Coaches - <?= htmlspecialchars($team['name']) ?>
+                    <i class="fas fa-user-tie"></i> Manage Coaches - <?= htmlspecialchars($team['name'] ?? '') ?>
                 </h5>
                 <button type="button" class="close" onclick="closeCoachModal()">
                     <span>&times;</span>

@@ -59,41 +59,89 @@ try {
 }
 $playerJoinCondition = in_array('status', $playersCols) ? "t.id = p.team_id AND p.status = 'active'" : "t.id = p.team_id";
 
-$teamsQuery = "
-    SELECT t.*,
-           COUNT(DISTINCT p.id) as player_count,
-    (
-        SELECT COUNT(*)
-        FROM attendance a
-        JOIN players p2 ON a.player_id = p2.id
-        WHERE p2.team_id = t.id AND a.status = 'present' AND datetime(a.created_at) >= datetime('now', '-30 days')
-    ) as recent_attendance,
-    (
-        SELECT COUNT(*)
-        FROM attendance a
-        JOIN players p3 ON a.player_id = p3.id
-        WHERE p3.team_id = t.id AND datetime(a.created_at) >= datetime('now', '-30 days')
-    ) as total_sessions,
-    GROUP_CONCAT(DISTINCT c.name) as coach_names,
-    COUNT(DISTINCT tc.coach_id) as coach_count,
-    (
-        SELECT c2.name FROM coaches c2
-        JOIN team_coaches tc2 ON c2.id = tc2.coach_id
-        WHERE tc2.team_id = t.id AND tc2.role_in_team = 'head_coach'
-        LIMIT 1
-    ) as head_coach,
-    (
-        SELECT c3.name FROM coaches c3
-        JOIN team_coaches tc3 ON c3.id = tc3.coach_id
-        WHERE tc3.team_id = t.id AND tc3.role_in_team = 'assistant_coach'
-        LIMIT 1
-    ) as assistant_coach
-    FROM teams t
-    LEFT JOIN players p ON {$playerJoinCondition}
-    LEFT JOIN team_coaches tc ON t.id = tc.team_id
-    LEFT JOIN coaches c ON tc.coach_id = c.id
-    GROUP BY t.id
-    ORDER BY t.name";
+// If a player_teams join table exists, use that to calculate player_count and attendance-based stats
+$hasPlayerTeams = false;
+try {
+    $r = $db->query("SELECT name FROM sqlite_master WHERE type='table' AND name='player_teams'")->fetch(PDO::FETCH_ASSOC);
+    $hasPlayerTeams = (bool)$r;
+} catch (Exception $e) { /* ignore */ }
+
+if ($hasPlayerTeams) {
+    $teamsQuery = "
+        SELECT t.*,
+               COUNT(DISTINCT p.id) as player_count,
+        (
+            SELECT COUNT(*)
+            FROM attendance a
+            JOIN players p2 ON a.player_id = p2.id
+            JOIN player_teams pt2 ON p2.id = pt2.player_id
+            WHERE pt2.team_id = t.id AND a.status = 'present' AND datetime(a.created_at) >= datetime('now', '-30 days')
+        ) as recent_attendance,
+        (
+            SELECT COUNT(*)
+            FROM attendance a
+            JOIN players p3 ON a.player_id = p3.id
+            JOIN player_teams pt3 ON p3.id = pt3.player_id
+            WHERE pt3.team_id = t.id AND datetime(a.created_at) >= datetime('now', '-30 days')
+        ) as total_sessions,
+        GROUP_CONCAT(DISTINCT c.name) as coach_names,
+        COUNT(DISTINCT tc.coach_id) as coach_count,
+        (
+            SELECT c2.name FROM coaches c2
+            JOIN team_coaches tc2 ON c2.id = tc2.coach_id
+            WHERE tc2.team_id = t.id AND tc2.role_in_team = 'head_coach'
+            LIMIT 1
+        ) as head_coach,
+        (
+            SELECT c3.name FROM coaches c3
+            JOIN team_coaches tc3 ON c3.id = tc3.coach_id
+            WHERE tc3.team_id = t.id AND tc3.role_in_team = 'assistant_coach'
+            LIMIT 1
+        ) as assistant_coach
+        FROM teams t
+        LEFT JOIN player_teams pt ON t.id = pt.team_id
+        LEFT JOIN players p ON p.id = pt.player_id AND p.status = 'active'
+        LEFT JOIN team_coaches tc ON t.id = tc.team_id
+        LEFT JOIN coaches c ON tc.coach_id = c.id
+        GROUP BY t.id
+        ORDER BY t.name";
+} else {
+    $teamsQuery = "
+        SELECT t.*,
+               COUNT(DISTINCT p.id) as player_count,
+        (
+            SELECT COUNT(*)
+            FROM attendance a
+            JOIN players p2 ON a.player_id = p2.id
+            WHERE p2.team_id = t.id AND a.status = 'present' AND datetime(a.created_at) >= datetime('now', '-30 days')
+        ) as recent_attendance,
+        (
+            SELECT COUNT(*)
+            FROM attendance a
+            JOIN players p3 ON a.player_id = p3.id
+            WHERE p3.team_id = t.id AND datetime(a.created_at) >= datetime('now', '-30 days')
+        ) as total_sessions,
+        GROUP_CONCAT(DISTINCT c.name) as coach_names,
+        COUNT(DISTINCT tc.coach_id) as coach_count,
+        (
+            SELECT c2.name FROM coaches c2
+            JOIN team_coaches tc2 ON c2.id = tc2.coach_id
+            WHERE tc2.team_id = t.id AND tc2.role_in_team = 'head_coach'
+            LIMIT 1
+        ) as head_coach,
+        (
+            SELECT c3.name FROM coaches c3
+            JOIN team_coaches tc3 ON c3.id = tc3.coach_id
+            WHERE tc3.team_id = t.id AND tc3.role_in_team = 'assistant_coach'
+            LIMIT 1
+        ) as assistant_coach
+        FROM teams t
+        LEFT JOIN players p ON {$playerJoinCondition}
+        LEFT JOIN team_coaches tc ON t.id = tc.team_id
+        LEFT JOIN coaches c ON tc.coach_id = c.id
+        GROUP BY t.id
+        ORDER BY t.name";
+}
 
 try {
     $stmt = $db->prepare($teamsQuery);
@@ -130,7 +178,7 @@ try {
                 <p class="page-subtitle">Organize squads and track team performance</p>
                 
                 <div class="page-actions">
-                    <a href="team_edit.php?action=add" class="btn btn-primary">
+                    <a href="add_team.php" class="btn btn-primary">
                         <i class="fas fa-plus-circle"></i>
                         Add New Team
                     </a>
@@ -211,7 +259,7 @@ try {
                 <i class="fas fa-shield-alt fa-3x" style="color:#94a3b8"></i>
                 <h3>No Teams Yet</h3>
                 <p>Create a team to get started</p>
-                <a href="team_edit.php?action=add" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Add Team</a>
+                <a href="add_team.php" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Add Team</a>
             </div>
         <?php else: ?>
             <div id="teamsGrid" class="team-grid">
@@ -223,6 +271,16 @@ try {
                         <div class="tc-icon"><i class="fas fa-shield-alt"></i></div>
                         <div class="tc-head-text">
                             <h2 class="tc-name"><?= htmlspecialchars($team['name'] ?: 'Unknown Team') ?></h2>
+                            <?php if (!empty($team['age_group'])): ?>
+                                <?php
+                                    $groups = array_filter(array_map('trim', explode(',', $team['age_group'])));
+                                ?>
+                                <div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap;">
+                                    <?php foreach ($groups as $g): ?>
+                                        <span style="background:var(--primary-light, #eef2ff);color:var(--primary, #1f2937);padding:3px 8px;border-radius:999px;font-size:11px;font-weight:700;"><?= htmlspecialchars($g) ?></span>
+                                    <?php endforeach; ?>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                     <div class="tc-body">
@@ -255,7 +313,9 @@ try {
                             <a href="team_details.php?id=<?= $team['id'] ?? '' ?>" class="view"><i class="fas fa-eye"></i> View</a>
                             <a href="team_edit.php?id=<?= $team['id'] ?? '' ?>&action=edit" class="edit"><i class="fas fa-edit"></i> Edit</a>
                             <a href="#" class="assign-coach-btn" onclick="openCoachAssignment(<?= $team['id'] ?>, '<?= htmlspecialchars(addslashes($team['name'])) ?>')"><i class="fas fa-user-plus"></i> Coach</a>
+                            <?php if (function_exists('isAdmin') && isAdmin()): ?>
                             <a href="delete_team.php?id=<?= $team['id'] ?? '' ?>" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Delete</a>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>

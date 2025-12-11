@@ -58,6 +58,8 @@ if (isset($_SESSION['flash_created_name'])) {
 }
 
 // Get players data - using PDO
+$playersByTeam = [];
+$teamOrder = [];
 try {
     // Detect available columns in players table (legacy schemas may lack first_name/last_name/status)
     $cols = [];
@@ -149,6 +151,34 @@ try {
         }
     }
     unset($p); // Break reference
+    $playersByTeam = [];
+    if (!empty($players)) {
+        foreach ($players as $player) {
+            // If the player belongs to multiple teams, list them under each team
+            $teamsForPlayer = [];
+            if (!empty($player['all_teams']) && is_array($player['all_teams'])) {
+                $teamsForPlayer = $player['all_teams'];
+            } elseif (!empty($player['team_name'])) {
+                $teamsForPlayer = [trim($player['team_name'])];
+            } else {
+                $teamsForPlayer = ['Unassigned'];
+            }
+
+            // Ensure unique team labels and add player under each
+            $teamsForPlayer = array_values(array_unique(array_map('trim', $teamsForPlayer)));
+            foreach ($teamsForPlayer as $teamLabel) {
+                if ($teamLabel === '') $teamLabel = 'Unassigned';
+                $playersByTeam[$teamLabel][] = $player;
+            }
+        }
+        $teamOrder = array_keys($playersByTeam);
+        usort($teamOrder, function($a, $b) {
+            if ($a === 'Unassigned' && $b === 'Unassigned') return 0;
+            if ($a === 'Unassigned') return 1;
+            if ($b === 'Unassigned') return -1;
+            return strcasecmp($a, $b);
+        });
+    }
 } catch (Exception $e) {
     $players = [];
     $error = 'Database error: ' . $e->getMessage();
@@ -272,6 +302,7 @@ if (isset($_GET['error'])) {
         </div>
         <div class="page-actions">
             <a href="add_player.php" class="btn btn-primary"><i class="fas fa-user-plus"></i> Add Player</a>
+            <a id="addEventBtn" href="add_event.php" class="btn btn-secondary" style="margin-left:.5rem;"><i class="fas fa-calendar-plus"></i> Add Event</a>
             <button id="bulkDeleteBtn" class="btn btn-danger" style="margin-left:.5rem; display:none;" onclick="bulkDeleteSelected()"><i class="fas fa-trash"></i> Delete Selected</button>
         </div>
     </div>
@@ -346,8 +377,18 @@ if (isset($_GET['error'])) {
         <div style="margin:0 0 1rem; display:flex; gap:.5rem; align-items:center;">
             <label style="display:flex;align-items:center;gap:.4rem"><input type="checkbox" id="selectAllPlayers" onchange="toggleSelectAll(this)"> Select all</label>
         </div>
-        <div id="playersGrid" class="player-list-grid">
-            <?php foreach ($players as $p):
+        <div class="players-team-wrapper">
+            <?php foreach ($teamOrder as $teamLabel): ?>
+                <?php $teamPlayers = $playersByTeam[$teamLabel] ?? []; ?>
+                <section class="player-team-section" data-team-name="<?= htmlspecialchars(strtolower($teamLabel)) ?>">
+                    <div class="team-heading">
+                        <div class="team-heading-text">
+                            <h3><?= htmlspecialchars($teamLabel) ?></h3>
+                            <span class="team-subtitle"><?= count($teamPlayers) ?> player<?= count($teamPlayers) === 1 ? '' : 's' ?></span>
+                        </div>
+                    </div>
+                    <div class="team-player-grid player-list-grid">
+                        <?php foreach ($teamPlayers as $p):
                 // Build full name properly, handling both naming conventions
                 $fullName = '';
                 if (!empty($p['surname'])) {
@@ -385,8 +426,28 @@ if (isset($_GET['error'])) {
             <div class="player-card player-card-dark" tabindex="0" aria-expanded="false" data-player-id="<?= $p['id'] ?>" data-player-name="<?= strtolower($fullName) ?>" data-team="<?= strtolower($p['team_name'] ?? '') ?>" data-position="<?= strtolower($p['position'] ?? '') ?>" data-age-group="<?= htmlspecialchars($p['age_group'] ?? '') ?>" <?= $cardOnClick ? 'onclick="' . $cardOnClick . '"' : '' ?> >
                 <input type="checkbox" class="player-select-checkbox" value="<?= $p['id'] ?>" style="position:absolute;left:.6rem;top:.6rem;z-index:5;" onclick="event.stopPropagation();updateBulkUI();">
                 <div class="pcm-photo player-card-media">
-                    <?php if (!empty($p['profile_image']) && file_exists($p['profile_image'])): ?>
-                        <img src="<?= htmlspecialchars($p['profile_image'] ?: '') ?>" alt="<?= htmlspecialchars($fullName) ?>">
+                    <?php
+                        // Resolve profile image: allow remote URLs (http/https) or server-relative uploads paths
+                        $resolvedImage = '';
+                        if (!empty($p['profile_image'])) {
+                            $raw = $p['profile_image'];
+                            // Remote URL -> use directly
+                            if (preg_match('/^https?:\/\//i', $raw)) {
+                                $resolvedImage = $raw;
+                            } else {
+                                // Try file paths relative to app root and current dir
+                                $candidates = [__DIR__ . '/' . $raw, $raw];
+                                foreach ($candidates as $c) {
+                                    if (file_exists($c)) { $resolvedImage = $raw; break; }
+                                }
+                            }
+                        }
+                        if (empty($resolvedImage) && function_exists('vivo_get_player_image_from_uploads')) {
+                            $resolvedImage = vivo_get_player_image_from_uploads($p['id']);
+                        }
+                    ?>
+                    <?php if (!empty($resolvedImage)): ?>
+                        <img src="<?= htmlspecialchars($resolvedImage) ?>" alt="<?= htmlspecialchars($fullName) ?>">
                     <?php else: ?>
                         <?php 
                         // Use non-gender specific placeholders (5 variants available)
@@ -444,6 +505,9 @@ if (isset($_GET['error'])) {
                     </div>
                 </div>
             </div>
+                        <?php endforeach; ?>
+                    </div>
+                </section>
             <?php endforeach; ?>
         </div>
     <?php endif; ?>
@@ -502,6 +566,22 @@ function updateBulkUI(){
         selectAll.checked = all && document.querySelectorAll('.player-select-checkbox').length>0;
     }
 }
+
+// Add Event button handler: navigate to add_event.php and include selected player ids (if any)
+document.addEventListener('DOMContentLoaded', function(){
+    const addEventBtn = document.getElementById('addEventBtn');
+    if (!addEventBtn) return;
+    addEventBtn.addEventListener('click', function(e){
+        // If any players are selected, pass them in the query string
+        const ids = Array.from(document.querySelectorAll('.player-select-checkbox:checked')).map(function(ch){ return ch.value; });
+        let url = 'add_event.php';
+        if (ids.length === 1) url += '?player_id=' + encodeURIComponent(ids[0]);
+        else if (ids.length > 1) url += '?player_ids=' + encodeURIComponent(ids.join(','));
+        // allow normal click behaviour (link navigation) - but use computed url
+        e.preventDefault();
+        window.location.href = url;
+    });
+});
 
 function bulkDeleteSelected(){
     if(!confirm('Delete selected players? This cannot be undone.')) return;
