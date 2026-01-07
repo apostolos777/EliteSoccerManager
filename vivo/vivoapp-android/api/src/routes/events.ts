@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { listEvents, createEvent } from '../repositories/events';
+import { requireAuth } from '../middleware/authMiddleware';
 
 const router = Router();
 
@@ -8,12 +9,15 @@ router.get('/', async (req, res) => {
   res.json({ events });
 });
 
-import { requireAuth } from '../middleware/authMiddleware';
-
-router.post('/', requireAuth, async (req, res) => {
-  const data = req.body;
-  const ev = await createEvent(data);
-  res.status(201).json({ event: ev });
+router.post('/', requireAuth, async (req: any, res) => {
+  const { title, event_date } = req.body;
+  if (!title || !event_date) return res.status(400).json({ message: 'title and event_date are required' });
+  try {
+    const ev = await createEvent(req.body);
+    res.status(201).json({ event: ev });
+  } catch (e:any) {
+    res.status(500).json({ message: e.message });
+  }
 });
 
 export default router;
