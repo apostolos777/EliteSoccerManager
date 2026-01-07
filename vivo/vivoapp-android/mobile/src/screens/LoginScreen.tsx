@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, Alert } from 'react-native';
-import api from '../api';
+import api, { setToken } from '../api';
 
 export default function LoginScreen({ navigation }: any) {
   const [email, setEmail] = useState('');
@@ -10,9 +10,12 @@ export default function LoginScreen({ navigation }: any) {
     try {
       const res = await api.post('/auth/login', { email, password });
       const token = res.data.token;
-      // TODO: persist token securely (SecureStore/Keychain)
-      Alert.alert('Logged in', 'Token: ' + (token ? 'received' : 'none'));
-      navigation.replace('Home');
+      if (token) {
+        await setToken(token);
+        navigation.replace('Home');
+      } else {
+        Alert.alert('Login failed', 'No token received');
+      }
     } catch (e:any) {
       Alert.alert('Login failed', e.response?.data?.message || e.message);
     }
