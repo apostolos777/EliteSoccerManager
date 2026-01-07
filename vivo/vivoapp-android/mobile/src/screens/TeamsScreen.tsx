@@ -16,12 +16,13 @@ export default function TeamsScreen() {
   return (
     <View style={{ flex:1, padding:16 }}>
       <Text style={{ fontSize:18, marginBottom:12 }}>Teams</Text>
+      <Button title="New Team" onPress={() => navigation.navigate('CreateTeam')} />
       <FlatList data={teams} keyExtractor={t => String(t.id)} renderItem={({item}) => (
         <View style={{ padding:8, borderBottomWidth:1, borderColor:'#eee' }}>
           <Text style={{ fontWeight:'bold' }}>{item.name}</Text>
           <Text>{item.age_group || ''}</Text>
         </View>
-      )} />
+      )} style={{ marginTop:12 }} />
     </View>
   );
 }

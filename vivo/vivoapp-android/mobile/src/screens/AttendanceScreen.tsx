@@ -23,12 +23,13 @@ export default function AttendanceScreen() {
   return (
     <View style={{ flex:1, padding:16 }}>
       <Text style={{ fontSize:18, marginBottom:12 }}>Attendance</Text>
+      <Button title="Record Attendance" onPress={() => navigation.navigate('RecordAttendance')} />
       <FlatList data={attendance} keyExtractor={a => String(a.id)} renderItem={({item}) => (
         <View style={{ padding:8, borderBottomWidth:1, borderColor:'#eee' }}>
           <Text style={{ fontWeight:'bold' }}>{item.player_id}</Text>
           <Text>{item.status || ''}</Text>
         </View>
-      )} />
+      )} style={{ marginTop:12 }} />
     </View>
   );
 }
