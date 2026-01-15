@@ -19,7 +19,6 @@
     "knex": "^2.5.1",
     "mysql2": "^3.3.0",
     "pg": "^8.11.0",
-    "sqlite3": "^5.1.6",
     "dotenv": "^16.0.3"
   },
   "devDependencies": {
@@ -28,8 +27,7 @@
     "typescript": "^5.2.2",
     "@types/express": "^4.17.21",
     "@types/node": "^20.6.0",
-    "@types/jsonwebtoken": "^9.0.2",
-    "@types/bcrypt": "^5.0.0"
-  }
+    "@types/jsonwebtoken": "^9.0.2"
+  },
 }
 

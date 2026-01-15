@@ -89,6 +89,23 @@ try {
     die('Error fetching player: ' . $e->getMessage());
 }
 
+// helper to ensure links include a scheme and are safe
+function normalize_url_for_display($url) {
+    $url = trim((string)$url);
+    if ($url === '') return '';
+    // If no scheme present, assume https
+    if (!preg_match('~^[a-z][a-z0-9+.-]*://~i', $url)) {
+        $url = 'https://' . $url;
+    }
+    return $url;
+}
+
+function link_html($url) {
+    $norm = normalize_url_for_display($url);
+    if ($norm === '') return '';
+    return '<a href="' . htmlspecialchars($norm) . '" target="_blank" rel="noopener noreferrer">' . htmlspecialchars($url) . '</a>';
+}
+
 // lookups
 $teams = [];
 try { $teams = $db->query("SELECT * FROM teams ORDER BY name")->fetchAll(PDO::FETCH_ASSOC); } catch (Exception $e) { }
@@ -320,12 +337,12 @@ vivo_include_head_css($db);
                         <div class="card-header"><h5 class="card-title">Social Media</h5></div>
                         <div class="card-body">
                             <div class="form-grid">
-                                <?php if (in_array('facebook_url', $schemaColumns)): ?><div class="form-group"><label>Facebook URL</label><input class="form-control" value="<?= htmlspecialchars($player['facebook_url'] ?? '') ?>" disabled></div><?php endif; ?>
-                                <?php if (in_array('instagram_url', $schemaColumns)): ?><div class="form-group"><label>Instagram URL</label><input class="form-control" value="<?= htmlspecialchars($player['instagram_url'] ?? '') ?>" disabled></div><?php endif; ?>
-                                <?php if (in_array('twitter_url', $schemaColumns)): ?><div class="form-group"><label>Twitter URL</label><input class="form-control" value="<?= htmlspecialchars($player['twitter_url'] ?? '') ?>" disabled></div><?php endif; ?>
-                                <?php if (in_array('tiktok_url', $schemaColumns)): ?><div class="form-group"><label>TikTok URL</label><input class="form-control" value="<?= htmlspecialchars($player['tiktok_url'] ?? '') ?>" disabled></div><?php endif; ?>
-                                <?php if (in_array('youtube_url', $schemaColumns)): ?><div class="form-group"><label>YouTube URL</label><input class="form-control" value="<?= htmlspecialchars($player['youtube_url'] ?? '') ?>" disabled></div><?php endif; ?>
-                                <?php if (in_array('linkedin_url', $schemaColumns)): ?><div class="form-group"><label>LinkedIn URL</label><input class="form-control" value="<?= htmlspecialchars($player['linkedin_url'] ?? '') ?>" disabled></div><?php endif; ?>
+                                <?php if (in_array('facebook_url', $schemaColumns) && !empty($player['facebook_url'])): ?><div class="form-group"><label>Facebook</label><div class="form-control" style="background:#f8f9fa"><?= link_html($player['facebook_url']) ?></div></div><?php elseif (in_array('facebook_url', $schemaColumns)): ?><div class="form-group"><label>Facebook</label><div class="form-control" style="background:#f8f9fa">—</div></div><?php endif; ?>
+                                <?php if (in_array('instagram_url', $schemaColumns) && !empty($player['instagram_url'])): ?><div class="form-group"><label>Instagram</label><div class="form-control" style="background:#f8f9fa"><?= link_html($player['instagram_url']) ?></div></div><?php elseif (in_array('instagram_url', $schemaColumns)): ?><div class="form-group"><label>Instagram</label><div class="form-control" style="background:#f8f9fa">—</div></div><?php endif; ?>
+                                <?php if (in_array('twitter_url', $schemaColumns) && !empty($player['twitter_url'])): ?><div class="form-group"><label>Twitter</label><div class="form-control" style="background:#f8f9fa"><?= link_html($player['twitter_url']) ?></div></div><?php elseif (in_array('twitter_url', $schemaColumns)): ?><div class="form-group"><label>Twitter</label><div class="form-control" style="background:#f8f9fa">—</div></div><?php endif; ?>
+                                <?php if (in_array('tiktok_url', $schemaColumns) && !empty($player['tiktok_url'])): ?><div class="form-group"><label>TikTok</label><div class="form-control" style="background:#f8f9fa"><?= link_html($player['tiktok_url']) ?></div></div><?php elseif (in_array('tiktok_url', $schemaColumns)): ?><div class="form-group"><label>TikTok</label><div class="form-control" style="background:#f8f9fa">—</div></div><?php endif; ?>
+                                <?php if (in_array('youtube_url', $schemaColumns) && !empty($player['youtube_url'])): ?><div class="form-group"><label>YouTube</label><div class="form-control" style="background:#f8f9fa"><?= link_html($player['youtube_url']) ?></div></div><?php elseif (in_array('youtube_url', $schemaColumns)): ?><div class="form-group"><label>YouTube</label><div class="form-control" style="background:#f8f9fa">—</div></div><?php endif; ?>
+                                <?php if (in_array('linkedin_url', $schemaColumns) && !empty($player['linkedin_url'])): ?><div class="form-group"><label>LinkedIn</label><div class="form-control" style="background:#f8f9fa"><?= link_html($player['linkedin_url']) ?></div></div><?php elseif (in_array('linkedin_url', $schemaColumns)): ?><div class="form-group"><label>LinkedIn</label><div class="form-control" style="background:#f8f9fa">—</div></div><?php endif; ?>
                             </div>
                         </div>
                     </div>
@@ -333,8 +350,8 @@ vivo_include_head_css($db);
                     <div class="card form-section">
                         <div class="card-header"><h5 class="card-title">Media</h5></div>
                         <div class="card-body">
-                            <?php if (!empty($player['profile_image'])): ?><div class="mb-3"><strong>Profile Image</strong><div><img src="<?= htmlspecialchars($player['profile_image']) ?>" style="max-width:220px"></div></div><?php endif; ?>
-                            <?php if (!empty($player['introduction_video_url'])): ?><div class="mb-3"><strong>Introduction Video</strong><div><?= htmlspecialchars(basename($player['introduction_video_url'])) ?></div></div><?php endif; ?>
+                            <?php if (!empty($player['profile_image'])): ?><div class="mb-3"><strong>Profile Image</strong><div><a href="<?= htmlspecialchars(normalize_url_for_display($player['profile_image'])) ?>" target="_blank" rel="noopener noreferrer"><img src="<?= htmlspecialchars($player['profile_image']) ?>" style="max-width:220px"></a></div></div><?php endif; ?>
+                            <?php if (!empty($player['introduction_video_url'])): ?><div class="mb-3"><strong>Introduction Video</strong><div><?php $videoLink = normalize_url_for_display($player['introduction_video_url']); if ($videoLink !== ''): ?><a href="<?= htmlspecialchars($videoLink) ?>" target="_blank" rel="noopener noreferrer"><?= htmlspecialchars(basename($player['introduction_video_url'])) ?></a><?php else: ?><?= htmlspecialchars(basename($player['introduction_video_url'])) ?><?php endif; ?></div></div><?php endif; ?>
                         </div>
                     </div>
 

@@ -37,7 +37,11 @@ export default function App() {
         <Stack.Screen name="Teams" component={TeamsScreen} />
         <Stack.Screen name="Players" component={PlayersScreen} />
         <Stack.Screen name="Events" component={EventsScreen} />
+        <Stack.Screen name="CreateEvent" component={require('./src/screens/CreateEventScreen').default} options={{ title: 'Create Event' }} />
         <Stack.Screen name="Attendance" component={AttendanceScreen} />
+        <Stack.Screen name="RecordAttendance" component={require('./src/screens/RecordAttendanceScreen').default} options={{ title: 'Record Attendance' }} />
+        <Stack.Screen name="CreateTeam" component={require('./src/screens/CreateTeamScreen').default} options={{ title: 'Create Team' }} />
+        <Stack.Screen name="CreatePlayer" component={require('./src/screens/CreatePlayerScreen').default} options={{ title: 'Create Player' }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
