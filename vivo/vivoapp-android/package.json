@@ -1,0 +1,17 @@
+{
+  "name": "vivoapp-android",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "mobile",
+    "api"
+  ],
+  "scripts": {
+    "bootstrap": "pnpm install",
+    "start:api": "pnpm --filter api start",
+    "start:mobile": "pnpm --filter mobile start"
+  },
+  "devDependencies": {
+    "@react-native-community/cli-platform-android": "^20.1.0"
+  }
+}
